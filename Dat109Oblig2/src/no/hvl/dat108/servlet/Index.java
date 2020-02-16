@@ -23,8 +23,8 @@ import no.hvl.dat108.Entity.Reservasjon;
 
 
 
-@WebServlet({ "/login", "/index.html" })
-public class LoginServlet extends HttpServlet {
+@WebServlet({"/index.html" })
+public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 	
 
 
-	public LoginServlet() {
+	public Index() {
 		super();
 
 	}
@@ -51,24 +51,24 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	
-	Kunde kunde = new Kunde();
-	kunde.setAdress(adresseEAO.hentAdresse(1));
-	kunde.setFornavn("Borgar");
-	kunde.setEtternavn("Grande");
-	kunde.setTelefonnummer(request.getParameter("mobilnr"));
-	kundeEAO.leggTil(kunde);
-	
-	System.out.println(bilEAO.hentBil("KH51737"));
-	Reservasjon reservasjon = new Reservasjon();
-	reservasjon.setBilBean(bilEAO.hentBil("KH51737"));
-	
-	reservasjon.setKmstandut(2435);
-	reservasjon.setKundeBean(kunde);
-	reservasjon.setUtleigekontor1(utleigekontorEAO.hentUtleigekontor(1));
-	reservasjon.setUtleigekontor2(utleigekontorEAO.hentUtleigekontor(2));
-	
-	System.out.println(reservasjonEAO.createReservasjon(reservasjon));
+//	
+//	Kunde kunde = new Kunde();
+//	kunde.setAdress(adresseEAO.hentAdresse(1));
+//	kunde.setFornavn("Borgar");
+//	kunde.setEtternavn("Grande");
+//	kunde.setTelefonnummer(request.getParameter("mobilnr"));
+//	kundeEAO.leggTil(kunde);
+//	
+//	System.out.println(bilEAO.hentBil("KH51737"));
+//	Reservasjon reservasjon = new Reservasjon();
+//	reservasjon.setBilBean(bilEAO.hentBil("KH51737"));
+//	
+//	reservasjon.setKmstandut(2435);
+//	reservasjon.setKundeBean(kunde);
+//	reservasjon.setUtleigekontor1(utleigekontorEAO.hentUtleigekontor(1));
+//	reservasjon.setUtleigekontor2(utleigekontorEAO.hentUtleigekontor(2));
+//	
+//	System.out.println(reservasjonEAO.createReservasjon(reservasjon));
 	//localhost:8080/DAT109Oblig2/?regnr=N8V62538&pickup=1&return=2
 
 
