@@ -6,3 +6,4 @@ Innlevert 10.februar.
 Ikkje levert.
 #### SQL
 Sql er installert i azure. SQL datafil ligg ved prosjektet.
+Kun opna for IP 89.20.235.213
