@@ -15,8 +15,8 @@ public class BilEAO {
 	@PersistenceContext(name = "utleige")
     private EntityManager em;
 
-	public Bil hentMedlem(String mobilnr) {
-		return em.find(Bil.class, mobilnr);
+	public Bil hentBil(String regnr) {
+		return em.find(Bil.class, regnr);
 	}
 	
 
@@ -24,8 +24,8 @@ public class BilEAO {
 		return em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
 	}
 	
-	public void leggTil(Bil nyttMedlem) {
-		em.persist(nyttMedlem);
+	public void leggTil(Bil bil) {
+		em.persist(bil);
 	}
 
 }
