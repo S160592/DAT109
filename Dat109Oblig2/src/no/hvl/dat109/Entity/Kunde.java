@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
-import no.hvl.dat109.EAO.AdresseEAO;
+import com.google.gson.annotations.Expose;
 
 
 /**
@@ -23,20 +23,22 @@ public class Kunde implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Expose
 	private String telefonnummer;
-
+	@Expose
 	private String etternavn;
-
+	@Expose
 	private String fornavn;
+	
 
 	//bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name="adresse")
-	private Adress adress;
+	private  Adress adress;
 
 	//bi-directional many-to-one association to Reservasjon
 	@OneToMany(mappedBy="kundeBean")
-	private List<Reservasjon> reservasjons;
+	private  List<Reservasjon> reservasjons;
 
 	public Kunde() {
 	}

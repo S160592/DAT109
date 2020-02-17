@@ -29,21 +29,19 @@ public class Bil implements Serializable {
 
 	private String merke;
 
+	
 	//bi-directional many-to-one association to Biltype
 	@ManyToOne
 	@JoinColumn(name="typeid")
-	@Expose(serialize = false, deserialize = false)
 	private  Biltype biltype;
 
 	//bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name="staarved")
-	@Expose(serialize = false, deserialize = false)
 	private  Utleigekontor utleigekontor;
 
 	//bi-directional many-to-one association to Reservasjon
 	@OneToMany(mappedBy="bilBean")
-	@Expose(serialize = false, deserialize = false)
 	private  List<Reservasjon> reservasjons;
 
 	public Bil() {

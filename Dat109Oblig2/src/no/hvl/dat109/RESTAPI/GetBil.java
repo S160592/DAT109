@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-import no.hvl.dat109.Interfaces.PersistentBil;
+import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Interfaces.PersistentKunde;
 
 /**
  * Servlet implementation class GetBil
@@ -28,7 +30,7 @@ public class GetBil extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     @EJB
-    private PersistentBil bilEAO;
+    private PersistentKunde kundeEAO;
     
 
 	/**
@@ -36,9 +38,14 @@ public class GetBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Gson gson = new Gson();
-		System.out.println(bilEAO.hentBil("UC31787"));
-		System.out.println(gson.toJson(bilEAO.hentBil("UC31787")));
+		Gson gson = new GsonBuilder()
+		        .excludeFieldsWithoutExposeAnnotation()
+		        .create();
+		
+		
+		System.out.println(kundeEAO.finnKunde("81548300"));
+		Kunde kunde = kundeEAO.finnKunde("81548300");
+		System.out.println(gson.toJson(kunde));
 	}
 
 
