@@ -70,19 +70,7 @@ public class Utleigekontor implements Serializable {
 		this.bils = bils;
 	}
 
-	public Bil addBil(Bil bil) {
-		getBils().add(bil);
-		bil.setUtleigekontor(this);
 
-		return bil;
-	}
-
-	public Bil removeBil(Bil bil) {
-		getBils().remove(bil);
-		bil.setUtleigekontor(null);
-
-		return bil;
-	}
 
 	public List<Reservasjon> getReservasjons1() {
 		return this.reservasjons1;

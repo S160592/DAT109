@@ -28,7 +28,7 @@ public class GetBil extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     @EJB
-    private PersistentBil PersBil;
+    private PersistentBil bilEAO;
     
 
 	/**
@@ -37,7 +37,8 @@ public class GetBil extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Gson gson = new Gson();
-		response.getWriter().append(gson.toJson(PersBil.hentBil(request.getParameter("regnr"))));
+		System.out.println(bilEAO.hentBil("UC31787"));
+		System.out.println(gson.toJson(bilEAO.hentBil("UC31787")));
 	}
 
 

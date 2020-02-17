@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.google.gson.annotations.Expose;
+
 
 /**
  * The persistent class for the bil database table.
@@ -30,16 +32,19 @@ public class Bil implements Serializable {
 	//bi-directional many-to-one association to Biltype
 	@ManyToOne
 	@JoinColumn(name="typeid")
-	private Biltype biltype;
+	@Expose(serialize = false, deserialize = false)
+	private  Biltype biltype;
 
 	//bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name="staarved")
-	private Utleigekontor utleigekontor;
+	@Expose(serialize = false, deserialize = false)
+	private  Utleigekontor utleigekontor;
 
 	//bi-directional many-to-one association to Reservasjon
 	@OneToMany(mappedBy="bilBean")
-	private List<Reservasjon> reservasjons;
+	@Expose(serialize = false, deserialize = false)
+	private  List<Reservasjon> reservasjons;
 
 	public Bil() {
 	}
@@ -68,42 +73,9 @@ public class Bil implements Serializable {
 		this.merke = merke;
 	}
 
-	public Biltype getBiltype() {
-		return this.biltype;
-	}
-
-	public void setBiltype(Biltype biltype) {
-		this.biltype = biltype;
-	}
-
-	public Utleigekontor getUtleigekontor() {
-		return this.utleigekontor;
-	}
-
-	public void setUtleigekontor(Utleigekontor utleigekontor) {
-		this.utleigekontor = utleigekontor;
-	}
-
-	public List<Reservasjon> getReservasjons() {
-		return this.reservasjons;
-	}
-
-	public void setReservasjons(List<Reservasjon> reservasjons) {
-		this.reservasjons = reservasjons;
-	}
-
-	public Reservasjon addReservasjon(Reservasjon reservasjon) {
-		getReservasjons().add(reservasjon);
-		reservasjon.setBilBean(this);
-
-		return reservasjon;
-	}
-
-	public Reservasjon removeReservasjon(Reservasjon reservasjon) {
-		getReservasjons().remove(reservasjon);
-		reservasjon.setBilBean(null);
-
-		return reservasjon;
+	@Override
+	public String toString() {
+		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + "]";
 	}
 
 }

@@ -64,18 +64,6 @@ public class Biltype implements Serializable {
 		this.bils = bils;
 	}
 
-	public Bil addBil(Bil bil) {
-		getBils().add(bil);
-		bil.setBiltype(this);
-
-		return bil;
-	}
-
-	public Bil removeBil(Bil bil) {
-		getBils().remove(bil);
-		bil.setBiltype(null);
-
-		return bil;
-	}
+	
 
 }
