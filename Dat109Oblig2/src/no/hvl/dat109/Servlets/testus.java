@@ -1,50 +1,41 @@
-package no.hvl.dat109.RESTAPI;
+package no.hvl.dat109.Servlets;
 
 import java.io.IOException;
-
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import no.hvl.dat109.Entity.Kunde;
-import no.hvl.dat109.Interfaces.PersistentBil;
-import no.hvl.dat109.Interfaces.PersistentKunde;
-
 /**
- * Servlet implementation class GetBil
+ * Servlet implementation class testus
  */
-@WebServlet("/GetBil")
-public class GetBil extends HttpServlet {
+@WebServlet("/testus")
+public class testus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetBil() {
+    public testus() {
         super();
         // TODO Auto-generated constructor stub
     }
-    @EJB
-    private PersistentBil bilEAO;
-    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Gson gson = new GsonBuilder()
-		        .excludeFieldsWithoutExposeAnnotation()
-		        .create();
-		
-		response.getWriter().append(gson.toJson(bilEAO.hentBil(request.getParameter("regnr"))));
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
 }

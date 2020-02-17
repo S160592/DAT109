@@ -23,10 +23,11 @@ public class Bil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Expose
 	private String regnr;
-
+	@Expose
 	private String farge;
-
+	@Expose
 	private String merke;
 
 	
