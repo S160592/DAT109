@@ -2,13 +2,13 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.UtleigekontorEntity;
+import no.hvl.dat109.Entity.Utleigekontor;
 
 public interface PersistentUtleigekontor {
 
 
-	public UtleigekontorEntity hentUtleigekontor(int id);
-	public List<UtleigekontorEntity> hentAlle();
+	public Utleigekontor hentUtleigekontor(int id);
+	public List<Utleigekontor> hentAlle();
 	
 	
 }

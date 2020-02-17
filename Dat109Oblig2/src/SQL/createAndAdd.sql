@@ -2,6 +2,7 @@
 drop table if exists public.reservasjon;
 drop table if exists public.bil;
 drop table if exists public.biltype;
+
 drop table if exists public.kunde;
 DROP TABLE IF exists public.utleigekontor;
 DROP TABLE IF EXISTS public.adress;
@@ -9,10 +10,10 @@ DROP TABLE IF EXISTS public.adress;
 
 
 
-
 CREATE TABLE public.biltype (
 	typeid char(1) NOT NULL,
 	description text NULL,
+	dagspris Integer not null,
 	CONSTRAINT biltype_pk PRIMARY KEY (typeid)
 );
 
@@ -41,7 +42,9 @@ CREATE TABLE public.utleigekontor (
 CREATE TABLE public.bil (
 	regnr varchar(8) NOT NULL,
 	typeid varchar(1) NOT NULL,
+	merke varchar(20) not null,
 	staarVed int4,
+	farge varchar not null,
 	CONSTRAINT bil_pk PRIMARY KEY (regnr),
 	CONSTRAINT bil_fk FOREIGN KEY (typeid) REFERENCES public.biltype(typeid),
 	CONSTRAINT bil_utleigefk FOREIGN KEY (staarVed) REFERENCES public.utleigekontor(id)
@@ -89,17 +92,17 @@ VALUES('81549300', 1),
 ('80012345', 2);
 
 INSERT INTO public.biltype
-(typeid, description)
-VALUES('A', 'Liten bil'),
-('B', 'Mellomstor bil'),
-('C', 'Stor bil'),
-('D', 'Stasjonsvogn');
+(typeid, description, dagspris)
+VALUES('A', 'Liten bil', 1000),
+('B', 'Mellomstor bil', 1200),
+('C', 'Stor bil', 1350),
+('D', 'Stasjonsvogn', 1550);
 
 
 INSERT INTO public.bil
-(regnr, typeid, staarved)
-VALUES('UC31787', 'A', 1),
-('KH51737', 'A', 2);
+(regnr, typeid, staarved, merke, farge)
+VALUES('UC31787', 'A', 1, 'Kia',  'svart'),
+('KH51737', 'A', 2, 'Skoda',  'kvit');
 
 
 

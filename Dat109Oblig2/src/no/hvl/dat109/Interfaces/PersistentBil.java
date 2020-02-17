@@ -2,13 +2,13 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.BilEntity;
+import no.hvl.dat109.Entity.Bil;
 
 public interface PersistentBil {
 
 
-	public BilEntity hentBil(String regnr);
-	public List<BilEntity> hentAlle();
-	public void leggTil(BilEntity bil);
+	public Bil hentBil(String regnr);
+	public List<Bil> hentAlle();
+	public void leggTil(Bil bil);
 	
 }

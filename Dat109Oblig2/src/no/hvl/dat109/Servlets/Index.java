@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.KundeEntity;
-import no.hvl.dat109.Entity.ReservasjonEntity;
+import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentBiltype;
@@ -18,9 +17,7 @@ import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
-
-
-@WebServlet({"/index.html" })
+@WebServlet({ "/index.html" })
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -37,9 +34,6 @@ public class Index extends HttpServlet {
 	@EJB
 	private PersistentReservasjon reservasjonEAO;
 
-	
-
-
 	public Index() {
 		super();
 
@@ -48,34 +42,19 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	
-	KundeEntity kunde = new KundeEntity();
-	kunde.setAdress(adresseEAO.hentAdresse(1));
-	kunde.setFornavn("Borgar");
-	kunde.setEtternavn("Grande");
-	kunde.setTelefonnummer(request.getParameter("mobilnr"));
-	kundeEAO.leggTil(kunde);
-	
-	System.out.println(bilEAO.hentBil("KH51737"));
-	ReservasjonEntity reservasjon = new ReservasjonEntity();
-	reservasjon.setBilBean(bilEAO.hentBil("KH51737"));
-	
-	reservasjon.setKmstandut(2435);
-	reservasjon.setKundeBean(kunde);
-	reservasjon.setUtleigekontor1(utleigekontorEAO.hentUtleigekontor(1));
-	reservasjon.setUtleigekontor2(utleigekontorEAO.hentUtleigekontor(2));
-	
-	System.out.println(reservasjonEAO.createReservasjon(reservasjon));
-	//localhost:8080/DAT109Oblig2/?regnr=N8V62538&pickup=1&return=2
+		Kunde kunde = new Kunde();
+		kunde.setEtternavn(request.getParameter("etternavn"));
+		kunde.setFornavn(request.getParameter("fornavn"));
+		kunde.setTelefonnummer(request.getParameter("telefonnr"));
+		kunde.setAdress(adresseEAO.hentAdresse(1));
+		kundeEAO.leggTil(kunde);
 
+		// localhost:8080/DAT109Oblig2/?etternavn=grande&fornavn=bogar&telefonnr=12345678
 
-	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		
 
 	}
 

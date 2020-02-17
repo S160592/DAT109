@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.UtleigekontorEntity;
+import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
 @Stateless
@@ -15,12 +15,12 @@ public class UtleigekontorEAO implements PersistentUtleigekontor{
     private EntityManager em;
 	
 	
-	public UtleigekontorEntity hentUtleigekontor(int id) {
-		return em.find(UtleigekontorEntity.class, id);
+	public Utleigekontor hentUtleigekontor(int id) {
+		return em.find(Utleigekontor.class, id);
 	}
 	
-	public List<UtleigekontorEntity> hentAlle(){
-		return em.createNamedQuery("Utleigekontor.findAll", UtleigekontorEntity.class).getResultList();
+	public List<Utleigekontor> hentAlle(){
+		return em.createNamedQuery("UtleigekontorEntity.findAll", Utleigekontor.class).getResultList();
 	}
 
 	

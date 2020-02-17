@@ -2,10 +2,10 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.BiltypeEntity;
+import no.hvl.dat109.Entity.Biltype;
 
 public interface PersistentBiltype {
-	public BiltypeEntity hentbiltype(String type);
+	public Biltype hentbiltype(String type);
 	
-	public List<BiltypeEntity> hentAlle();
+	public List<Biltype> hentAlle();
 }

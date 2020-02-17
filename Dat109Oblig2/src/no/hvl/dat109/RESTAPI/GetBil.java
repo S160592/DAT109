@@ -28,7 +28,7 @@ public class GetBil extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     @EJB
-    PersistentBil PersBil;
+    private PersistentBil PersBil;
     
 
 	/**

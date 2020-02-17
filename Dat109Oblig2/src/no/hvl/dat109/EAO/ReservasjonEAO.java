@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.ReservasjonEntity;
+import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 
 @Stateless
@@ -14,15 +14,15 @@ public class ReservasjonEAO implements PersistentReservasjon {
 	@PersistenceContext(name = "utleige")
     private EntityManager em;
 	
-	public List<ReservasjonEntity> hentAlle() {
-		return em.createNamedQuery("Reservasjon.findAll", ReservasjonEntity.class).getResultList();
+	public List<Reservasjon> hentAlle() {
+		return em.createNamedQuery("ReservasjonEntity.findAll", Reservasjon.class).getResultList();
 	}
 	
-	public ReservasjonEntity hentReservasjon(int id) {
-		return em.find(ReservasjonEntity.class, id);
+	public Reservasjon hentReservasjon(int id) {
+		return em.find(Reservasjon.class, id);
 	}
 	
-	public int createReservasjon(ReservasjonEntity reservasjon) {
+	public int createReservasjon(Reservasjon reservasjon) {
 		em.persist(reservasjon);
 		em.flush();
 		return reservasjon.getReservasjonsid();
