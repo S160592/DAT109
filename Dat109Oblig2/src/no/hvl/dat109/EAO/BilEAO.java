@@ -1,12 +1,19 @@
 package no.hvl.dat109.EAO;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.hsqldb.lib.Collection;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
+
 import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Interfaces.PersistentBil;
 
 @Stateless
@@ -25,7 +32,12 @@ public class BilEAO implements PersistentBil {
 
 
 	public List<Bil> henledige() {
-		return em.createQuery("SELECT * FROM Bil b WHERE b.regnr IN ( SELECT b2.regnr FROM Bil b2 , Reservasjon r where b2.regnr = r.bil and now() between r.fradato and r.tildato )").getResultList();
+
+		
+		
+		List<Bil> bilar = em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
+		List<Bil> ledige = bilar.stream().filter(x -> x.getReservasjons().size() == 0).collect(Collectors.toList()); 
+		return ledige;
 	}
 
 	
