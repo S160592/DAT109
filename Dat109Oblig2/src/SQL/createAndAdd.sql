@@ -1,118 +1,155 @@
+drop table if exists borgar.faktura;
 
-drop table if exists public.reservasjon;
-drop table if exists public.bil;
-drop table if exists public.biltype;
+drop table if exists borgar.reservasjon;
 
-drop table if exists public.kunde;
-DROP TABLE IF exists public.utleigekontor;
-DROP TABLE IF EXISTS public.adress;
+drop table if exists borgar.bil;
 
+drop table if exists borgar.biltype;
 
+drop table if exists borgar.kunde;
 
+drop table if exists borgar.utleigekontor;
 
-CREATE TABLE public.biltype (
-	typeid char(1) NOT NULL,
-	description text NULL,
-	dagspris Integer not null,
-	CONSTRAINT biltype_pk PRIMARY KEY (typeid)
-);
+drop table if exists borgar.adress;
 
-CREATE TABLE public.adress (
-	id serial,
-	gateadresse varchar(50) NOT NULL,
-	postnummer varchar(4) NOT NULL,
-	poststed varchar(50) NOT NULL,
-	CONSTRAINT adress_pk PRIMARY KEY (id)
-);
+create table borgar.biltype ( typeid char(1) not null,
+description text null,
+dagspris integer not null,
+constraint biltype_pk primary key (typeid) );
 
-CREATE TABLE public.utleigekontor (
-	id serial,
-	telefonnr varchar(8) NOT NULL,
-	adresse int4 NOT null,
-	
-	CONSTRAINT utleigekontor_pk PRIMARY KEY (id),
-	CONSTRAINT utleigekontor_fk FOREIGN KEY (adresse) REFERENCES public.adress (id)
-	
-);
+create table borgar.adress ( id serial,
+gateadresse varchar(50) not null,
+postnummer varchar(4) not null,
+poststed varchar(50) not null,
+constraint adress_pk primary key (id) );
 
+create table borgar.utleigekontor ( id serial,
+telefonnr varchar(8) not null,
+adresse int4 not null,
+constraint utleigekontor_pk primary key (id),
+constraint utleigekontor_fk foreign key (adresse) references borgar.adress (id) );
 
+create table borgar.bil ( regnr varchar(8) not null,
+typeid varchar(1) not null,
+merke varchar(20) not null,
+staarVed int4,
+farge varchar not null,
+constraint bil_pk primary key (regnr),
+constraint bil_fk foreign key (typeid) references borgar.biltype(typeid),
+constraint bil_utleigefk foreign key (staarVed) references borgar.utleigekontor(id) );
 
+create table borgar.kunde ( fornavn varchar(50) not null,
+etternavn varchar(50) not null,
+adresse int4 not null,
+telefonnummer varchar(8) null,
+kredittkortnr varchar(16) null,
+constraint kunde_pk primary key (telefonnummer),
+constraint kunde_fk foreign key (adresse) references borgar.adress(id) );
 
+create table borgar.reservasjon ( reservasjonsid serial,
+fradato text ,
+tildato text ,
+bil varchar(8) not null,
+kunde varchar(8) not null,
+fralokasjon int4 not null,
+tillokasjon int4 not null,
+kmstandut integer not null,
+kmstandinn integer ,
+constraint reservasjon_pk primary key (reservasjonsid),
+constraint reservasjon_fk foreign key (kunde) references borgar.kunde(telefonnummer),
+constraint reservasjon_fk_1 foreign key (fralokasjon) references borgar.utleigekontor(id),
+constraint reservasjon_fk_2 foreign key (tillokasjon) references borgar.utleigekontor(id) deferrable,
+constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr) );
 
-CREATE TABLE public.bil (
-	regnr varchar(8) NOT NULL,
-	typeid varchar(1) NOT NULL,
-	merke varchar(20) not null,
-	staarVed int4,
-	farge varchar not null,
-	CONSTRAINT bil_pk PRIMARY KEY (regnr),
-	CONSTRAINT bil_fk FOREIGN KEY (typeid) REFERENCES public.biltype(typeid),
-	CONSTRAINT bil_utleigefk FOREIGN KEY (staarVed) REFERENCES public.utleigekontor(id)
-);
+create table borgar.faktura ( fakturanr serial not null,
+reservasjon int4 not null,
+constraint db_faktura_pk primary key (fakturanr),
+constraint db_faktura_fk foreign key (reservasjon) references borgar.reservasjon(reservasjonsid) );
 
+insert
+	into
+	borgar.adress (gateadresse,
+	postnummer,
+	poststed)
+values('Stykkje 6B',
+'6809',
+'Førde'),
+('Avsølevegen',
+'6856',
+'Sogndal') ;
 
-CREATE TABLE public.kunde (
-	fornavn varchar(50) NOT NULL,
-	etternavn varchar(50) NOT NULL,
-	adresse int4 NOT NULL,
-	telefonnummer varchar(8) NULL,
-	CONSTRAINT kunde_pk PRIMARY KEY (telefonnummer),
-	CONSTRAINT kunde_fk FOREIGN KEY (adresse) REFERENCES public.adress(id)
-);
+insert
+	into
+	borgar.utleigekontor (telefonnr,
+	adresse)
+values('81549300',
+1),
+('80012345',
+2);
 
+insert
+	into
+	borgar.biltype (typeid,
+	description,
+	dagspris)
+values('A',
+'Liten bil',
+1000),
+('B',
+'Mellomstor bil',
+1200),
+('C',
+'Stor bil',
+1350),
+('D',
+'Stasjonsvogn',
+1550);
 
-CREATE TABLE public.reservasjon (
-	reservasjonsid serial,
-	fradato text ,
-	tildato text ,
-	bil varchar(8) not null,
-	kunde varchar(8) not null,
-	fralokasjon int4 not null,
-	tillokasjon int4 not null,
-	kmstandut integer not null,
-	kmstandinn integer ,
-	CONSTRAINT reservasjon_pk PRIMARY KEY (reservasjonsid),
-	CONSTRAINT reservasjon_fk FOREIGN KEY (kunde) REFERENCES public.kunde(telefonnummer),
-	CONSTRAINT reservasjon_fk_1 FOREIGN KEY (fralokasjon) REFERENCES public.utleigekontor(id),
-	CONSTRAINT reservasjon_fk_2 FOREIGN KEY (tillokasjon) REFERENCES public.utleigekontor(id) deferrable,
-	CONSTRAINT reservasjon_fk_3 FOREIGN KEY (bil) REFERENCES public.bil(regnr)
-	
-	);
+insert
+	into
+	borgar.bil (regnr,
+	typeid,
+	staarved,
+	merke,
+	farge)
+values('UC31787',
+'A',
+1,
+'Kia',
+'svart'),
+('KH51737',
+'A',
+2,
+'Skoda',
+'kvit');
 
-INSERT INTO public.adress
-(gateadresse, postnummer, poststed)
-VALUES('Stykkje 6B', '6809', 'Førde'),
-('Avsølevegen', '6856', 'Sogndal')
-;
+insert
+	into
+	borgar.kunde (fornavn,
+	etternavn,
+	adresse,
+	telefonnummer,
+	kredittkortnr)
+values('Borgar',
+'Grande',
+1,
+'81548300','');
 
-
-INSERT INTO public.utleigekontor
-(telefonnr, adresse)
-VALUES('81549300', 1),
-('80012345', 2);
-
-INSERT INTO public.biltype
-(typeid, description, dagspris)
-VALUES('A', 'Liten bil', 1000),
-('B', 'Mellomstor bil', 1200),
-('C', 'Stor bil', 1350),
-('D', 'Stasjonsvogn', 1550);
-
-
-INSERT INTO public.bil
-(regnr, typeid, staarved, merke, farge)
-VALUES('UC31787', 'A', 1, 'Kia',  'svart'),
-('KH51737', 'A', 2, 'Skoda',  'kvit');
-
-
-
-INSERT INTO public.kunde
-(fornavn, etternavn, adresse, telefonnummer)
-VALUES('Borgar', 'Grande', 1, '81548300');
-
-
-INSERT INTO public.reservasjon
-(fradato, tildato, bil, kunde, fralokasjon, tillokasjon, kmstandut, kmstandinn)
-VALUES('', '', 'UC31787', '81548300', 1, 2, 0, 0);
-
-
+insert
+	into
+	borgar.reservasjon (fradato,
+	tildato,
+	bil,
+	kunde,
+	fralokasjon,
+	tillokasjon,
+	kmstandut,
+	kmstandinn)
+values('',
+'',
+'UC31787',
+'81548300',
+1,
+2,
+0,
+0);

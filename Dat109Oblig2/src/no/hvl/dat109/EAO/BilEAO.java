@@ -20,7 +20,7 @@ public class BilEAO implements PersistentBil {
 	}
 
 	public List<Bil> hentAlle() {
-		return em.createNamedQuery("BilEntity.findAll", Bil.class).getResultList();
+		return em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
 	}
 
 	public void leggTil(Bil bil) {

@@ -19,7 +19,7 @@ public class BiltypeEAO implements PersistentBiltype {
 	}
 	
 	public List<Biltype> hentAlle(){
-		return em.createNamedQuery("BiltypeEntity.findAll", Biltype.class).getResultList();
+		return em.createNamedQuery("Biltype.findAll", Biltype.class).getResultList();
 	}
 	
 }

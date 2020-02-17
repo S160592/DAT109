@@ -1,15 +1,8 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -17,13 +10,12 @@ import javax.persistence.NamedQuery;
  * 
  */
 @Entity
+@Table(name = "Reservasjon", schema = "borgar")
 @NamedQuery(name="Reservasjon.findAll", query="SELECT r FROM Reservasjon r")
 public class Reservasjon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "reservasjonsid", updatable = false, nullable = false)
 	private Integer reservasjonsid;
 
 	private String fradato;
@@ -53,6 +45,10 @@ public class Reservasjon implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="tillokasjon")
 	private Utleigekontor utleigekontor2;
+
+	//bi-directional many-to-one association to Faktura
+	@OneToMany(mappedBy="reservasjonBean")
+	private List<Faktura> fakturas;
 
 	public Reservasjon() {
 	}
@@ -127,6 +123,28 @@ public class Reservasjon implements Serializable {
 
 	public void setUtleigekontor2(Utleigekontor utleigekontor2) {
 		this.utleigekontor2 = utleigekontor2;
+	}
+
+	public List<Faktura> getFakturas() {
+		return this.fakturas;
+	}
+
+	public void setFakturas(List<Faktura> fakturas) {
+		this.fakturas = fakturas;
+	}
+
+	public Faktura addFaktura(Faktura faktura) {
+		getFakturas().add(faktura);
+		faktura.setReservasjonBean(this);
+
+		return faktura;
+	}
+
+	public Faktura removeFaktura(Faktura faktura) {
+		getFakturas().remove(faktura);
+		faktura.setReservasjonBean(null);
+
+		return faktura;
 	}
 
 }

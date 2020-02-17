@@ -20,7 +20,7 @@ public class AdresseEAO implements PersistentAdresse{
 	}
 	
 	public List<Adress> hentAlle(){
-		return em.createNamedQuery("AdressEntity.findAll", Adress.class).getResultList();
+		return em.createNamedQuery("Adress.findAll", Adress.class).getResultList();
 	}
 	
 }

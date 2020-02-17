@@ -1,15 +1,8 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 
 /**
@@ -17,11 +10,12 @@ import javax.persistence.OneToMany;
  * 
  */
 @Entity
+@Table(name = "Utleigekontor", schema = "borgar")
 @NamedQuery(name="Utleigekontor.findAll", query="SELECT u FROM Utleigekontor u")
 public class Utleigekontor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue
+	@Id
 	private Integer id;
 
 	private String telefonnr;
@@ -70,7 +64,19 @@ public class Utleigekontor implements Serializable {
 		this.bils = bils;
 	}
 
+	public Bil addBil(Bil bil) {
+		getBils().add(bil);
+		bil.setUtleigekontor(this);
 
+		return bil;
+	}
+
+	public Bil removeBil(Bil bil) {
+		getBils().remove(bil);
+		bil.setUtleigekontor(null);
+
+		return bil;
+	}
 
 	public List<Reservasjon> getReservasjons1() {
 		return this.reservasjons1;

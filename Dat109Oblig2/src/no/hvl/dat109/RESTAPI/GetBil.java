@@ -9,12 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Interfaces.PersistentBil;
-import no.hvl.dat109.Interfaces.PersistentKunde;
 
 /**
  * Servlet implementation class GetBil
@@ -39,11 +34,11 @@ public class GetBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Gson gson = new GsonBuilder()
-		        .excludeFieldsWithoutExposeAnnotation()
-		        .create();
-		
-		response.getWriter().append(gson.toJson(bilEAO.hentBil(request.getParameter("regnr"))));
+//		Gson gson = new GsonBuilder()
+//		        .excludeFieldsWithoutExposeAnnotation()
+//		        .create();
+		System.out.println(bilEAO.hentBil("UC31787"));
+		//response.getWriter().append(gson.toJson(bilEAO.hentBil(request.getParameter("regnr"))));
 	}
 
 

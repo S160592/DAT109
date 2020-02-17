@@ -15,7 +15,7 @@ public class ReservasjonEAO implements PersistentReservasjon {
     private EntityManager em;
 	
 	public List<Reservasjon> hentAlle() {
-		return em.createNamedQuery("ReservasjonEntity.findAll", Reservasjon.class).getResultList();
+		return em.createNamedQuery("Reservasjon.findAll", Reservasjon.class).getResultList();
 	}
 	
 	public Reservasjon hentReservasjon(int id) {

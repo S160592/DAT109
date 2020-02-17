@@ -11,8 +11,8 @@
 		
 		<jta-data-source>DAT108LocalDS</jta-data-source>
 		
-		<class>no.hvl.dat108.Entity.Bil</class>
-		
+		<class>no.hvl.dat108.Entity.DBBil</class>
+			<class>no.hvl.dat108.Entity.DBAdress</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="false" />

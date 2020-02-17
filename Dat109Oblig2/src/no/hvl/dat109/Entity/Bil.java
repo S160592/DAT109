@@ -9,16 +9,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.google.gson.annotations.Expose;
-
 
 /**
  * The persistent class for the bil database table.
  * 
  */
-@Entity
-@NamedQuery(name="Bil.findAll", query="SELECT b FROM Bil b")
+@Entity(name = "Bil")
+@Table(name = "Bil", schema = "borgar")
+@NamedQuery(name = "Bil.findAll", query = "SELECT b FROM Bil b")
 public class Bil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -30,20 +31,19 @@ public class Bil implements Serializable {
 	@Expose
 	private String merke;
 
-	
-	//bi-directional many-to-one association to Biltype
+	// bi-directional many-to-one association to Biltype
 	@ManyToOne
-	@JoinColumn(name="typeid")
-	private  Biltype biltype;
+	@JoinColumn(name = "typeid")
+	private Biltype biltype;
 
-	//bi-directional many-to-one association to Utleigekontor
+	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
-	@JoinColumn(name="staarved")
-	private  Utleigekontor utleigekontor;
+	@JoinColumn(name = "staarved")
+	private Utleigekontor utleigekontor;
 
-	//bi-directional many-to-one association to Reservasjon
-	@OneToMany(mappedBy="bilBean")
-	private  List<Reservasjon> reservasjons;
+	// bi-directional many-to-one association to Reservasjon
+	@OneToMany(mappedBy = "bilBean")
+	private List<Reservasjon> reservasjons;
 
 	public Bil() {
 	}
@@ -72,9 +72,42 @@ public class Bil implements Serializable {
 		this.merke = merke;
 	}
 
-	@Override
-	public String toString() {
-		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + "]";
+	public Biltype getBiltype() {
+		return this.biltype;
+	}
+
+	public void setBiltype(Biltype biltype) {
+		this.biltype = biltype;
+	}
+
+	public Utleigekontor getUtleigekontor() {
+		return this.utleigekontor;
+	}
+
+	public void setUtleigekontor(Utleigekontor utleigekontor) {
+		this.utleigekontor = utleigekontor;
+	}
+
+	public List<Reservasjon> getReservasjons() {
+		return this.reservasjons;
+	}
+
+	public void setReservasjons(List<Reservasjon> reservasjons) {
+		this.reservasjons = reservasjons;
+	}
+
+	public Reservasjon addReservasjon(Reservasjon reservasjon) {
+		getReservasjons().add(reservasjon);
+		reservasjon.setBilBean(this);
+
+		return reservasjon;
+	}
+
+	public Reservasjon removeReservasjon(Reservasjon reservasjon) {
+		getReservasjons().remove(reservasjon);
+		reservasjon.setBilBean(null);
+
+		return reservasjon;
 	}
 
 }

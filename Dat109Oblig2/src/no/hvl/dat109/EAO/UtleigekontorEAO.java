@@ -20,7 +20,7 @@ public class UtleigekontorEAO implements PersistentUtleigekontor{
 	}
 	
 	public List<Utleigekontor> hentAlle(){
-		return em.createNamedQuery("UtleigekontorEntity.findAll", Utleigekontor.class).getResultList();
+		return em.createNamedQuery("Utleigekontor.findAll", Utleigekontor.class).getResultList();
 	}
 
 	

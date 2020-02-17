@@ -1,16 +1,8 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-
-import com.google.gson.annotations.Expose;
 
 
 /**
@@ -18,27 +10,28 @@ import com.google.gson.annotations.Expose;
  * 
  */
 @Entity
+@Table(name = "Kunde", schema = "borgar")
 @NamedQuery(name="Kunde.findAll", query="SELECT k FROM Kunde k")
 public class Kunde implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Expose
 	private String telefonnummer;
-	@Expose
+
 	private String etternavn;
-	@Expose
+
 	private String fornavn;
-	
+
+	private String kredittkortnr;
 
 	//bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name="adresse")
-	private  Adress adress;
+	private Adress adress;
 
 	//bi-directional many-to-one association to Reservasjon
 	@OneToMany(mappedBy="kundeBean")
-	private  List<Reservasjon> reservasjons;
+	private List<Reservasjon> reservasjons;
 
 	public Kunde() {
 	}
@@ -67,8 +60,17 @@ public class Kunde implements Serializable {
 		this.fornavn = fornavn;
 	}
 
-	
+	public String getKredittkortnr() {
+		return this.kredittkortnr;
+	}
 
+	public void setKredittkortnr(String kredittkortnr) {
+		this.kredittkortnr = kredittkortnr;
+	}
+
+	public Adress getAdress() {
+		return this.adress;
+	}
 
 	public void setAdress(Adress adress) {
 		this.adress = adress;
@@ -94,14 +96,6 @@ public class Kunde implements Serializable {
 		reservasjon.setKundeBean(null);
 
 		return reservasjon;
-	}
-
-
-
-	
-	public Adress getAdress() {
-		// TODO Auto-generated method stub
-		return this.adress;
 	}
 
 }

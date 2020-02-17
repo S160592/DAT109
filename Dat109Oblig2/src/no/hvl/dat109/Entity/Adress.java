@@ -1,29 +1,22 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 
 /**
  * The persistent class for the adress database table.
  * 
  */
-@Entity
+
+@Entity(name = "Adress")
+@Table(name = "Adress", schema = "borgar")
 @NamedQuery(name="Adress.findAll", query="SELECT a FROM Adress a")
 public class Adress implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", updatable = false, nullable = false)
 	private Integer id;
 
 	private String gateadresse;

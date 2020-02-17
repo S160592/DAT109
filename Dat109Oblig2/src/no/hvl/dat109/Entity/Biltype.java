@@ -1,12 +1,8 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 
 /**
@@ -14,6 +10,7 @@ import javax.persistence.OneToMany;
  * 
  */
 @Entity
+@Table(name = "Biltype", schema = "borgar")
 @NamedQuery(name="Biltype.findAll", query="SELECT b FROM Biltype b")
 public class Biltype implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -64,6 +61,18 @@ public class Biltype implements Serializable {
 		this.bils = bils;
 	}
 
-	
+	public Bil addBil(Bil bil) {
+		getBils().add(bil);
+		bil.setBiltype(this);
+
+		return bil;
+	}
+
+	public Bil removeBil(Bil bil) {
+		getBils().remove(bil);
+		bil.setBiltype(null);
+
+		return bil;
+	}
 
 }
