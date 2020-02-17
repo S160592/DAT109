@@ -20,6 +20,8 @@ import com.google.gson.annotations.Expose;
 @Entity(name = "Bil")
 @Table(name = "Bil", schema = "borgar")
 @NamedQuery(name = "Bil.findAll", query = "SELECT b FROM Bil b")
+
+
 public class Bil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -109,5 +111,12 @@ public class Bil implements Serializable {
 
 		return reservasjon;
 	}
+
+	@Override
+	public String toString() {
+		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + "]";
+	}
+	
+	
 
 }

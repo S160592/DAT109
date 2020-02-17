@@ -1,8 +1,19 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 /**
@@ -16,15 +27,17 @@ public class Reservasjon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "reservasjonsid", updatable = false, nullable = false)
 	private Integer reservasjonsid;
 
-	private String fradato;
+	private Timestamp fradato;
 
 	private Integer kmstandinn;
 
 	private Integer kmstandut;
 
-	private String tildato;
+	private Timestamp tildato;
 
 	//bi-directional many-to-one association to Bil
 	@ManyToOne
@@ -61,11 +74,11 @@ public class Reservasjon implements Serializable {
 		this.reservasjonsid = reservasjonsid;
 	}
 
-	public String getFradato() {
+	public Timestamp getFradato() {
 		return this.fradato;
 	}
 
-	public void setFradato(String fradato) {
+	public void setFradato(Timestamp fradato) {
 		this.fradato = fradato;
 	}
 
@@ -85,11 +98,11 @@ public class Reservasjon implements Serializable {
 		this.kmstandut = kmstandut;
 	}
 
-	public String getTildato() {
+	public Timestamp getTildato() {
 		return this.tildato;
 	}
 
-	public void setTildato(String tildato) {
+	public void setTildato(Timestamp tildato) {
 		this.tildato = tildato;
 	}
 

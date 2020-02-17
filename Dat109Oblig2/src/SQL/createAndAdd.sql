@@ -47,8 +47,8 @@ constraint kunde_pk primary key (telefonnummer),
 constraint kunde_fk foreign key (adresse) references borgar.adress(id) );
 
 create table borgar.reservasjon ( reservasjonsid serial,
-fradato text ,
-tildato text ,
+fradato timestamp ,
+tildato timestamp ,
 bil varchar(8) not null,
 kunde varchar(8) not null,
 fralokasjon int4 not null,
@@ -117,11 +117,21 @@ values('UC31787',
 1,
 'Kia',
 'svart'),
-('KH51737',
+('KH51979',
 'A',
 2,
 'Skoda',
-'kvit');
+'kvit'),
+('AB11111',
+'C',
+2,
+'VW',
+'Blå'),
+('AB22222',
+'B',
+1,
+'Kia',
+'Gul');
 
 insert
 	into
@@ -137,16 +147,15 @@ values('Borgar',
 
 insert
 	into
-	borgar.reservasjon (fradato,
-	tildato,
+	borgar.reservasjon (
 	bil,
 	kunde,
 	fralokasjon,
 	tillokasjon,
 	kmstandut,
 	kmstandinn)
-values('',
-'',
+values(
+
 'UC31787',
 '81548300',
 1,

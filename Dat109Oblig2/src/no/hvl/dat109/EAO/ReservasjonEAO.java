@@ -23,6 +23,7 @@ public class ReservasjonEAO implements PersistentReservasjon {
 	}
 	
 	public int createReservasjon(Reservasjon reservasjon) {
+		System.out.println("lager reservasjon");
 		em.persist(reservasjon);
 		em.flush();
 		return reservasjon.getReservasjonsid();

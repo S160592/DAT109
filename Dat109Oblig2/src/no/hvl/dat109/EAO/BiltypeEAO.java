@@ -22,4 +22,6 @@ public class BiltypeEAO implements PersistentBiltype {
 		return em.createNamedQuery("Biltype.findAll", Biltype.class).getResultList();
 	}
 	
+	
+	
 }

@@ -10,5 +10,5 @@ public interface PersistentBil {
 	public Bil hentBil(String regnr);
 	public List<Bil> hentAlle();
 	public void leggTil(Bil bil);
-	
+	public List<Bil> henledige();
 }

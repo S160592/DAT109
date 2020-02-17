@@ -23,6 +23,13 @@ public class BilEAO implements PersistentBil {
 		return em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
 	}
 
+
+	public List<Bil> henledige() {
+		return em.createQuery("SELECT * FROM Bil b WHERE b.regnr IN ( SELECT b2.regnr FROM Bil b2 , Reservasjon r where b2.regnr = r.bil and now() between r.fradato and r.tildato )").getResultList();
+	}
+
+	
+	
 	public void leggTil(Bil bil) {
 		em.persist(bil);
 	}
