@@ -8,4 +8,6 @@ public interface PersistentBiltype {
 	public Biltype hentbiltype(String type);
 	
 	public List<Biltype> hentAlle();
+	
+	
 }

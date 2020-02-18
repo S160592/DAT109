@@ -1,23 +1,19 @@
 package no.hvl.dat109.EAO;
 
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.hsqldb.lib.Collection;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
-
 import no.hvl.dat109.Entity.Bil;
-import no.hvl.dat109.Entity.Reservasjon;
+import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.PersistentBil;
 
 @Stateless
 public class BilEAO implements PersistentBil {
+
 
 	@PersistenceContext(name = "utleige")
 	private EntityManager em;
@@ -30,24 +26,28 @@ public class BilEAO implements PersistentBil {
 		return em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
 	}
 
+	public List<Bil> henledige(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
-	public List<Bil> henledige() {
+//		List<Reservasjon>reservasjonar=reservasjonEAO.hentAlle();List<Bil>bilar=hentAlle();List<String>reserverte=new ArrayList<String>();
+//
+//		reservasjonar.forEach(r->{
+//
+//		if(r.getFradato().before(fra)&&r.getTildato().after(til)){reserverte.add(r.getBilBean().getRegnr());}
+//
+//		});
+//
+//		List<Bil>ledigeBilar=bilar.stream().filter(b->!reserverte.contains(b.getRegnr()) && b.getUtleigekontor().getId() == fraLokasjon.getId() ).collect(Collectors.toList());
+//
+//		return ledigeBilar;
+		return null;
 
-		
-		
-		List<Bil> bilar = em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
-		List<Bil> ledige = bilar.stream().filter(x -> x.getReservasjons().size() == 0).collect(Collectors.toList()); 
-		return ledige;
 	}
 
-	
-	
 	public void leggTil(Bil bil) {
 		em.persist(bil);
 	}
 
-
-
-
-	
+	public void update(Bil bil) {
+		em.merge(bil);
+	}
 }
