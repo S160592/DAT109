@@ -1,7 +1,6 @@
 package no.hvl.dat109.Servlets;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class NyBil
+ * Servlet implementation class Utleige
  */
-@WebServlet("/adminNyBil") 
-
-public class NyBil extends HttpServlet {
+@WebServlet("/Utleige")
+public class Utleige extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NyBil() {
+    public Utleige() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,8 +27,7 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		request.getRequestDispatcher("WEB-INF/jsp/nyBil.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -38,9 +35,6 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println(request.getParameter("biltype"));
-		System.out.println(request.getParameter("regnr"));
-		
 		doGet(request, response);
 	}
 
