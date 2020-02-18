@@ -142,16 +142,17 @@
         </div>
         <div class="info">
           <input type="text" name="regnr" placeholder="Registreringsnr">
-          <input type="text" name="KMStand" placeholder="KM stand">
+          <input type="text" name="farge" placeholder="Farge">
+          <input type="text" name="Merke" placeholder="Merke">
           <select id="staarVed" name="staarVed" >
-            <option value="Location 1" selected>Lokasjon 1</option>
-            <option value="Location 2">Lokasjon 2</option>
+            <option value="1" selected>Lokasjon 1</option>
+            <option value="2">Lokasjon 2</option>
           </select>
-          <select id="biltype" name="biltype" >
-            <option value="course-type" selected>Biltype A</option>
-            <option value="short-courses">Biltype B</option>
-            <option value="featured-courses">Biltype C</option>
-            <option value="undergraduate">Biltype D</option>
+          <select id="biltype" name="biltype" placeholder="Biltype">
+            <option value="A" selected>>Biltype A</option>
+            <option value="B">Biltype B</option>
+            <option value="C">Biltype C</option>
+            <option value="D">Biltype D</option>
           </select>
         </div>
         <div class="checkbox">
