@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Biltype;
-import no.hvl.dat109.Interfaces.PersistentBil;
+import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
 /**
@@ -33,7 +33,7 @@ public class NyBil extends HttpServlet {
 	@EJB
 	private PersistentUtleigekontor persistentUtleigekontor;
 	@EJB
-	private PersistentBil bilEAO;
+	private Datalagring bilEAO;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -68,7 +68,7 @@ public class NyBil extends HttpServlet {
 		nyBil.setMerke(Merke);
 		nyBil.setUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
 		nyBil.setFarge(farge);
-		bilEAO.leggTil(nyBil);
+		bilEAO.lagreBil(nyBil);
 
 		System.out.println(regnr);
 

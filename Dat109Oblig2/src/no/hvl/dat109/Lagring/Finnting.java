@@ -1,4 +1,4 @@
-package no.hvl.dat109.Classes;
+package no.hvl.dat109.Lagring;
 
 //@Stateless
 public class Finnting {

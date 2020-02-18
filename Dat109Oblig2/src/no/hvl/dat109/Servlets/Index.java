@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Classes.Finnting;
-import no.hvl.dat109.Classes.hentingavData;
-import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
@@ -26,7 +24,7 @@ public class Index extends HttpServlet {
 	@EJB
 	private PersistentUtleigekontor utleigekontorEAO;
 	@EJB
-	private hentingavData hent;
+	private Datalagring hent;
 
 	public Index() {
 		super();
@@ -41,16 +39,16 @@ public class Index extends HttpServlet {
 //		bil.setUtleigekontor(utleigekontorEAO.hentUtleigekontor(utleigekontor));
 //		bilEAO.update(bil);
 //
-//		Date date = new Date();
-//
-//		long time = date.getTime();
-//
-//		Timestamp timestamp = new Timestamp(time);
-//		hent.finnledigeBilar(timestamp, timestamp, utleigekontorEAO.hentUtleigekontor(1)).forEach(System.out::println);
-//		
-//
-//		System.out.println();
-//		System.out.println();
+		Date date = new Date();
+
+		long time = date.getTime();
+
+		Timestamp timestamp = new Timestamp(time);
+		hent.finnledigeBilar(timestamp, timestamp, utleigekontorEAO.hentUtleigekontor(1)).forEach(System.out::println);
+		
+
+		System.out.println();
+		System.out.println();
 	
 	}
 
