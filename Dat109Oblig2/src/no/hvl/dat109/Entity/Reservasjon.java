@@ -42,7 +42,7 @@ public class Reservasjon implements Serializable {
 	//bi-directional many-to-one association to Bil
 	@ManyToOne
 	@JoinColumn(name="bil")
-	private Bil bilBean;
+	private BilDB bilBean;
 
 	//bi-directional many-to-one association to Kunde
 	@ManyToOne
@@ -106,11 +106,11 @@ public class Reservasjon implements Serializable {
 		this.tildato = tildato;
 	}
 
-	public Bil getBilBean() {
+	public BilDB getBilBean() {
 		return this.bilBean;
 	}
 
-	public void setBilBean(Bil bilBean) {
+	public void setBilBean(BilDB bilBean) {
 		this.bilBean = bilBean;
 	}
 

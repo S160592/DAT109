@@ -24,7 +24,7 @@ public class Biltype implements Serializable {
 
 	//bi-directional many-to-one association to Bil
 	@OneToMany(mappedBy="biltype")
-	private List<Bil> bils;
+	private List<BilDB> bils;
 
 	public Biltype() {
 	}
@@ -53,22 +53,22 @@ public class Biltype implements Serializable {
 		this.description = description;
 	}
 
-	public List<Bil> getBils() {
+	public List<BilDB> getBils() {
 		return this.bils;
 	}
 
-	public void setBils(List<Bil> bils) {
+	public void setBils(List<BilDB> bils) {
 		this.bils = bils;
 	}
 
-	public Bil addBil(Bil bil) {
+	public BilDB addBil(BilDB bil) {
 		getBils().add(bil);
 		bil.setBiltype(this);
 
 		return bil;
 	}
 
-	public Bil removeBil(Bil bil) {
+	public BilDB removeBil(BilDB bil) {
 		getBils().remove(bil);
 		bil.setBiltype(null);
 

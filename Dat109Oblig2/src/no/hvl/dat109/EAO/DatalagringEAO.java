@@ -10,9 +10,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
@@ -32,15 +33,15 @@ public class DatalagringEAO implements Datalagring{
 	}
 
 	
-	public Bil hentBil(String regnr) {
+	public BilDB hentBil(String regnr) {
 		return bilEAO.hentBil(regnr);
 	}
 	
 	
-	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
+	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
 		List<Reservasjon> reservasjonar = reservasjonEAO.hentAlle();
-		List<Bil> bilar = bilEAO.hentAlle();
+		List<BilDB> bilar = bilEAO.hentAlle();
 		List<String> reserverte = new ArrayList<String>();
 
 		reservasjonar.forEach(r -> {
@@ -51,7 +52,7 @@ public class DatalagringEAO implements Datalagring{
 
 		});
 
-		List<Bil> ledigeBilar = bilar.stream()
+		List<BilDB> ledigeBilar = bilar.stream()
 				.filter(b -> !reserverte.contains(b.getRegnr()) && b.getUtleigekontor().getId() == fraLokasjon.getId())
 				.collect(Collectors.toList());
 		

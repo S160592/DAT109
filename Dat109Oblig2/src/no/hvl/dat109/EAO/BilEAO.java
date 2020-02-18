@@ -7,8 +7,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.PersistentBil;
 
 @Stateless
@@ -18,15 +19,15 @@ public class BilEAO implements PersistentBil {
 	@PersistenceContext(name = "utleige")
 	private EntityManager em;
 
-	public Bil hentBil(String regnr) {
-		return em.find(Bil.class, regnr);
+	public BilDB hentBil(String regnr) {
+		return em.find(BilDB.class, regnr);
 	}
 
-	public List<Bil> hentAlle() {
-		return em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
+	public List<BilDB> hentAlle() {
+		return em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
 	}
 
-	public List<Bil> henledige(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
+	public List<BilDB> henledige(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
 //		List<Reservasjon>reservasjonar=reservasjonEAO.hentAlle();List<Bil>bilar=hentAlle();List<String>reserverte=new ArrayList<String>();
 //
@@ -47,7 +48,7 @@ public class BilEAO implements PersistentBil {
 		em.persist(bil);
 	}
 
-	public void update(Bil bil) {
+	public void update(BilDB bil) {
 		em.merge(bil);
 	}
 }

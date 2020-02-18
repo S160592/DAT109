@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
@@ -60,7 +61,8 @@ public class NyBil extends HttpServlet {
 		String staarVed = request.getParameter("staarVed");
 		String biltype = request.getParameter("biltype");
 
-		Bil nyBil = new Bil();
+		Bil nyBil = new BilDB();
+		
 		Biltype type = new Biltype();
 		type.setTypeid(biltype);
 		nyBil.setBiltype(type);
@@ -68,6 +70,7 @@ public class NyBil extends HttpServlet {
 		nyBil.setMerke(Merke);
 		nyBil.setUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
 		nyBil.setFarge(farge);
+		
 		bilEAO.lagreBil(nyBil);
 
 		System.out.println(regnr);

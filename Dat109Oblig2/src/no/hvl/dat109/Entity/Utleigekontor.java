@@ -22,7 +22,7 @@ public class Utleigekontor implements Serializable {
 
 	//bi-directional many-to-one association to Bil
 	@OneToMany(mappedBy="utleigekontor")
-	private List<Bil> bils;
+	private List<BilDB> bils;
 
 	//bi-directional many-to-one association to Reservasjon
 	@OneToMany(mappedBy="utleigekontor1")
@@ -56,22 +56,22 @@ public class Utleigekontor implements Serializable {
 		this.telefonnr = telefonnr;
 	}
 
-	public List<Bil> getBils() {
+	public List<BilDB> getBils() {
 		return this.bils;
 	}
 
-	public void setBils(List<Bil> bils) {
+	public void setBils(List<BilDB> bils) {
 		this.bils = bils;
 	}
 
-	public Bil addBil(Bil bil) {
+	public BilDB addBil(BilDB bil) {
 		getBils().add(bil);
 		bil.setUtleigekontor(this);
 
 		return bil;
 	}
 
-	public Bil removeBil(Bil bil) {
+	public BilDB removeBil(BilDB bil) {
 		getBils().remove(bil);
 		bil.setUtleigekontor(null);
 

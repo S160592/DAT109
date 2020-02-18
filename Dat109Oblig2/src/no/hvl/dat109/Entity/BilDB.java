@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import com.google.gson.annotations.Expose;
 
+import no.hvl.dat109.Interfaces.Bil;
+
 /**
  * The persistent class for the bil database table.
  * 
@@ -22,7 +24,7 @@ import com.google.gson.annotations.Expose;
 @NamedQuery(name = "Bil.findAll", query = "SELECT b FROM Bil b")
 
 
-public class Bil implements Serializable {
+public class BilDB implements Serializable, Bil {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -47,7 +49,7 @@ public class Bil implements Serializable {
 	@OneToMany(mappedBy = "bilBean")
 	private List<Reservasjon> reservasjons;
 
-	public Bil() {
+	public BilDB() {
 	}
 
 	public String getRegnr() {
