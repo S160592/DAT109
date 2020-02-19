@@ -22,5 +22,11 @@ public class AdresseEAO implements PersistentAdresse{
 	public List<Adress> hentAlle(){
 		return em.createNamedQuery("Adress.findAll", Adress.class).getResultList();
 	}
+
+	@Override
+	public void lagre(Adress adress) {
+		em.persist(adress);
+		
+	}
 	
 }

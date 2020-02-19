@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ny bil</title>
+    <title>Ny adresse</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   
     <style>
@@ -135,25 +135,16 @@
           <a class="btn-item" href="Innlevering">Regisrer innlevering</a>
         </div>
       </div>
-      <form action="adminNyBil" method="post">
+      <form action="NyAdresse" method="post">
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
-          <h2>Registrer ny bil</h2>
+          <h2>Registrer Adresse</h2>
         </div>
         <div class="info">
-          <input type="text" name="regnr" placeholder="Registreringsnr">
-          <input type="text" name="farge" placeholder="Farge">
-          <input type="text" name="Merke" placeholder="Merke">
-          <select id="staarVed" name="staarVed" >
-            <option value="1" selected>Lokasjon 1</option>
-            <option value="2">Lokasjon 2</option>
-          </select>
-          <select id="biltype" name="biltype" placeholder="Biltype">
-            <option value="A" selected>>Biltype A</option>
-            <option value="B">Biltype B</option>
-            <option value="C">Biltype C</option>
-            <option value="D">Biltype D</option>
-          </select>
+          <input type="text" name="gatenr" placeholder="Gatenr">
+          <input type="text" name="poststed" placeholder="Poststed">
+          <input type="text" name="postkode" placeholder="Postkode">
+         
         </div>
         <div class="checkbox">
           <input type="checkbox" name="checkbox"><span>I agree to the stupid agreement</span>

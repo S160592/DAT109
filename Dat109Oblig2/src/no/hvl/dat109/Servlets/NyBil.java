@@ -34,7 +34,7 @@ public class NyBil extends HttpServlet {
 	@EJB
 	private PersistentUtleigekontor persistentUtleigekontor;
 	@EJB
-	private Datalagring bilEAO;
+	private Datalagring datalagring;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -53,7 +53,7 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Vask input
 
 		String regnr = request.getParameter("regnr");
 		String farge = request.getParameter("farge");
@@ -62,7 +62,7 @@ public class NyBil extends HttpServlet {
 		String biltype = request.getParameter("biltype");
 
 		Bil nyBil = new BilDB();
-		
+
 		Biltype type = new Biltype();
 		type.setTypeid(biltype);
 		nyBil.setBiltype(type);
@@ -70,18 +70,10 @@ public class NyBil extends HttpServlet {
 		nyBil.setMerke(Merke);
 		nyBil.setUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
 		nyBil.setFarge(farge);
-		
-		bilEAO.lagreBil(nyBil);
 
-		System.out.println(regnr);
+		datalagring.lagreBil(nyBil);
 
-		System.out.println(Merke);
-
-		System.out.println(staarVed);
-
-		System.out.println(biltype);
-
-		doGet(request, response);
+		response.sendRedirect("adminNyBil");
 	}
 
 }

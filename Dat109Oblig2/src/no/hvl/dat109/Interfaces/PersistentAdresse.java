@@ -10,5 +10,5 @@ public interface PersistentAdresse {
 	public Adress hentAdresse(int id);
 	
 	public List<Adress> hentAlle();
-	
+	public void lagre(Adress adress);
 }

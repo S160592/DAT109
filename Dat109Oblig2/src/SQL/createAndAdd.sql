@@ -65,13 +65,12 @@ constraint reservasjon_pk primary key (reservasjonsid),
 constraint reservasjon_fk foreign key (kunde) references borgar.kunde(telefonnummer),
 constraint reservasjon_fk_1 foreign key (fralokasjon) references borgar.utleigekontor(id),
 constraint reservasjon_fk_2 foreign key (tillokasjon) references borgar.utleigekontor(id) deferrable,
-constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr),
+constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr));
 --constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr) );
 
 
 insert
-	into
-	borgar.adress (gateadresse,
+	into borgar.adress (gateadresse,
 	postnummer,
 	poststed)
 values('Stykkje 6B',
@@ -147,21 +146,3 @@ values('Borgar',
 'Grande',
 1,
 '81548300','');
-
-insert
-	into
-	borgar.reservasjon (
-	bil,
-	kunde,
-	fralokasjon,
-	tillokasjon,
-	kmstandut,
-	kmstandinn)
-values(
-
-'UC31787',
-'81548300',
-1,
-2,
-0,
-0);

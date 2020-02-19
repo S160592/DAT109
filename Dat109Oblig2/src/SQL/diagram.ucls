@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.4" icons="true" automaticImage="JPEG" always-add-relationships="false" 
-  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
-  router="FAN">  
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <interface id="1" language="java" name="no.hvl.dat109.Interfaces.Bil" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/Bil.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10747" y="4519"/>    
+    <position height="-1" width="-1" x="3138" y="1596"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +12,7 @@
   </interface>  
   <class id="2" language="java" name="no.hvl.dat109.Servlets.SokOgReserver" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/SokOgReserver.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6190" y="3463"/>    
+    <position height="137" width="318" x="87" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="no.hvl.dat109.EAO.ReservasjonEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/ReservasjonEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10701" y="3472"/>    
+    <position height="-1" width="-1" x="3904" y="306"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="no.hvl.dat109.Entity.Adress" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Adress.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10164" y="5074"/>    
+    <position height="-1" width="-1" x="4071" y="1411"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="no.hvl.dat109.Entity.Reservasjon" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Reservasjon.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10441" y="3688"/>    
+    <position height="-1" width="-1" x="2776" y="1021"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -49,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="no.hvl.dat109.Classes.hentingavData" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Classes/hentingavData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="11035" y="3472"/>    
+    <position height="-1" width="-1" x="4532" y="1398"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -58,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="no.hvl.dat109.Entity.Biltype" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Biltype.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10979" y="4546"/>    
+    <position height="-1" width="-1" x="3130" y="1917"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -67,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="no.hvl.dat109.Servlets.NyUtleigestad" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/NyUtleigestad.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6548" y="3463"/>    
+    <position height="137" width="318" x="445" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="no.hvl.dat109.Entity.Utleigekontor" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Utleigekontor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10453" y="4645"/>    
+    <position height="-1" width="-1" x="3622" y="778"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -85,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="no.hvl.dat109.Servlets.NyBil" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/NyBil.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12930" y="3463"/>    
+    <position height="137" width="318" x="5593" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -94,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="no.hvl.dat109.Entity.BilDB" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/BilDB.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10498" y="4198"/>    
+    <position height="-1" width="-1" x="2506" y="1631"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -103,7 +102,7 @@
   </class>  
   <interface id="12" language="java" name="no.hvl.dat109.Interfaces.PersistentReservasjon" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentReservasjon.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="11366" y="4075"/>    
+    <position height="-1" width="-1" x="4135" y="993"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -112,7 +111,7 @@
   </interface>  
   <class id="13" language="java" name="no.hvl.dat109.Entity.Kunde" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10171" y="4198"/>    
+    <position height="-1" width="-1" x="3480" y="1339"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -121,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="no.hvl.dat109.Servlets.Innlevering" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Innlevering.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="7109" y="3463"/>    
+    <position height="137" width="318" x="803" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -130,465 +129,363 @@
   </class>  
   <class id="15" language="java" name="no.hvl.dat109.Servlets.Reserver" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Reserver.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="7467" y="3463"/>    
+    <position height="137" width="318" x="1364" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="16" language="java" name="no.hvl.dat109.EAO" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/EAO" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="7740" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <interface id="17" language="java" name="no.hvl.dat109.Interfaces.PersistentUtleigekontor" project="DAT109Oblig2" 
+  <interface id="16" language="java" name="no.hvl.dat109.Interfaces.PersistentUtleigekontor" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentUtleigekontor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12878" y="4072"/>    
+    <position height="-1" width="-1" x="5822" y="1008"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="18" language="java" name="no.hvl.dat109.Interfaces.Datalagring" project="DAT109Oblig2" 
+  <interface id="17" language="java" name="no.hvl.dat109.Interfaces.Datalagring" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/Datalagring.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12545" y="4081"/>    
+    <position height="-1" width="-1" x="5307" y="995"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="19" language="java" name="no.hvl.dat109.EAO.BilEAO" project="DAT109Oblig2" 
+  <class id="18" language="java" name="no.hvl.dat109.EAO.BilEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/BilEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="11846" y="3490"/>    
+    <position height="191" width="348" x="4494" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="20" language="java" name="no.hvl.dat109.Entity" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="7932" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="21" language="java" name="no.hvl.dat109.Lagring.Finnting" project="DAT109Oblig2" 
+  <class id="19" language="java" name="no.hvl.dat109.Lagring.Finnting" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Lagring/Finnting.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="8104" y="3436"/>    
+    <position height="83" width="107" x="1722" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="no.hvl.dat109.EAO.BiltypeEAO" project="DAT109Oblig2" 
+  <class id="20" language="java" name="no.hvl.dat109.EAO.BiltypeEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/BiltypeEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6828" y="3463"/>    
+    <position height="137" width="163" x="1161" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="23" language="java" name="no.hvl.dat109.Lagring" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Lagring" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="8282" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <package id="24" language="java" name="no.hvl.dat109.Interfaces" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="8499" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <interface id="25" language="java" name="no.hvl.dat109.Interfaces.PersistentAdresse" project="DAT109Oblig2" 
+  <interface id="21" language="java" name="no.hvl.dat109.Interfaces.PersistentAdresse" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentAdresse.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="9066" y="4072"/>    
+    <position height="101" width="155" x="2585" y="428"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="26" language="java" name="no.hvl.dat109.Servlets.Utleige" project="DAT109Oblig2" 
+  <class id="22" language="java" name="no.hvl.dat109.Servlets.Utleige" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Utleige.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="8790" y="3463"/>    
+    <position height="137" width="318" x="1869" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="no.hvl.dat109.EAO.AdresseEAO" project="DAT109Oblig2" 
+  <class id="23" language="java" name="no.hvl.dat109.EAO.AdresseEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/AdresseEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="9066" y="3463"/>    
+    <position height="137" width="155" x="2585" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="no.hvl.dat109.EAO.DatalagringEAO" project="DAT109Oblig2" 
+  <class id="24" language="java" name="no.hvl.dat109.EAO.DatalagringEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/DatalagringEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="11446" y="3472"/>    
+    <position height="155" width="371" x="4083" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="no.hvl.dat109.Servlets.Index" project="DAT109Oblig2" 
+  <class id="25" language="java" name="no.hvl.dat109.Servlets.Index" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Index.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12572" y="3463"/>    
+    <position height="137" width="318" x="5235" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="30" language="java" name="no.hvl.dat109.Interfaces.PersistentKunde" project="DAT109Oblig2" 
+  <interface id="26" language="java" name="no.hvl.dat109.Interfaces.PersistentKunde" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentKunde.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="13463" y="4072"/>    
+    <position height="-1" width="-1" x="6207" y="974"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="31" language="java" name="no.hvl.dat109.Interfaces.PersistentBiltype" project="DAT109Oblig2" 
+  <interface id="27" language="java" name="no.hvl.dat109.Interfaces.PersistentBiltype" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentBiltype.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="6828" y="4072"/>    
+    <position height="101" width="163" x="1161" y="428"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <package id="32" language="java" name="no.hvl.dat109.RESTAPI" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/RESTAPI" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="9272" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <package id="33" language="java" name="no.hvl.dat109.Servlets" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Servlets" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="9487" y="3421"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <interface id="34" language="java" name="no.hvl.dat109.Interfaces.PersistentBil" project="DAT109Oblig2" 
+  <interface id="28" language="java" name="no.hvl.dat109.Interfaces.PersistentBil" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Interfaces/PersistentBil.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="11846" y="4099"/>    
+    <position height="-1" width="-1" x="4654" y="1027"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="35" language="java" name="no.hvl.dat109.EAO.KundeEAO" project="DAT109Oblig2" 
+  <class id="29" language="java" name="no.hvl.dat109.EAO.KundeEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/KundeEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="13463" y="3463"/>    
+    <position height="137" width="158" x="6206" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="no.hvl.dat109.Entity.Faktura" project="DAT109Oblig2" 
+  <class id="30" language="java" name="no.hvl.dat109.Entity.Faktura" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Faktura.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10995" y="3939"/>    
+    <position height="-1" width="-1" x="3270" y="338"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="no.hvl.dat109.RESTAPI.GetBil" project="DAT109Oblig2" 
+  <class id="31" language="java" name="no.hvl.dat109.RESTAPI.GetBil" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/RESTAPI/GetBil.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12216" y="3454"/>    
+    <position height="119" width="313" x="4882" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="no.hvl.dat109.Servlets.Bekreftelse" project="DAT109Oblig2" 
+  <class id="32" language="java" name="no.hvl.dat109.Servlets.Bekreftelse" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Bekreftelse.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="9772" y="3463"/>    
+    <position height="137" width="318" x="2227" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="no.hvl.dat109.EAO.UtleigekontorEAO" project="DAT109Oblig2" 
+  <class id="33" language="java" name="no.hvl.dat109.EAO.UtleigekontorEAO" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/EAO/UtleigekontorEAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="13236" y="3463"/>    
+    <position height="137" width="215" x="5951" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="40" language="java" name="no.hvl.dat109.Servlets.Bookingar" project="DAT109Oblig2" 
+  <class id="34" language="java" name="no.hvl.dat109.Servlets.Bookingar" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Servlets/Bookingar.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="10130" y="3463"/>    
+    <position height="137" width="318" x="2780" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="41">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="42" name="utleigekontor">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="43" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="44">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="45" name="fakturas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="46" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="36" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="47">    
-    <bendpoint x="10085" y="4415"/>    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="48" name="adress">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="49" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="35">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="36" name="adress"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="50">    
+  <association id="38">    
+    <bendpoint x="3836" y="1019"/>    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="51" name="bilBean">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="52" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="54" name="bilEAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="55" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="57" name="persistentUtleigekontor">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="58" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
-    <bendpoint x="10296" y="4022"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="60" name="utleigekontor1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="61" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+      <attribute id="39" name="utleigekontor2"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="63" name="biltype">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="64" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="41">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="42" name="bilEAO"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="28" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="66" name="reservasjonBean">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="67" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <realization id="44">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <realization id="45">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="46">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="47" name="bilEAO"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="49">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="50" name="bilEAO"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="52">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="53">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="54" name="reservasjonBean"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="68">    
-    <end type="SOURCE" refId="39"/>    
-    <end type="TARGET" refId="17"/>  
+  <realization id="56">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="27"/>  
   </realization>  
-  <realization id="69">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="34"/>  
-  </realization>  
-  <association id="70">    
+  <association id="57">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="71" name="datalagring">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="72" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+      <attribute id="58" name="persistentUtleigekontor"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="73">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="18"/>  
-  </realization>  
-  <association id="74">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="75" name="hent">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="76" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="77">    
-    <end type="SOURCE" refId="35"/>    
-    <end type="TARGET" refId="30"/>  
-  </realization>  
-  <association id="78">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="79" name="bilEAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="80" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="81">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="82" name="adress">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="83" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="60">    
+    <bendpoint x="3604" y="1412"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="61" name="adress"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="84">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="85" name="reservasjonEAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="86" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="87">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="88" name="bilEAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="89" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="90">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="91" name="utleigekontorEAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="92" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="93">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="25"/>  
-  </realization>  
-  <realization id="94">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <association id="95">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="96" name="kundeBean">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="97" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="98">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <association id="99">    
-    <bendpoint x="10317" y="4022"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="100" name="utleigekontor2">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="101" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="63">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="64" name="utleigekontor"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="102">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="31"/>  
+  <association id="66">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="67" name="hent"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="69">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
   </realization>  
+  <association id="70">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="71" name="utleigekontorEAO"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="74" name="bilBean"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="77" name="kundeBean"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="79">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <association id="80">    
+    <bendpoint x="3815" y="1019"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="81" name="utleigekontor1"/>      
+      <multiplicity id="82" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="83">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="84" name="reservasjonEAO"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="86">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="87" name="biltype"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="89">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="90">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <association id="91">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="92" name="fakturas"/>      
+      <multiplicity id="93" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="95" name="datalagring"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

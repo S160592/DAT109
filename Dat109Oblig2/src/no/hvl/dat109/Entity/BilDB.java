@@ -1,14 +1,12 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.google.gson.annotations.Expose;
@@ -35,7 +33,7 @@ public class BilDB implements Serializable, Bil {
 	@Expose
 	private String merke;
 
-	// bi-directional many-to-one association to Biltyper
+	// bi-directional many-to-one association to Biltype
 	@ManyToOne
 	@JoinColumn(name = "typeid")
 	private Biltype biltype;
