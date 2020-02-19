@@ -66,7 +66,7 @@ constraint reservasjon_fk foreign key (kunde) references borgar.kunde(telefonnum
 constraint reservasjon_fk_1 foreign key (fralokasjon) references borgar.utleigekontor(id),
 constraint reservasjon_fk_2 foreign key (tillokasjon) references borgar.utleigekontor(id) deferrable,
 constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr),
-constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr) );
+--constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr) );
 
 
 insert

@@ -35,7 +35,7 @@ public class BilDB implements Serializable, Bil {
 	@Expose
 	private String merke;
 
-	// bi-directional many-to-one association to Biltype
+	// bi-directional many-to-one association to Biltyper
 	@ManyToOne
 	@JoinColumn(name = "typeid")
 	private Biltype biltype;
