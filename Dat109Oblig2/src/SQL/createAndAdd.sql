@@ -48,7 +48,8 @@ constraint kunde_fk foreign key (adresse) references borgar.adress(id) );
 
 
 create table borgar.faktura ( 
-fakturanr serial not null,
+fakturanr serial,
+beskriveslse text,
 constraint db_faktura_pk primary key (fakturanr));
 
 create table borgar.reservasjon ( reservasjonsid serial,
@@ -65,8 +66,21 @@ constraint reservasjon_pk primary key (reservasjonsid),
 constraint reservasjon_fk foreign key (kunde) references borgar.kunde(telefonnummer),
 constraint reservasjon_fk_1 foreign key (fralokasjon) references borgar.utleigekontor(id),
 constraint reservasjon_fk_2 foreign key (tillokasjon) references borgar.utleigekontor(id) deferrable,
-constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr),
---constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr) );
+constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr),
+constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr));
+
+
+
+
+
+
+
+
+--ALTER TABLE borgar.reservasjon ADD faktura int4 NULL;
+--ALTER TABLE borgar.reservasjon ADD CONSTRAINT reservasjon_fk_4 FOREIGN KEY (reservasjonsid) REFERENCES borgar.faktura(fakturanr);
+
+
+
 
 
 insert
@@ -147,21 +161,3 @@ values('Borgar',
 'Grande',
 1,
 '81548300','');
-
-insert
-	into
-	borgar.reservasjon (
-	bil,
-	kunde,
-	fralokasjon,
-	tillokasjon,
-	kmstandut,
-	kmstandinn)
-values(
-
-'UC31787',
-'81548300',
-1,
-2,
-0,
-0);
