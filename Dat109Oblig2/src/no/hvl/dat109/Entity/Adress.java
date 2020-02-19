@@ -1,8 +1,11 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 /**
@@ -25,13 +28,7 @@ public class Adress implements Serializable {
 
 	private String poststed;
 
-	//bi-directional many-to-one association to Kunde
-	@OneToMany(mappedBy="adress")
-	private List<Kunde> kundes;
-
-	//bi-directional many-to-one association to Utleigekontor
-	@OneToMany(mappedBy="adress")
-	private List<Utleigekontor> utleigekontors;
+	
 
 	public Adress() {
 	}
@@ -68,48 +65,5 @@ public class Adress implements Serializable {
 		this.poststed = poststed;
 	}
 
-	public List<Kunde> getKundes() {
-		return this.kundes;
-	}
-
-	public void setKundes(List<Kunde> kundes) {
-		this.kundes = kundes;
-	}
-
-	public Kunde addKunde(Kunde kunde) {
-		getKundes().add(kunde);
-		kunde.setAdress(this);
-
-		return kunde;
-	}
-
-	public Kunde removeKunde(Kunde kunde) {
-		getKundes().remove(kunde);
-		kunde.setAdress(null);
-
-		return kunde;
-	}
-
-	public List<Utleigekontor> getUtleigekontors() {
-		return this.utleigekontors;
-	}
-
-	public void setUtleigekontors(List<Utleigekontor> utleigekontors) {
-		this.utleigekontors = utleigekontors;
-	}
-
-	public Utleigekontor addUtleigekontor(Utleigekontor utleigekontor) {
-		getUtleigekontors().add(utleigekontor);
-		utleigekontor.setAdress(this);
-
-		return utleigekontor;
-	}
-
-	public Utleigekontor removeUtleigekontor(Utleigekontor utleigekontor) {
-		getUtleigekontors().remove(utleigekontor);
-		utleigekontor.setAdress(null);
-
-		return utleigekontor;
-	}
 
 }

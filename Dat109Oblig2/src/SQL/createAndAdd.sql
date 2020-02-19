@@ -1,7 +1,7 @@
-drop table if exists borgar.faktura;
+
 
 drop table if exists borgar.reservasjon;
-
+drop table if exists borgar.faktura;
 drop table if exists borgar.bil;
 
 drop table if exists borgar.biltype;
@@ -46,6 +46,11 @@ kredittkortnr varchar(16) null,
 constraint kunde_pk primary key (telefonnummer),
 constraint kunde_fk foreign key (adresse) references borgar.adress(id) );
 
+
+create table borgar.faktura ( 
+fakturanr serial not null,
+constraint db_faktura_pk primary key (fakturanr));
+
 create table borgar.reservasjon ( reservasjonsid serial,
 fradato timestamp ,
 tildato timestamp ,
@@ -54,17 +59,15 @@ kunde varchar(8) not null,
 fralokasjon int4 not null,
 tillokasjon int4 not null,
 kmstandut integer not null,
-kmstandinn integer ,
+kmstandinn integer,
+fakturaID int4,
 constraint reservasjon_pk primary key (reservasjonsid),
 constraint reservasjon_fk foreign key (kunde) references borgar.kunde(telefonnummer),
 constraint reservasjon_fk_1 foreign key (fralokasjon) references borgar.utleigekontor(id),
 constraint reservasjon_fk_2 foreign key (tillokasjon) references borgar.utleigekontor(id) deferrable,
-constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr) );
+constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr),
+constraint reservasjon_fk_4 foreign key (fakturaID) references borgar.faktura(fakturanr) );
 
-create table borgar.faktura ( fakturanr serial not null,
-reservasjon int4 not null,
-constraint db_faktura_pk primary key (fakturanr),
-constraint db_faktura_fk foreign key (reservasjon) references borgar.reservasjon(reservasjonsid) );
 
 insert
 	into

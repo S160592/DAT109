@@ -45,10 +45,6 @@ public class BilDB implements Serializable, Bil {
 	@JoinColumn(name = "staarved")
 	private Utleigekontor utleigekontor;
 
-	// bi-directional many-to-one association to Reservasjon
-	@OneToMany(mappedBy = "bilBean")
-	private List<Reservasjon> reservasjons;
-
 	public BilDB() {
 	}
 
@@ -92,28 +88,7 @@ public class BilDB implements Serializable, Bil {
 		this.utleigekontor = utleigekontor;
 	}
 
-	public List<Reservasjon> getReservasjons() {
-		return this.reservasjons;
-	}
-
-	public void setReservasjons(List<Reservasjon> reservasjons) {
-		this.reservasjons = reservasjons;
-	}
-
-	public Reservasjon addReservasjon(Reservasjon reservasjon) {
-		getReservasjons().add(reservasjon);
-		reservasjon.setBilBean(this);
-
-		return reservasjon;
-	}
-
-	public Reservasjon removeReservasjon(Reservasjon reservasjon) {
-		getReservasjons().remove(reservasjon);
-		reservasjon.setBilBean(null);
-
-		return reservasjon;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + "]";

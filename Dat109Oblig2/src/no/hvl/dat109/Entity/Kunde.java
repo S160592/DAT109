@@ -4,14 +4,13 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
 /**
  * The persistent class for the kunde database table.
  * 
  */
 @Entity
 @Table(name = "Kunde", schema = "borgar")
-@NamedQuery(name="Kunde.findAll", query="SELECT k FROM Kunde k")
+@NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k")
 public class Kunde implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -24,14 +23,10 @@ public class Kunde implements Serializable {
 
 	private String kredittkortnr;
 
-	//bi-directional many-to-one association to Adress
+	// bi-directional many-to-one association to Adress
 	@ManyToOne
-	@JoinColumn(name="adresse")
+	@JoinColumn(name = "adresse")
 	private Adress adress;
-
-	//bi-directional many-to-one association to Reservasjon
-	@OneToMany(mappedBy="kundeBean")
-	private List<Reservasjon> reservasjons;
 
 	public Kunde() {
 	}
@@ -74,28 +69,6 @@ public class Kunde implements Serializable {
 
 	public void setAdress(Adress adress) {
 		this.adress = adress;
-	}
-
-	public List<Reservasjon> getReservasjons() {
-		return this.reservasjons;
-	}
-
-	public void setReservasjons(List<Reservasjon> reservasjons) {
-		this.reservasjons = reservasjons;
-	}
-
-	public Reservasjon addReservasjon(Reservasjon reservasjon) {
-		getReservasjons().add(reservasjon);
-		reservasjon.setKundeBean(this);
-
-		return reservasjon;
-	}
-
-	public Reservasjon removeReservasjon(Reservasjon reservasjon) {
-		getReservasjons().remove(reservasjon);
-		reservasjon.setKundeBean(null);
-
-		return reservasjon;
 	}
 
 }

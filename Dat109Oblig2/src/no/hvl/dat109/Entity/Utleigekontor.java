@@ -20,18 +20,6 @@ public class Utleigekontor implements Serializable {
 
 	private String telefonnr;
 
-	//bi-directional many-to-one association to Bil
-	@OneToMany(mappedBy="utleigekontor")
-	private List<BilDB> bils;
-
-	//bi-directional many-to-one association to Reservasjon
-	@OneToMany(mappedBy="utleigekontor1")
-	private List<Reservasjon> reservasjons1;
-
-	//bi-directional many-to-one association to Reservasjon
-	@OneToMany(mappedBy="utleigekontor2")
-	private List<Reservasjon> reservasjons2;
-
 	//bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name="adresse")
@@ -54,72 +42,6 @@ public class Utleigekontor implements Serializable {
 
 	public void setTelefonnr(String telefonnr) {
 		this.telefonnr = telefonnr;
-	}
-
-	public List<BilDB> getBils() {
-		return this.bils;
-	}
-
-	public void setBils(List<BilDB> bils) {
-		this.bils = bils;
-	}
-
-	public BilDB addBil(BilDB bil) {
-		getBils().add(bil);
-		bil.setUtleigekontor(this);
-
-		return bil;
-	}
-
-	public BilDB removeBil(BilDB bil) {
-		getBils().remove(bil);
-		bil.setUtleigekontor(null);
-
-		return bil;
-	}
-
-	public List<Reservasjon> getReservasjons1() {
-		return this.reservasjons1;
-	}
-
-	public void setReservasjons1(List<Reservasjon> reservasjons1) {
-		this.reservasjons1 = reservasjons1;
-	}
-
-	public Reservasjon addReservasjons1(Reservasjon reservasjons1) {
-		getReservasjons1().add(reservasjons1);
-		reservasjons1.setUtleigekontor1(this);
-
-		return reservasjons1;
-	}
-
-	public Reservasjon removeReservasjons1(Reservasjon reservasjons1) {
-		getReservasjons1().remove(reservasjons1);
-		reservasjons1.setUtleigekontor1(null);
-
-		return reservasjons1;
-	}
-
-	public List<Reservasjon> getReservasjons2() {
-		return this.reservasjons2;
-	}
-
-	public void setReservasjons2(List<Reservasjon> reservasjons2) {
-		this.reservasjons2 = reservasjons2;
-	}
-
-	public Reservasjon addReservasjons2(Reservasjon reservasjons2) {
-		getReservasjons2().add(reservasjons2);
-		reservasjons2.setUtleigekontor2(this);
-
-		return reservasjons2;
-	}
-
-	public Reservasjon removeReservasjons2(Reservasjon reservasjons2) {
-		getReservasjons2().remove(reservasjons2);
-		reservasjons2.setUtleigekontor2(null);
-
-		return reservasjons2;
 	}
 
 	public Adress getAdress() {

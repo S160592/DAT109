@@ -146,18 +146,4 @@ public class Reservasjon implements Serializable {
 		this.fakturas = fakturas;
 	}
 
-	public Faktura addFaktura(Faktura faktura) {
-		getFakturas().add(faktura);
-		faktura.setReservasjonBean(this);
-
-		return faktura;
-	}
-
-	public Faktura removeFaktura(Faktura faktura) {
-		getFakturas().remove(faktura);
-		faktura.setReservasjonBean(null);
-
-		return faktura;
-	}
-
 }
