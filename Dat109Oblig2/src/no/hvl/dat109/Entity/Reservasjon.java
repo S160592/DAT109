@@ -41,12 +41,12 @@ public class Reservasjon implements Serializable {
 	// bi-directional many-to-one association to Bil
 	@ManyToOne
 	@JoinColumn(name = "bil")
-	private BilDB bil;
+	private BilDB bilBean;
 
 	// bi-directional many-to-one association to Kunde
 	@ManyToOne
 	@JoinColumn(name = "kunde")
-	private Kunde kunde;
+	private Kunde kundeBean;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
@@ -103,19 +103,19 @@ public class Reservasjon implements Serializable {
 	}
 
 	public BilDB getBilBean() {
-		return this.bil;
+		return this.bilBean;
 	}
 
 	public void setBilBean(BilDB bilBean) {
-		this.bil = bilBean;
+		this.bilBean = bilBean;
 	}
 
 	public Kunde getKundeBean() {
-		return this.kunde;
+		return this.kundeBean;
 	}
 
 	public void setKundeBean(Kunde kundeBean) {
-		this.kunde = kundeBean;
+		this.kundeBean = kundeBean;
 	}
 
 	public Utleigekontor getFraUtleigekontor() {
