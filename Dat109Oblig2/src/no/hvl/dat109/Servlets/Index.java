@@ -19,10 +19,10 @@ import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@EJB
-	private PersistentBil bilEAO;
-	@EJB
-	private PersistentUtleigekontor utleigekontorEAO;
+//	@EJB
+//	private PersistentBil bilEAO;
+//	@EJB
+//	private PersistentUtleigekontor utleigekontorEAO;
 	@EJB
 	private Datalagring hent;
 
@@ -44,7 +44,7 @@ public class Index extends HttpServlet {
 		long time = date.getTime();
 
 		Timestamp timestamp = new Timestamp(time);
-		hent.finnledigeBilar(timestamp, timestamp, utleigekontorEAO.hentUtleigekontor(1)).forEach(System.out::println);
+		hent.finnledigeBilar(timestamp, timestamp, hent.hentUtleigekontor(1)).forEach(System.out::println);
 		
 
 		System.out.println();
