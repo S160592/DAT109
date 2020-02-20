@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import no.hvl.dat109.Interfaces.AdressInterface;
+
 
 /**
  * The persistent class for the adress database table.
@@ -19,7 +21,7 @@ import javax.persistence.Table;
 @Entity(name = "Adress")
 @Table(name = "Adress", schema = "borgar")
 @NamedQuery(name="Adress.findAll", query="SELECT a FROM Adress a")
-public class Adress implements Serializable {
+public class Adress implements Serializable, AdressInterface {
 	private static final long serialVersionUID = 1L;
 
 	@Id

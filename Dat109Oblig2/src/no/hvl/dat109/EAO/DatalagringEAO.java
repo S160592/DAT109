@@ -14,11 +14,15 @@ import no.hvl.dat109.Entity.Adress;
 import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.AdressInterface;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.KundeInterface;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
+import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
+import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 @Stateless
 public class DatalagringEAO implements Datalagring{
 	@PersistenceContext(name = "utleige")
@@ -28,9 +32,13 @@ public class DatalagringEAO implements Datalagring{
 	PersistentBil bilEAO;
 	@EJB
 	PersistentReservasjon reservasjonEAO;
-	
 	@EJB
 	PersistentAdresse adressEAO;
+	@EJB
+	PersistentKunde kundeEAO;
+	@EJB
+	PersistentUtleigekontor utleigekontorEAO;
+	
 	
 	
 	public void lagreBil(Bil bil) {
@@ -58,7 +66,7 @@ public class DatalagringEAO implements Datalagring{
 		});
 
 		List<BilDB> ledigeBilar = bilar.stream()
-				.filter(b -> !reserverte.contains(b.getRegnr()) && b.getUtleigekontor().getId() == fraLokasjon.getId())
+				.filter(b -> !reserverte.contains(b.getRegnr()) && b.getStaarVedUtleigekontor().getId() == fraLokasjon.getId())
 				.collect(Collectors.toList());
 		
 		return ledigeBilar;
@@ -66,8 +74,24 @@ public class DatalagringEAO implements Datalagring{
 
 
 	@Override
-	public void lagreAdresse(Adress adress) {
-		adressEAO.lagre(adress);
+	public int lagreAdresse(AdressInterface adress) {
 		
+		
+		return adressEAO.lagre(adress);
+		
+	}
+
+
+	@Override
+	public void lagreNyKunde(KundeInterface kunde) {
+		
+		kundeEAO.leggTil(kunde);
+	}
+
+
+	@Override
+	public Utleigekontor hentUtleigekontor(int id) {
+		// TODO Auto-generated method stub
+		return utleigekontorEAO.hentUtleigekontor(id);
 	}
 }

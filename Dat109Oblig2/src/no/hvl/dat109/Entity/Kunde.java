@@ -2,6 +2,10 @@ package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Interfaces.KundeInterface;
+
 import java.util.List;
 
 /**
@@ -11,7 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "Kunde", schema = "borgar")
 @NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k")
-public class Kunde implements Serializable {
+public class Kunde implements Serializable, KundeInterface {
 	private static final long serialVersionUID = 1L;
 
 	@Id

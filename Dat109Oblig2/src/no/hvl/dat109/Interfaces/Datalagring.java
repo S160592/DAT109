@@ -13,6 +13,9 @@ public interface Datalagring {
 		public Bil hentBil(String regnr);
 		public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon);
 		
-	public void lagreAdresse(Adress adress);
+	public int lagreAdresse(AdressInterface adress);
+	public void lagreNyKunde(KundeInterface kunde);
+	public Utleigekontor hentUtleigekontor(int id);
+	
 		
 }

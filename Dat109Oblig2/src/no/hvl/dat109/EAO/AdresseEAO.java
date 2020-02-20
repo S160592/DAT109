@@ -7,26 +7,29 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Interfaces.AdressInterface;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 
 @Stateless
-public class AdresseEAO implements PersistentAdresse{
+public class AdresseEAO implements PersistentAdresse {
 	@PersistenceContext(name = "utleige")
-    private EntityManager em;
-	
-	
+	private EntityManager em;
+
 	public Adress hentAdresse(int id) {
 		return em.find(Adress.class, id);
 	}
-	
-	public List<Adress> hentAlle(){
+
+	public List<Adress> hentAlle() {
 		return em.createNamedQuery("Adress.findAll", Adress.class).getResultList();
 	}
 
 	@Override
-	public void lagre(Adress adress) {
+	public int lagre(AdressInterface adress) {
 		em.persist(adress);
-		
+
+		em.flush();
+		return adress.getId();
+
 	}
-	
+
 }

@@ -12,6 +12,8 @@ public interface Bil {
 	public String getMerke();
 	public void setMerke(String merke);
 	public void setBiltype(Biltype biltype) ;
-	public void setUtleigekontor(Utleigekontor utleigekontor);
+	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor);
+	public Utleigekontor getStaarVedUtleigekontor();
+	
 	
 }

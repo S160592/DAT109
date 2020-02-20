@@ -31,8 +31,8 @@ public class NyBil extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	@EJB
-	private PersistentUtleigekontor persistentUtleigekontor;
+//	@EJB
+//	private PersistentUtleigekontor persistentUtleigekontor;
 	@EJB
 	private Datalagring datalagring;
 
@@ -68,7 +68,8 @@ public class NyBil extends HttpServlet {
 		nyBil.setBiltype(type);
 		nyBil.setRegnr(regnr);
 		nyBil.setMerke(Merke);
-		nyBil.setUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
+		nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
+		//nyBil.setStaarVedUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
 		nyBil.setFarge(farge);
 
 		datalagring.lagreBil(nyBil);
