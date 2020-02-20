@@ -1,6 +1,6 @@
 # DAT109
 ## Oblig 1
-Innlevert 10.februar.
+Innlevert 10.februar, godkjendt 19.februar.
 
 ## Oblig 2
 Ikkje levert.
