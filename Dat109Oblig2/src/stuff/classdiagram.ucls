@@ -4,7 +4,7 @@
   router="FAN">  
   <class id="1" language="java" name="no.hvl.dat109.Entity.BilDB" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/BilDB.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1929" y="1583"/>    
+    <position height="-1" width="-1" x="1553" y="1457"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="no.hvl.dat109.Entity.Faktura" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Faktura.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1428" y="712"/>    
+    <position height="-1" width="-1" x="1468" y="1022"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -49,7 +49,7 @@
   </class>  
   <class id="6" language="java" name="no.hvl.dat109.Entity.Biltype" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Biltype.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1925" y="2115"/>    
+    <position height="-1" width="-1" x="1605" y="2147"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,78 +66,90 @@
     </display>  
   </class>  
   <association id="8">    
-    <bendpoint x="320" y="1614"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="9" name="adress"/>      
-      <multiplicity id="10" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="11">    
-    <bendpoint x="782" y="1646"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="12" name="fraUtleigekontor"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="9" name="staarved">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="14">    
+  <association id="11">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="15" name="reservasjonBean"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
+      <attribute id="12" name="reservasjonBean">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="17">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="18" name="adress"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
+  <association id="14">    
+    <bendpoint x="782" y="1646"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="15" name="fraUtleigekontor">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="20">    
+  <association id="17">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="21" name="biltype"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
+      <attribute id="18" name="biltype">        
+        <position height="0" width="0" x="-320" y="32"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-320" y="32"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="24" name="staarved"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
+  <association id="20">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="21" name="adress">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="22" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="23">    
+    <bendpoint x="320" y="1614"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="24" name="adress">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="25" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="26">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="27" name="bilBean"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="29">    
     <bendpoint x="698" y="1656"/>    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="30" name="tilUtleigekotor"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+      <attribute id="27" name="tilUtleigekotor">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="33" name="kundeBean"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
