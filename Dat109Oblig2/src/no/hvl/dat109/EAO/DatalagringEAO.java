@@ -40,17 +40,17 @@ public class DatalagringEAO implements Datalagring{
 	PersistentUtleigekontor utleigekontorEAO;
 	
 	
-	
+	@Override
 	public void lagreBil(Bil bil) {
 		bilEAO.leggTil(bil);
 	}
 
-	
+	@Override
 	public BilDB hentBil(String regnr) {
 		return bilEAO.hentBil(regnr);
 	}
 	
-	
+	@Override
 	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
 		List<Reservasjon> reservasjonar = reservasjonEAO.hentAlle();
