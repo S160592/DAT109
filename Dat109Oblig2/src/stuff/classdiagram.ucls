@@ -22,7 +22,7 @@
   </class>  
   <class id="3" language="java" name="no.hvl.dat109.Entity.Kunde" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="301" y="1161"/>    
+    <position height="-1" width="-1" x="427" y="1135"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="no.hvl.dat109.Entity.Adress" project="DAT109Oblig2" 
     file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Adress.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="344" y="2177"/>    
+    <position height="-1" width="-1" x="466" y="2179"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -117,23 +117,22 @@
   <association id="20">    
     <end type="SOURCE" refId="7" navigable="false">      
       <attribute id="21" name="adress">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="122" y="2"/>      
       </attribute>      
       <multiplicity id="22" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="122" y="2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="23">    
-    <bendpoint x="320" y="1614"/>    
     <end type="SOURCE" refId="3" navigable="false">      
       <attribute id="24" name="adress">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="122" y="2"/>      
       </attribute>      
       <multiplicity id="25" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="122" y="2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
