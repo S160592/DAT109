@@ -15,14 +15,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 /**
  * The persistent class for the reservasjon database table.
  * 
  */
 @Entity
 @Table(name = "Reservasjon", schema = "borgar")
-@NamedQuery(name="Reservasjon.findAll", query="SELECT r FROM Reservasjon r")
+@NamedQuery(name = "Reservasjon.findAll", query = "SELECT r FROM Reservasjon r")
 public class Reservasjon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -39,30 +38,27 @@ public class Reservasjon implements Serializable {
 
 	private Timestamp tildato;
 
-	//bi-directional many-to-one association to Bil
+	// bi-directional many-to-one association to Bil
 	@ManyToOne
-	@JoinColumn(name="bil")
-	private BilDB bilBean;
+	@JoinColumn(name = "bil")
+	private BilDB bil;
 
-	//bi-directional many-to-one association to Kunde
+	// bi-directional many-to-one association to Kunde
 	@ManyToOne
-	@JoinColumn(name="kunde")
-	private Kunde kundeBean;
+	@JoinColumn(name = "kunde")
+	private Kunde kunde;
 
-	//bi-directional many-to-one association to Utleigekontor
+	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
-	@JoinColumn(name="fralokasjon")
-	private Utleigekontor utleigekontor1;
+	@JoinColumn(name = "fralokasjon")
+	private Utleigekontor fraUtleigekontor;
 
-	//bi-directional many-to-one association to Utleigekontor
+	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
-	@JoinColumn(name="tillokasjon")
-	private Utleigekontor utleigekontor2;
+	@JoinColumn(name = "tillokasjon")
+	private Utleigekontor tilUtleigekotor;
 
-	//bi-directional many-to-one association to Faktura
-	@OneToMany(mappedBy="reservasjonBean")
-	private List<Faktura> fakturas;
-
+	
 	public Reservasjon() {
 	}
 
@@ -107,43 +103,38 @@ public class Reservasjon implements Serializable {
 	}
 
 	public BilDB getBilBean() {
-		return this.bilBean;
+		return this.bil;
 	}
 
 	public void setBilBean(BilDB bilBean) {
-		this.bilBean = bilBean;
+		this.bil = bilBean;
 	}
 
 	public Kunde getKundeBean() {
-		return this.kundeBean;
+		return this.kunde;
 	}
 
 	public void setKundeBean(Kunde kundeBean) {
-		this.kundeBean = kundeBean;
+		this.kunde = kundeBean;
 	}
 
-	public Utleigekontor getUtleigekontor1() {
-		return this.utleigekontor1;
+	public Utleigekontor getFraUtleigekontor() {
+		return this.fraUtleigekontor;
 	}
 
-	public void setUtleigekontor1(Utleigekontor utleigekontor1) {
-		this.utleigekontor1 = utleigekontor1;
+	public void setFraUtleigekontor(Utleigekontor fraUtleigekotor) {
+		this.fraUtleigekontor = fraUtleigekotor;
 	}
 
-	public Utleigekontor getUtleigekontor2() {
-		return this.utleigekontor2;
+	public Utleigekontor getTilUtleigekotor() {
+		return this.tilUtleigekotor;
 	}
 
-	public void setUtleigekontor2(Utleigekontor utleigekontor2) {
-		this.utleigekontor2 = utleigekontor2;
+	public void setTilUtleigekotor(Utleigekontor tilUtleigekotor) {
+		this.tilUtleigekotor = tilUtleigekotor;
 	}
 
-	public List<Faktura> getFakturas() {
-		return this.fakturas;
-	}
 
-	public void setFakturas(List<Faktura> fakturas) {
-		this.fakturas = fakturas;
-	}
+	
 
 }
