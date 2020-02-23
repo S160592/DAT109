@@ -82,59 +82,51 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="14">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="15" name="reservasjonBean"/>      
+    <bendpoint x="410" y="660"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="15" name="tilUtleigekotor"/>      
       <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="17">    
-    <bendpoint x="410" y="660"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="18" name="tilUtleigekotor"/>      
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="18" name="staarved"/>      
       <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="20">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="21" name="staarved"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="23">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="24" name="adress"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
+      <attribute id="21" name="adress"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="26">    
+  <association id="23">    
     <bendpoint x="696" y="672"/>    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="27" name="fraUtleigekontor"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+      <attribute id="24" name="fraUtleigekontor"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="29">    
+  <association id="26">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="30" name="kunde"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+      <attribute id="27" name="kunde"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="32">    
+  <association id="29">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="33" name="adress"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
+      <attribute id="30" name="adress"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
