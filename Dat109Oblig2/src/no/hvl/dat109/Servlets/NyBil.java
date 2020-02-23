@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.BiltypeDB;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
@@ -63,7 +63,7 @@ public class NyBil extends HttpServlet {
 
 		Bil nyBil = new BilDB();
 
-		Biltype type = new Biltype();
+		BiltypeDB type = new BiltypeDB();
 		type.setTypeid(biltype);
 		nyBil.setBiltype(type);
 		nyBil.setRegnr(regnr);

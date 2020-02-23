@@ -1,18 +1,23 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import no.hvl.dat109.Interfaces.Biltype;
 
 
 /**
  * The persistent class for the biltype database table.
  * 
  */
-@Entity
+@Entity(name = "Biltype")
 @Table(name = "Biltype", schema = "borgar")
 @NamedQuery(name="Biltype.findAll", query="SELECT b FROM Biltype b")
-public class Biltype implements Serializable {
+public class BiltypeDB implements Serializable, Biltype {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -22,7 +27,7 @@ public class Biltype implements Serializable {
 
 	private String description;
 
-	public Biltype() {
+	public BiltypeDB() {
 	}
 
 	public String getTypeid() {

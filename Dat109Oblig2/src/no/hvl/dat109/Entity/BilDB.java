@@ -36,7 +36,7 @@ public class BilDB implements Serializable, Bil {
 	// bi-directional many-to-one association to Biltype
 	@ManyToOne
 	@JoinColumn(name = "typeid")
-	private Biltype biltype;
+	private BiltypeDB biltype;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
@@ -70,11 +70,11 @@ public class BilDB implements Serializable, Bil {
 		this.merke = merke;
 	}
 
-	public Biltype getBiltype() {
+	public BiltypeDB getBiltype() {
 		return this.biltype;
 	}
 
-	public void setBiltype(Biltype biltype) {
+	public void setBiltype(BiltypeDB biltype) {
 		this.biltype = biltype;
 	}
 
