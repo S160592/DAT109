@@ -19,6 +19,7 @@
       font-family: Roboto, Arial, sans-serif;
       font-size: 16px;
       color: #eee;
+      	width: -webkit-fill-available;
       }
       
       body {
