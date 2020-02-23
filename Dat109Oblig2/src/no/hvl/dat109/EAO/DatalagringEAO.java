@@ -17,7 +17,7 @@ import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.AdressInterface;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.KundeInterface;
+import no.hvl.dat109.Interfaces.Kunde;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentKunde;
@@ -83,7 +83,7 @@ public class DatalagringEAO implements Datalagring{
 
 
 	@Override
-	public void lagreNyKunde(KundeInterface kunde) {
+	public void lagreNyKunde(Kunde kunde) {
 		
 		kundeEAO.leggTil(kunde);
 	}

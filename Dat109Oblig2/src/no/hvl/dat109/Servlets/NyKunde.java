@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.Adress;
-import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.KundeDB;
 import no.hvl.dat109.Interfaces.AdressInterface;
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.KundeInterface;
+import no.hvl.dat109.Interfaces.Kunde;
 
 /**
  * Servlet implementation class NyKunde
@@ -57,7 +57,7 @@ public class NyKunde extends HttpServlet {
 		String postnummer = request.getParameter("postnummer");
 		String poststed = request.getParameter("poststed");
 
-		KundeInterface kunde = new Kunde();
+		Kunde kunde = new KundeDB();
 		Adress adresse = new Adress();
 
 		adresse.setGateadresse(gateadresse);

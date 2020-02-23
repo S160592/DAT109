@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import no.hvl.dat109.Interfaces.AdressInterface;
-import no.hvl.dat109.Interfaces.KundeInterface;
+import no.hvl.dat109.Interfaces.Kunde;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import java.util.List;
  * The persistent class for the kunde database table.
  * 
  */
-@Entity
+@Entity(name = "Kunde")
 @Table(name = "Kunde", schema = "borgar")
 @NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k")
-public class Kunde implements Serializable, KundeInterface {
+public class KundeDB implements Serializable, Kunde {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,7 +32,7 @@ public class Kunde implements Serializable, KundeInterface {
 	@JoinColumn(name = "adresse")
 	private Adress adress;
 
-	public Kunde() {
+	public KundeDB() {
 	}
 
 	public String getTelefonnummer() {

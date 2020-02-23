@@ -46,7 +46,7 @@ public class Reservasjon implements Serializable {
 	// bi-directional many-to-one association to Kunde
 	@ManyToOne
 	@JoinColumn(name = "kunde")
-	private Kunde kunde;
+	private KundeDB kunde;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
@@ -110,11 +110,11 @@ public class Reservasjon implements Serializable {
 		this.bil = bilBean;
 	}
 
-	public Kunde getKundeBean() {
+	public KundeDB getKundeBean() {
 		return this.kunde;
 	}
 
-	public void setKundeBean(Kunde kundeBean) {
+	public void setKundeBean(KundeDB kundeBean) {
 		this.kunde = kundeBean;
 	}
 

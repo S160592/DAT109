@@ -2,7 +2,7 @@ package no.hvl.dat109.Interfaces;
 
 import no.hvl.dat109.Entity.Adress;
 
-public interface KundeInterface {
+public interface Kunde {
 	public String getTelefonnummer();
 
 	public void setTelefonnummer(String telefonnummer);

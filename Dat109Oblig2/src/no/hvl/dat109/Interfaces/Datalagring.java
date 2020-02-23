@@ -16,7 +16,7 @@ public interface Datalagring {
 
 	public int lagreAdresse(AdressInterface adress);
 
-	public void lagreNyKunde(KundeInterface kunde);
+	public void lagreNyKunde(Kunde kunde);
 
 	public Utleigekontor hentUtleigekontor(int id);
 
