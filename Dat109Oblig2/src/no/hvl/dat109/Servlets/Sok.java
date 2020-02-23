@@ -29,7 +29,7 @@ public class Sok extends HttpServlet {
 	}
 
 	@EJB
-	private Datalagring hent;
+	private Datalagring datalagring;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -56,7 +56,7 @@ public class Sok extends HttpServlet {
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
 
-		hent.finnledigeBilar(fraTimestamp, tilTimestamp, hent.hentUtleigekontor(fraLokasjon)).stream()
+		datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
 				.filter(b -> b.getBiltype().getTypeid().equals(biltype)).forEach(System.out::println);
 
 		System.out.println();
