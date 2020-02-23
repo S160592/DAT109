@@ -135,20 +135,26 @@
           <a class="btn-item" href="Innlevering">Regisrer innlevering</a>
         </div>
       </div>
-      <form action="adminNyBil" method="post">
+      <form action="sok" method="post">
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
-          <h2>Registrer ny bil</h2>
+          <h2>Søk etter ledig bil</h2>
         </div>
         <div class="info">
-          <input type="text" name="regnr" placeholder="Registreringsnr">
-          <input type="text" name="farge" placeholder="Farge">
-          <input type="text" name="Merke" placeholder="Merke">
-          <select id="staarVed" name="staarVed" >
-            <option value="1" selected>Førde</option>
+        
+        <input type="date" id="start" name="trip-start" value="2020-07-22" min="2020-01-01" max="2022-12-31">
+        <input type="date" id="start" name="trip-end" value="2020-07-22" min="2020-01-01" max="2022-12-31">
+         
+          <select id=fraLokasjon name="fraLokasjon" >
+            <option value="1" selected>Fra Førde</option>
             <option value="2">Sogndal</option>
           </select>
-          <select id="biltype" name="biltype" placeholder="Biltype">
+           <select id="tilLokasjon" name="tilLokasjon" >
+            <option value="1"selected>Leveres i Førde</option>
+            <option value="2">Leveres i Sogndal</option>
+          </select>
+          
+          <select id="biltype" name="biltype">
             <option value="A" selected>Liten bil</option>
             <option value="B">Mellomstor bil</option>
             <option value="C">Stor bil</option>

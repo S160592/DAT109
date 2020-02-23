@@ -89,7 +89,7 @@ public class BilDB implements Serializable, Bil {
 	
 	@Override
 	public String toString() {
-		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + "]";
+		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + ", biltype= " + biltype.getTypeid() + "]";
 	}
 
 	
