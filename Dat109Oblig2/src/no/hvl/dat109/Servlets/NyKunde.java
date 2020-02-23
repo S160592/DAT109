@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.AdressDB;
 import no.hvl.dat109.Entity.KundeDB;
-import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Interfaces.Adress;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.Kunde;
 
@@ -58,7 +58,7 @@ public class NyKunde extends HttpServlet {
 		String poststed = request.getParameter("poststed");
 
 		Kunde kunde = new KundeDB();
-		Adress adresse = new Adress();
+		AdressDB adresse = new AdressDB();
 
 		adresse.setGateadresse(gateadresse);
 		adresse.setPostnummer(postnummer);

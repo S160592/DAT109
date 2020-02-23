@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.AdressDB;
 import no.hvl.dat109.Interfaces.Datalagring;
 
 /**
@@ -48,7 +48,7 @@ public class NyAdresse extends HttpServlet {
 		String postkode = request.getParameter("postkode");
 
 
-		Adress newAdr = new Adress();
+		AdressDB newAdr = new AdressDB();
 		newAdr.setGateadresse(gatenr);
 		newAdr.setPostnummer(postkode);
 		newAdr.setPoststed(poststed);

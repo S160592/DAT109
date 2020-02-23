@@ -1,6 +1,6 @@
 package no.hvl.dat109.Interfaces;
 
-import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.AdressDB;
 
 public interface Kunde {
 	public String getTelefonnummer();
@@ -19,7 +19,7 @@ public interface Kunde {
 
 	public void setKredittkortnr(String kredittkortnr);
 
-	public Adress getAdress();
+	public AdressDB getAdress();
 
-	public void setAdress(Adress adress);
+	public void setAdress(AdressDB adress);
 }

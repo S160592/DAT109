@@ -10,11 +10,11 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.AdressDB;
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.Reservasjon;
-import no.hvl.dat109.Entity.Utleigekontor;
-import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Entity.ReservasjonDB;
+import no.hvl.dat109.Entity.UtleigekontorDB;
+import no.hvl.dat109.Interfaces.Adress;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.Kunde;
@@ -51,9 +51,9 @@ public class DatalagringEAO implements Datalagring{
 	}
 	
 	@Override
-	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
+	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
 
-		List<Reservasjon> reservasjonar = reservasjonEAO.hentAlle();
+		List<ReservasjonDB> reservasjonar = reservasjonEAO.hentAlle();
 		List<BilDB> bilar = bilEAO.hentAlle();
 		List<String> reserverte = new ArrayList<String>();
 
@@ -74,7 +74,7 @@ public class DatalagringEAO implements Datalagring{
 
 
 	@Override
-	public int lagreAdresse(AdressInterface adress) {
+	public int lagreAdresse(Adress adress) {
 		
 		
 		return adressEAO.lagre(adress);
@@ -90,7 +90,7 @@ public class DatalagringEAO implements Datalagring{
 
 
 	@Override
-	public Utleigekontor hentUtleigekontor(int id) {
+	public UtleigekontorDB hentUtleigekontor(int id) {
 		// TODO Auto-generated method stub
 		return utleigekontorEAO.hentUtleigekontor(id);
 	}

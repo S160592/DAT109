@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Entity.UtleigekontorDB;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.PersistentBil;
 
@@ -27,7 +27,7 @@ public class BilEAO implements PersistentBil {
 		return em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
 	}
 
-	public List<BilDB> henledige(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
+	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
 
 //		List<Reservasjon>reservasjonar=reservasjonEAO.hentAlle();List<Bil>bilar=hentAlle();List<String>reserverte=new ArrayList<String>();
 //

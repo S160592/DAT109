@@ -2,7 +2,6 @@ package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,17 +11,18 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import no.hvl.dat109.Interfaces.Reservasjon;
 
 /**
  * The persistent class for the reservasjon database table.
  * 
  */
-@Entity
+@Entity(name = "Reservasjon")
 @Table(name = "Reservasjon", schema = "borgar")
 @NamedQuery(name = "Reservasjon.findAll", query = "SELECT r FROM Reservasjon r")
-public class Reservasjon implements Serializable {
+public class ReservasjonDB implements Serializable, Reservasjon {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -51,15 +51,15 @@ public class Reservasjon implements Serializable {
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "fralokasjon")
-	private Utleigekontor fraUtleigekontor;
+	private UtleigekontorDB fraUtleigekontor;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "tillokasjon")
-	private Utleigekontor tilUtleigekotor;
+	private UtleigekontorDB tilUtleigekotor;
 
 	
-	public Reservasjon() {
+	public ReservasjonDB() {
 	}
 
 	public Integer getReservasjonsid() {
@@ -118,19 +118,19 @@ public class Reservasjon implements Serializable {
 		this.kunde = kundeBean;
 	}
 
-	public Utleigekontor getFraUtleigekontor() {
+	public UtleigekontorDB getFraUtleigekontor() {
 		return this.fraUtleigekontor;
 	}
 
-	public void setFraUtleigekontor(Utleigekontor fraUtleigekotor) {
+	public void setFraUtleigekontor(UtleigekontorDB fraUtleigekotor) {
 		this.fraUtleigekontor = fraUtleigekotor;
 	}
 
-	public Utleigekontor getTilUtleigekotor() {
+	public UtleigekontorDB getTilUtleigekotor() {
 		return this.tilUtleigekotor;
 	}
 
-	public void setTilUtleigekotor(Utleigekontor tilUtleigekotor) {
+	public void setTilUtleigekotor(UtleigekontorDB tilUtleigekotor) {
 		this.tilUtleigekotor = tilUtleigekotor;
 	}
 

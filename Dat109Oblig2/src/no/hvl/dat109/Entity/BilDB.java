@@ -41,7 +41,7 @@ public class BilDB implements Serializable, Bil {
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "staarved")
-	private Utleigekontor staarved;
+	private UtleigekontorDB staarved;
 
 	public BilDB() {
 	}
@@ -78,11 +78,11 @@ public class BilDB implements Serializable, Bil {
 		this.biltype = biltype;
 	}
 
-	public Utleigekontor getStaarVedUtleigekontor() {
+	public UtleigekontorDB getStaarVedUtleigekontor() {
 		return this.staarved;
 	}
 
-	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor) {
+	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor) {
 		this.staarved = utleigekontor;
 	}
 

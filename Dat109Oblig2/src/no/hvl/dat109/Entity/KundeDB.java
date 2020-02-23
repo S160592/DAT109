@@ -3,7 +3,7 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Interfaces.Adress;
 import no.hvl.dat109.Interfaces.Kunde;
 
 import java.util.List;
@@ -30,7 +30,7 @@ public class KundeDB implements Serializable, Kunde {
 	// bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name = "adresse")
-	private Adress adress;
+	private AdressDB adress;
 
 	public KundeDB() {
 	}
@@ -67,11 +67,11 @@ public class KundeDB implements Serializable, Kunde {
 		this.kredittkortnr = kredittkortnr;
 	}
 
-	public Adress getAdress() {
+	public AdressDB getAdress() {
 		return this.adress;
 	}
 
-	public void setAdress(Adress adress) {
+	public void setAdress(AdressDB adress) {
 		this.adress = adress;
 	}
 

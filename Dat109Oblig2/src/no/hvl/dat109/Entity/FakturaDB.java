@@ -3,15 +3,17 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import no.hvl.dat109.Interfaces.Faktura;
+
 
 /**
  * The persistent class for the faktura database table.
  * 
  */
-@Entity
+@Entity(name = "Faktura")
 @Table(name = "Faktura", schema = "borgar")
 @NamedQuery(name="Faktura.findAll", query="SELECT f FROM Faktura f")
-public class Faktura implements Serializable {
+public class FakturaDB implements Serializable, Faktura {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -20,9 +22,9 @@ public class Faktura implements Serializable {
 	//bi-directional many-to-one association to Reservasjon
 	@ManyToOne
 	@JoinColumn(name="reservasjon")
-	private Reservasjon reservasjonBean;
+	private ReservasjonDB reservasjonBean;
 
-	public Faktura() {
+	public FakturaDB() {
 	}
 
 	public Integer getFakturanr() {
@@ -33,11 +35,11 @@ public class Faktura implements Serializable {
 		this.fakturanr = fakturanr;
 	}
 
-	public Reservasjon getReservasjonBean() {
+	public ReservasjonDB getReservasjonBean() {
 		return this.reservasjonBean;
 	}
 
-	public void setReservasjonBean(Reservasjon reservasjonBean) {
+	public void setReservasjonBean(ReservasjonDB reservasjonBean) {
 		this.reservasjonBean = reservasjonBean;
 	}
 

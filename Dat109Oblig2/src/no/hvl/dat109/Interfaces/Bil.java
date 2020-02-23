@@ -1,7 +1,7 @@
 package no.hvl.dat109.Interfaces;
 
 import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Entity.UtleigekontorDB;
 
 public interface Bil {
 
@@ -12,8 +12,8 @@ public interface Bil {
 	public String getMerke();
 	public void setMerke(String merke);
 	public void setBiltype(BiltypeDB biltype) ;
-	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor);
-	public Utleigekontor getStaarVedUtleigekontor();
+	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor);
+	public UtleigekontorDB getStaarVedUtleigekontor();
 	
 	
 }

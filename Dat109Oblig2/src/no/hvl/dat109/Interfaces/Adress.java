@@ -1,6 +1,6 @@
 package no.hvl.dat109.Interfaces;
 
-public interface AdressInterface {
+public interface Adress {
 	public Integer getId();
 
 	public void setId(Integer id);

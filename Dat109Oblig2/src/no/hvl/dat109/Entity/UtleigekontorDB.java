@@ -3,7 +3,7 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.UtleigekontorInterface;
+import no.hvl.dat109.Interfaces.Utleigekontor;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import java.util.List;
  * The persistent class for the utleigekontor database table.
  * 
  */
-@Entity
+@Entity(name = "Utleigekontor")
 @Table(name = "Utleigekontor", schema = "borgar")
 @NamedQuery(name="Utleigekontor.findAll", query="SELECT u FROM Utleigekontor u")
-public class Utleigekontor implements Serializable {
+public class UtleigekontorDB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -26,9 +26,9 @@ public class Utleigekontor implements Serializable {
 	//bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name="adresse")
-	private Adress adress;
+	private AdressDB adress;
 
-	public Utleigekontor() {
+	public UtleigekontorDB() {
 	}
 
 	public Integer getId() {
@@ -47,11 +47,11 @@ public class Utleigekontor implements Serializable {
 		this.telefonnr = telefonnr;
 	}
 
-	public Adress getAdress() {
+	public AdressDB getAdress() {
 		return this.adress;
 	}
 
-	public void setAdress(Adress adress) {
+	public void setAdress(AdressDB adress) {
 		this.adress = adress;
 	}
 

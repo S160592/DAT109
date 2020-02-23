@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Interfaces.Adress;
 
 
 /**
@@ -21,7 +21,7 @@ import no.hvl.dat109.Interfaces.AdressInterface;
 @Entity(name = "Adress")
 @Table(name = "Adress", schema = "borgar")
 @NamedQuery(name="Adress.findAll", query="SELECT a FROM Adress a")
-public class Adress implements Serializable, AdressInterface {
+public class AdressDB implements Serializable, Adress {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -37,7 +37,7 @@ public class Adress implements Serializable, AdressInterface {
 
 	
 
-	public Adress() {
+	public AdressDB() {
 	}
 
 	public Integer getId() {

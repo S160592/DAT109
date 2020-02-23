@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Entity.UtleigekontorDB;
 
 public interface Datalagring {
 
@@ -12,12 +12,12 @@ public interface Datalagring {
 
 	public Bil hentBil(String regnr);
 
-	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon);
+	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
 
-	public int lagreAdresse(AdressInterface adress);
+	public int lagreAdresse(Adress adress);
 
 	public void lagreNyKunde(Kunde kunde);
 
-	public Utleigekontor hentUtleigekontor(int id);
+	public UtleigekontorDB hentUtleigekontor(int id);
 
 }
