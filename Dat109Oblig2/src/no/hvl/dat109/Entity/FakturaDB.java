@@ -22,7 +22,7 @@ public class FakturaDB implements Serializable, Faktura {
 	//bi-directional many-to-one association to Reservasjon
 	@ManyToOne
 	@JoinColumn(name="reservasjon")
-	private ReservasjonDB reservasjonBean;
+	private ReservasjonDB reservasjon;
 
 	public FakturaDB() {
 	}
@@ -36,11 +36,11 @@ public class FakturaDB implements Serializable, Faktura {
 	}
 
 	public ReservasjonDB getReservasjonBean() {
-		return this.reservasjonBean;
+		return this.reservasjon;
 	}
 
 	public void setReservasjonBean(ReservasjonDB reservasjonBean) {
-		this.reservasjonBean = reservasjonBean;
+		this.reservasjon = reservasjonBean;
 	}
 
 }
