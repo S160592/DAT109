@@ -59,9 +59,11 @@ public class Sok extends HttpServlet {
 		datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
 				.filter(b -> b.getBiltype().getTypeid().equals(biltype)).forEach(System.out::println);
 
+		request.setAttribute("bilar", datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
+				.filter(b -> b.getBiltype().getTypeid().equals(biltype)));
 		System.out.println();
 		System.out.println();
-		response.sendRedirect("sok");
+		response.sendRedirect("reserver");
 
 	}
 
