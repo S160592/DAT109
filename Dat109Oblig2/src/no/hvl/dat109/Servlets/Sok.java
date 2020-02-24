@@ -3,6 +3,9 @@ package no.hvl.dat109.Servlets;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Interfaces.Datalagring;
 
 /**
@@ -38,7 +42,16 @@ public class Sok extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/jsp/sok.jsp").forward(request, response);
+
+//		if (request.getSession().getAttribute("bilar") != null) {
+//			request.getRequestDispatcher("WEB-INF/jsp/sokResultat.jsp").forward(request, response);
+//		} else {
+
+			request.getRequestDispatcher("WEB-INF/jsp/sok.jsp").forward(request, response);
+
+//		}
+//		request.getSession().setAttribute("bilar", null);
+		
 	}
 
 	/**
@@ -56,13 +69,16 @@ public class Sok extends HttpServlet {
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
 
-//		datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
-//				.filter(b -> b.getBiltype().getTypeid().equals(biltype)).forEach(System.out::println);
+//		Stream<BilDB> ledige = datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
+//				.filter(b -> b.getBiltype().getTypeid().equals(biltype));
 
-		request.getSession().setAttribute("bilar", datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
-				.filter(b -> b.getBiltype().getTypeid().equals(biltype)));
+		request.getSession().setAttribute("bilar",
+				datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon))
+						.stream().filter(b -> b.getBiltype().getTypeid().equals(biltype)).collect(Collectors.toList()));
 //		System.out.println();
 //		System.out.println();
+		
+		
 		response.sendRedirect("reserver");
 
 	}

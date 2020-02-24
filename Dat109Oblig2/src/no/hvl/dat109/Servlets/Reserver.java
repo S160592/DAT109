@@ -34,8 +34,11 @@ public class Reserver extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<BilDB> bilar = (List<BilDB>) request.getSession().getAttribute("bilar");
-		request.getSession().setAttribute("bilar", null);
+		if (request.getSession().getAttribute("bilar") != null) {
+			request.getRequestDispatcher("WEB-INF/jsp/reserver.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("sok");
+		}
 	}
 
 	/**
