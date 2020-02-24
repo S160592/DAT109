@@ -54,7 +54,7 @@ public class DatalagringEAO implements Datalagring{
 	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
 
 		List<ReservasjonDB> reservasjonar = reservasjonEAO.hentAlle();
-		List<Bil> bilar = bilEAO.hentAlle();
+		List<? extends Bil> bilar = bilEAO.hentAlle();
 		List<String> reserverte = new ArrayList<String>();
 
 		reservasjonar.forEach(r -> {

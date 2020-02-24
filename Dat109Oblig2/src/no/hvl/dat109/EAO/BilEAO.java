@@ -24,12 +24,14 @@ public class BilEAO implements PersistentBil {
 		return em.find(BilDB.class, regnr);
 	}
 
-	public List<Bil> hentAlle() {
-		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
-		List<Bil> bilar = new ArrayList<Bil>();
-		biler.forEach(bilar::add);
+	public List<? extends Bil> hentAlle() {
 		
-		return bilar;
+		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
+//		List<Bil> test = biler;
+//		List<Bil> bilar = new ArrayList<Bil>();
+//		biler.forEach(bilar::add);
+		
+		return biler;
 	}
 
 	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
