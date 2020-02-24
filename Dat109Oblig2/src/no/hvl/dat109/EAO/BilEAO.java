@@ -34,7 +34,7 @@ public class BilEAO implements PersistentBil {
 		return biler;
 	}
 
-	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
+//	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
 
 //		List<Reservasjon>reservasjonar=reservasjonEAO.hentAlle();List<Bil>bilar=hentAlle();List<String>reserverte=new ArrayList<String>();
 //
@@ -47,9 +47,9 @@ public class BilEAO implements PersistentBil {
 //		List<Bil>ledigeBilar=bilar.stream().filter(b->!reserverte.contains(b.getRegnr()) && b.getUtleigekontor().getId() == fraLokasjon.getId() ).collect(Collectors.toList());
 //
 //		return ledigeBilar;
-		return null;
+		//return null;
 
-	}
+//	}
 
 	public void leggTil(Bil bil) {
 		em.persist(bil);

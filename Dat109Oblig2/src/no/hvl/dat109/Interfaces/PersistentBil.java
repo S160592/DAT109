@@ -12,6 +12,6 @@ public interface PersistentBil {
 	public BilDB hentBil(String regnr);
 	public List<? extends Bil> hentAlle();
 	public void leggTil(Bil bil);
-	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
+	//public List<? extends Bil> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
 	public void update(BilDB bil);
 }
