@@ -14,6 +14,7 @@ public interface Bil {
 	public void setBiltype(BiltypeDB biltype) ;
 	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor);
 	public UtleigekontorDB getStaarVedUtleigekontor();
+	public Biltype getBiltype();
 	
 	
 }

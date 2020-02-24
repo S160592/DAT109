@@ -51,10 +51,10 @@ public class DatalagringEAO implements Datalagring{
 	}
 	
 	@Override
-	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
+	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
 
 		List<ReservasjonDB> reservasjonar = reservasjonEAO.hentAlle();
-		List<BilDB> bilar = bilEAO.hentAlle();
+		List<Bil> bilar = bilEAO.hentAlle();
 		List<String> reserverte = new ArrayList<String>();
 
 		reservasjonar.forEach(r -> {
@@ -65,7 +65,7 @@ public class DatalagringEAO implements Datalagring{
 
 		});
 
-		List<BilDB> ledigeBilar = bilar.stream()
+		List<Bil> ledigeBilar = bilar.stream()
 				.filter(b -> !reserverte.contains(b.getRegnr()) && b.getStaarVedUtleigekontor().getId() == fraLokasjon.getId())
 				.collect(Collectors.toList());
 		

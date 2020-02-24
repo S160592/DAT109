@@ -1,6 +1,7 @@
 package no.hvl.dat109.EAO;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -23,8 +24,12 @@ public class BilEAO implements PersistentBil {
 		return em.find(BilDB.class, regnr);
 	}
 
-	public List<BilDB> hentAlle() {
-		return em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
+	public List<Bil> hentAlle() {
+		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
+		List<Bil> bilar = new ArrayList<Bil>();
+		biler.forEach(bilar::add);
+		
+		return bilar;
 	}
 
 	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {

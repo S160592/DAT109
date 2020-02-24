@@ -39,6 +39,7 @@ public class Reserver extends HttpServlet {
 		} else {
 			response.sendRedirect("sok");
 		}
+		request.getSession().setAttribute("bilar", null);
 	}
 
 	/**

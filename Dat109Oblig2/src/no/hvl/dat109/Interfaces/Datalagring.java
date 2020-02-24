@@ -12,7 +12,7 @@ public interface Datalagring {
 
 	public Bil hentBil(String regnr);
 
-	public List<BilDB> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
+	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
 
 	public int lagreAdresse(Adress adress);
 
