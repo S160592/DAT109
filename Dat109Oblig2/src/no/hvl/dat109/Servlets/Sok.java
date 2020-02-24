@@ -56,13 +56,13 @@ public class Sok extends HttpServlet {
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
 
-		datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
-				.filter(b -> b.getBiltype().getTypeid().equals(biltype)).forEach(System.out::println);
+//		datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
+//				.filter(b -> b.getBiltype().getTypeid().equals(biltype)).forEach(System.out::println);
 
-		request.setAttribute("bilar", datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
+		request.getSession().setAttribute("bilar", datalagring.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon)).stream()
 				.filter(b -> b.getBiltype().getTypeid().equals(biltype)));
-		System.out.println();
-		System.out.println();
+//		System.out.println();
+//		System.out.println();
 		response.sendRedirect("reserver");
 
 	}
