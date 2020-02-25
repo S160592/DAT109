@@ -1,11 +1,13 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.Utleigekontor;
-
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 /**
@@ -27,6 +29,11 @@ public class UtleigekontorDB implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="adresse")
 	private AdressDB adress;
+	
+	//bi-directional many-to-one association to Firma
+		@ManyToOne
+		@JoinColumn(name="firma")
+		private Firma firmaBean;
 
 	public UtleigekontorDB() {
 	}
