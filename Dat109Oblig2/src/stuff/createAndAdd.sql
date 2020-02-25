@@ -10,12 +10,8 @@ drop table if exists borgar.kunde;
 
 drop table if exists borgar.utleigekontor;
 
+drop table if exists borgar.firma;
 drop table if exists borgar.adress;
-
-create table borgar.biltype ( typeid char(1) not null,
-description text null,
-dagspris integer not null,
-constraint biltype_pk primary key (typeid) );
 
 create table borgar.adress ( id serial,
 gateadresse varchar(50) not null,
@@ -23,11 +19,29 @@ postnummer varchar(4) not null,
 poststed varchar(50) not null,
 constraint adress_pk primary key (id) );
 
+
+CREATE TABLE borgar.firma (
+	navn varchar NOT NULL,
+	adresse int4 NOT NULL,
+	CONSTRAINT firma_pk PRIMARY KEY (navn),
+	CONSTRAINT firma_fk FOREIGN KEY (adresse) REFERENCES borgar.adress(id)
+);
+
+
+create table borgar.biltype ( typeid char(1) not null,
+description text null,
+dagspris integer not null,
+constraint biltype_pk primary key (typeid) );
+
+
+
 create table borgar.utleigekontor ( id serial,
 telefonnr varchar(8) not null,
 adresse int4 not null,
+firma varchar not null,
 constraint utleigekontor_pk primary key (id),
-constraint utleigekontor_fk foreign key (adresse) references borgar.adress (id) );
+constraint utleigekontor_fk foreign key (adresse) references borgar.adress (id) ,
+constraint utleigekontor_fkFirma foreign key (firma) references borgar.firma (navn) );
 
 create table borgar.bil ( regnr varchar(8) not null,
 typeid varchar(1) not null,
@@ -79,10 +93,6 @@ constraint reservasjon_fk_3 foreign key (bil) references borgar.bil(regnr));
 --ALTER TABLE borgar.reservasjon ADD faktura int4 NULL;
 --ALTER TABLE borgar.reservasjon ADD CONSTRAINT reservasjon_fk_4 FOREIGN KEY (reservasjonsid) REFERENCES borgar.faktura(fakturanr);
 
-
-
-
-
 insert
 	into
 	borgar.adress (gateadresse,
@@ -95,14 +105,23 @@ values('Stykkje 6B',
 '6856',
 'Sogndal') ;
 
+
+INSERT INTO borgar.firma
+(navn, adresse)
+VALUES('Bilutleige', 1);
+
+
+
+
+
 insert
 	into
 	borgar.utleigekontor (telefonnr,
-	adresse)
+	adresse, firma)
 values('81549300',
-1),
+1, 'Bilutleige'),
 ('80012345',
-2);
+2, 'Bilutleige');
 
 insert
 	into

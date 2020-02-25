@@ -168,12 +168,12 @@ button:hover, .btn-item:hover {
 			</div>
 			<div class="info">
 				<div id="fraDato">
-					<label>Fra dato : </label> <input type="date" id="start" name="trip-start"
+					<label>Fra dato : </label> <input type="date" id="start" name="trip-start" 
 						>
 				</div>
 
 				<div id="fraDato">
-					<label>Til dato : </label> <input type="date" id="start" name="trip-end"
+					<label>Til dato : </label> <input type="date" id="slutt" name="trip-end"
 						>
 				</div>
 
@@ -216,4 +216,9 @@ button:hover, .btn-item:hover {
 		</form>
 	</div>
 </body>
+
+<script>
+document.getElementById('start').valueAsDate = new Date();
+document.getElementById('slutt').valueAsDate = new Date();
+</script>
 </html>
