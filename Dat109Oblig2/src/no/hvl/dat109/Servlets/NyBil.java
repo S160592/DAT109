@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.BiltypeDB;
+import no.hvl.dat109.Interfaces.Biltype;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Superclasses.BilSuper;
 import no.hvl.dat109.Superclasses.BiltypeSuper;
@@ -60,13 +61,12 @@ public class NyBil extends HttpServlet {
 		String biltype = request.getParameter("biltype");
 
 		BilSuper nyBil = new BilDB();
-		BiltypeSuper type = datalagring.hentBiltype(biltype);
+		System.out.println("biltype : " + biltype);
+		BiltypeSuper type = (BiltypeSuper) datalagring.hentBiltype(biltype);
 //		type.setTypeid(datalagring.hentBiltype(biltype).getTypeid());
 //		System.out.println(datalagring.hentBiltype(biltype).getTypeid());
-		System.out.println(type.getTypeid());
-		System.out.println(nyBil.getBiltype().getTypeid());
+//		BiltypeSuper test = new BiltypeDB();
 		nyBil.setBiltype(type);
-		System.out.println(nyBil.getBiltype().getTypeid());
 		
 		nyBil.setRegnr(regnr);
 		nyBil.setMerke(Merke);
