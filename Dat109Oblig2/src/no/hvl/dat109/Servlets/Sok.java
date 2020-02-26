@@ -61,6 +61,7 @@ public class Sok extends HttpServlet {
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
 
+		request.getSession().setAttribute("fraTimestamp", fraTimestamp);
 		request.getSession()
 				.setAttribute("bilar", datalagring
 						.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon))

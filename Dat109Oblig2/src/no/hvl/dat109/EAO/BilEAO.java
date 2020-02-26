@@ -30,13 +30,13 @@ public class BilEAO implements PersistentBil {
 
 	@Override
 	public void leggTil(Bil bil) {
-		// TODO Auto-generated method stub
+		em.persist(bil);
 		
 	}
 
 	@Override
 	public void update(Bil bil) {
-		// TODO Auto-generated method stub
+		em.merge(bil);
 		
 	}
 

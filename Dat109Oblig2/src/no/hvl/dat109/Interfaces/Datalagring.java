@@ -7,6 +7,7 @@ import no.hvl.dat109.Entity.Adress;
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Biltype;
 import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
 
 public interface Datalagring {
@@ -24,5 +25,6 @@ public interface Datalagring {
 	public Utleigekontor hentUtleigekontor(int id);
 	public Biltype hentBiltype(String biltype);
 	public List<Biltype> hentBiltyper();
+	public int lagreReservasjon(Reservasjon reservasjon);
 
 }

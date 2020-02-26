@@ -1,12 +1,20 @@
 package no.hvl.dat109.Servlets;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.Timestamp;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Reservasjon;
+import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.Datalagring;
 
 /**
  * Servlet implementation class Reserver
@@ -14,7 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/reserver")
 public class Reserver extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	@EJB
+	private Datalagring datalagring;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -35,6 +44,7 @@ public class Reserver extends HttpServlet {
 		} else {
 			response.sendRedirect("sok");
 		}
+		
 		request.getSession().setAttribute("bilar", null);
 	}
 
@@ -44,8 +54,29 @@ public class Reserver extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		Bil bil = datalagring.hentBil(request.getParameter("regnr"));
+		
+		Date fra = Date.valueOf(request.getParameter("trip-start"));
+		Date til = Date.valueOf(request.getParameter("trip-end"));
+		Utleigekontor fraLokasjon = datalagring.hentUtleigekontor(Integer.valueOf(request.getParameter("fraLokasjon")));
+		Utleigekontor tilLokasjon = datalagring.hentUtleigekontor(Integer.valueOf(request.getParameter("tilLokasjon")));
+		
+		
+		
+		Timestamp fraTimestamp = new Timestamp(fra.getTime());
+		Timestamp tilTimestamp = new Timestamp(til.getTime());
+		
+		Reservasjon reservasjon = new Reservasjon();
+		reservasjon.setBilBean(bil);
+		reservasjon.setFradato(fraTimestamp);
+		reservasjon.setTildato(tilTimestamp);
+		reservasjon.setFraUtleigekontor(fraLokasjon);
+		reservasjon.setTilUtleigekotor(tilLokasjon);
+		datalagring.lagreReservasjon(reservasjon);
+		request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
+		response.sendRedirect("reservasjonBekreftelse");
+		
 	}
 
 }

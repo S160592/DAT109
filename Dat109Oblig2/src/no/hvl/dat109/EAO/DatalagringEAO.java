@@ -108,4 +108,12 @@ public class DatalagringEAO implements Datalagring{
 		
 		return biltypeEAO.hentAlle();
 	}
+
+	@Override
+	public int lagreReservasjon(Reservasjon reservasjon) {
+		// TODO Auto-generated method stub
+		return reservasjonEAO.createReservasjon(reservasjon);
+		
+	}
+	
 }
