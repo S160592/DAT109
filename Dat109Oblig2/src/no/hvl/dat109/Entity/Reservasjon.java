@@ -134,6 +134,13 @@ public class Reservasjon implements Serializable, ReservasjonInterface {
 		this.tilUtleigekotor = tilUtleigekotor;
 	}
 
+	@Override
+	public String toString() {
+		return "Reservasjon [reservasjonsid=" + reservasjonsid + ", fradato=" + fradato + ", tildato=" + tildato + "]";
+	}
+	
+	
+
 
 	
 

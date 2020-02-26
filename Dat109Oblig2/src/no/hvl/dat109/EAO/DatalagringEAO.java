@@ -115,5 +115,17 @@ public class DatalagringEAO implements Datalagring{
 		return reservasjonEAO.createReservasjon(reservasjon);
 		
 	}
+
+	@Override
+	public Reservasjon getReservasjon(String reservasjonsnr) {
+		// TODO Auto-generated method stub
+		return reservasjonEAO.hentReservasjon(Integer.valueOf(reservasjonsnr));
+	}
+
+	@Override
+	public List<Reservasjon> hentAlleReservasjonar() {
+		// TODO Auto-generated method stub
+		return reservasjonEAO.hentAlle();
+	}
 	
 }

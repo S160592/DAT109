@@ -26,5 +26,7 @@ public interface Datalagring {
 	public Biltype hentBiltype(String biltype);
 	public List<Biltype> hentBiltyper();
 	public int lagreReservasjon(Reservasjon reservasjon);
+	public Reservasjon getReservasjon(String reservasjonsnr);
+	public List<Reservasjon> hentAlleReservasjonar();
 
 }
