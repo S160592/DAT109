@@ -2,8 +2,8 @@
 <class-diagram version="1.2.4" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
   router="FAN">  
-  <class id="1" language="java" name="no.hvl.dat109.Entity.BilDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/BilDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="no.hvl.dat109.Entity.Bil" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Bil.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1166" y="945"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -11,8 +11,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="no.hvl.dat109.Entity.BiltypeDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/BiltypeDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="no.hvl.dat109.Entity.Biltype" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Biltype.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1546" y="943"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -20,8 +20,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="no.hvl.dat109.Entity.KundeDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/KundeDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="no.hvl.dat109.Entity.Kunde" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="172" y="349"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -29,8 +29,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="no.hvl.dat109.Entity.AdressDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/AdressDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="no.hvl.dat109.Entity.Adress" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Adress.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="161" y="983"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -38,8 +38,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="no.hvl.dat109.Entity.UtleigekontorDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/UtleigekontorDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="no.hvl.dat109.Entity.Utleigekontor" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Utleigekontor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="564" y="964"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -47,8 +47,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="no.hvl.dat109.Entity.ReservasjonDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/ReservasjonDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="no.hvl.dat109.Entity.Reservasjon" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Reservasjon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="649" y="359"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -56,8 +56,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="no.hvl.dat109.Entity.FakturaDB" project="DAT109Oblig2" 
-    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/FakturaDB.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="no.hvl.dat109.Entity.Faktura" project="DAT109Oblig2" 
+    file="/DAT109Oblig2/src/no/hvl/dat109/Entity/Faktura.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1204" y="362"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -66,75 +66,111 @@
     </display>  
   </class>  
   <association id="8">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="9" name="bil"/>      
-      <multiplicity id="10" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="11">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="12" name="biltype"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
+      <attribute id="9" name="biltype">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="14">    
-    <bendpoint x="410" y="660"/>    
+  <association id="11">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="15" name="tilUtleigekotor"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
+      <attribute id="12" name="bil">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="14">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="15" name="reservasjon">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="17">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="18" name="staarved"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
+    <bendpoint x="410" y="660"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="18" name="tilUtleigekotor">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="20">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="21" name="adress"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="24" name="reservasjon"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
     <bendpoint x="696" y="672"/>    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="27" name="fraUtleigekontor"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+      <attribute id="21" name="fraUtleigekontor">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="22" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="29">    
+  <association id="23">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="24" name="adress">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="25" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="26">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="30" name="kunde"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+      <attribute id="27" name="kunde">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="30" name="staarved">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="31" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="32">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="33" name="adress"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
+      <attribute id="33" name="adress">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  

@@ -1,6 +1,6 @@
 package no.hvl.dat109.Interfaces;
 
-public interface Biltype {
+public interface BiltypeInterface {
 	public String getTypeid();
 
 	public void setTypeid(String typeid);

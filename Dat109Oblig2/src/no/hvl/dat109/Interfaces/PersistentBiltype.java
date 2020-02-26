@@ -2,13 +2,12 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Superclasses.BiltypeSuper;
+import no.hvl.dat109.Entity.Biltype;
 
 public interface PersistentBiltype {
-	public BiltypeSuper hentbiltype(String type);
+	public Biltype hentbiltype(String type);
 	
-	public List<BiltypeSuper> hentAlle();
+	public List<Biltype> hentAlle();
 	
 	
 }

@@ -1,10 +1,9 @@
 package no.hvl.dat109.Interfaces;
 
-import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
+import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Superclasses.BiltypeSuper;
 
-public interface Bil {
+public interface BilInterface {
 
 	public String getRegnr();
 	public void setRegnr(String regnr);
@@ -13,9 +12,9 @@ public interface Bil {
 	public String getMerke();
 	public void setMerke(String merke);
 	public void setBiltype(BiltypeSuper biltype) ;
-	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor);
-	public UtleigekontorDB getStaarVedUtleigekontor();
-	public Biltype getBiltype();
+	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor);
+	public Utleigekontor getStaarVedUtleigekontor();
+	public BiltypeInterface getBiltype();
 	
 	
 }

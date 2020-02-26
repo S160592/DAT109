@@ -1,8 +1,13 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 /**
@@ -22,7 +27,7 @@ public class Firma implements Serializable {
 
 	//bi-directional many-to-one association to Utleigekontor
 	@OneToMany(mappedBy="firmaBean")
-	private List<UtleigekontorDB> utleigekontors;
+	private List<Utleigekontor> utleigekontors;
 
 	public Firma() {
 	}
@@ -43,11 +48,11 @@ public class Firma implements Serializable {
 		this.adresse = adresse;
 	}
 
-	public List<UtleigekontorDB> getUtleigekontors() {
+	public List<Utleigekontor> getUtleigekontors() {
 		return this.utleigekontors;
 	}
 
-	public void setUtleigekontors(List<UtleigekontorDB> utleigekontors) {
+	public void setUtleigekontors(List<Utleigekontor> utleigekontors) {
 		this.utleigekontors = utleigekontors;
 	}
 

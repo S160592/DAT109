@@ -1,9 +1,9 @@
 package no.hvl.dat109.Servlets;
 
-import no.hvl.dat109.Entity.ReservasjonDB;
-import no.hvl.dat109.Interfaces.Faktura;
+import no.hvl.dat109.Entity.Reservasjon;
+import no.hvl.dat109.Interfaces.FakturaInterface;
 
-public class FakturaSuper implements Faktura {
+public class FakturaSuper implements FakturaInterface {
 
 	@Override
 	public Integer getFakturanr() {
@@ -18,13 +18,13 @@ public class FakturaSuper implements Faktura {
 	}
 
 	@Override
-	public ReservasjonDB getReservasjonBean() {
+	public Reservasjon getReservasjonBean() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setReservasjonBean(ReservasjonDB reservasjonBean) {
+	public void setReservasjonBean(Reservasjon reservasjonBean) {
 		// TODO Auto-generated method stub
 		
 	}

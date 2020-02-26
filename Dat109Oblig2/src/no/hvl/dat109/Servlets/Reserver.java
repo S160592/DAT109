@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Interfaces.Bil;
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Interfaces.BilInterface;
 
 /**
  * Servlet implementation class Reserver

@@ -2,14 +2,13 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Superclasses.BilSuper;
+import no.hvl.dat109.Entity.Bil;
 
 public interface PersistentBil {
 
 
-	public BilDB hentBil(String regnr);
-	public List<? extends BilSuper> hentAlle();
-	public void leggTil(BilSuper bil);
-	public void update(BilSuper bil); 
+	public Bil hentBil(String regnr);
+	public List<Bil> hentAlle();
+	public void leggTil(Bil bil);
+	public void update(Bil bil); 
 }

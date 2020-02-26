@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity(name = "Utleigekontor")
 @Table(name = "Utleigekontor", schema = "borgar")
 @NamedQuery(name="Utleigekontor.findAll", query="SELECT u FROM Utleigekontor u")
-public class UtleigekontorDB implements Serializable {
+public class Utleigekontor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,14 +28,14 @@ public class UtleigekontorDB implements Serializable {
 	//bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name="adresse")
-	private AdressDB adress;
+	private Adress adress;
 	
 	//bi-directional many-to-one association to Firma
 		@ManyToOne
 		@JoinColumn(name="firma")
 		private Firma firmaBean;
 
-	public UtleigekontorDB() {
+	public Utleigekontor() {
 	}
 
 	public Integer getId() {
@@ -54,11 +54,11 @@ public class UtleigekontorDB implements Serializable {
 		this.telefonnr = telefonnr;
 	}
 
-	public AdressDB getAdress() {
+	public Adress getAdress() {
 		return this.adress;
 	}
 
-	public void setAdress(AdressDB adress) {
+	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
 

@@ -1,9 +1,9 @@
 package no.hvl.dat109.Superclasses;
 
-import no.hvl.dat109.Entity.AdressDB;
-import no.hvl.dat109.Interfaces.Utleigekontor;
+import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Interfaces.UtleigekontorInterface;
 
-public class UtleigekontorSuper implements Utleigekontor{
+public class UtleigekontorSuper implements UtleigekontorInterface{
 
 	@Override
 	public Integer getId() {
@@ -30,13 +30,13 @@ public class UtleigekontorSuper implements Utleigekontor{
 	}
 
 	@Override
-	public AdressDB getAdress() {
+	public Adress getAdress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setAdress(AdressDB adress) {
+	public void setAdress(Adress adress) {
 		// TODO Auto-generated method stub
 		
 	}

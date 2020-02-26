@@ -2,12 +2,12 @@ package no.hvl.dat109.Superclasses;
 
 import java.sql.Timestamp;
 
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.KundeDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
-import no.hvl.dat109.Interfaces.Reservasjon;
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.ReservasjonInterface;
 
-public class ReservasjonSuper implements Reservasjon {
+public class ReservasjonSuper implements ReservasjonInterface {
 
 	@Override
 	public Integer getReservasjonsid() {
@@ -64,49 +64,49 @@ public class ReservasjonSuper implements Reservasjon {
 	}
 
 	@Override
-	public BilDB getBilBean() {
+	public Bil getBilBean() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setBilBean(BilDB bilBean) {
+	public void setBilBean(Bil bilBean) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public KundeDB getKundeBean() {
+	public Kunde getKundeBean() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setKundeBean(KundeDB kundeBean) {
+	public void setKundeBean(Kunde kundeBean) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public UtleigekontorDB getFraUtleigekontor() {
+	public Utleigekontor getFraUtleigekontor() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setFraUtleigekontor(UtleigekontorDB fraUtleigekotor) {
+	public void setFraUtleigekontor(Utleigekontor fraUtleigekotor) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public UtleigekontorDB getTilUtleigekotor() {
+	public Utleigekontor getTilUtleigekotor() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setTilUtleigekotor(UtleigekontorDB tilUtleigekotor) {
+	public void setTilUtleigekotor(Utleigekontor tilUtleigekotor) {
 		// TODO Auto-generated method stub
 		
 	}

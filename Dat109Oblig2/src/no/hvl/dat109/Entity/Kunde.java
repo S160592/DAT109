@@ -3,8 +3,8 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.Adress;
-import no.hvl.dat109.Interfaces.Kunde;
+import no.hvl.dat109.Interfaces.AdressInterface;
+import no.hvl.dat109.Interfaces.KundeInterface;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @Entity(name = "Kunde")
 @Table(name = "Kunde", schema = "borgar")
 @NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k")
-public class KundeDB implements Serializable, Kunde {
+public class Kunde implements Serializable, KundeInterface {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -30,9 +30,9 @@ public class KundeDB implements Serializable, Kunde {
 	// bi-directional many-to-one association to Adress
 	@ManyToOne
 	@JoinColumn(name = "adresse")
-	private AdressDB adress;
+	private Adress adress;
 
-	public KundeDB() {
+	public Kunde() {
 	}
 
 	public String getTelefonnummer() {
@@ -67,11 +67,11 @@ public class KundeDB implements Serializable, Kunde {
 		this.kredittkortnr = kredittkortnr;
 	}
 
-	public AdressDB getAdress() {
+	public Adress getAdress() {
 		return this.adress;
 	}
 
-	public void setAdress(AdressDB adress) {
+	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
 

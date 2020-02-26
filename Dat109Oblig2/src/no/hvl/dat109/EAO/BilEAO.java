@@ -6,10 +6,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Interfaces.Bil;
+import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Interfaces.PersistentBil;
-import no.hvl.dat109.Superclasses.BilSuper;
 
 @Stateless
 public class BilEAO implements PersistentBil {
@@ -18,24 +16,28 @@ public class BilEAO implements PersistentBil {
 	@PersistenceContext(name = "utleige")
 	private EntityManager em;
 
-	public BilDB hentBil(String regnr) {
-		return em.find(BilDB.class, regnr);
+	public Bil hentBil(String regnr) {
+		return em.find(Bil.class, regnr);
 	}
 
-	public List<? extends BilSuper> hentAlle() {
+	public List<Bil> hentAlle() {
 		
-		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
+		List<Bil> biler = em.createNamedQuery("Bil.findAll", Bil.class).getResultList();
 	
 		return biler;
 	}
 
 
-	public void leggTil(BilSuper bil) {
-		em.persist(bil);
+	@Override
+	public void leggTil(Bil bil) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public void update(BilSuper bil) {
-		em.merge(bil);
+	@Override
+	public void update(Bil bil) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

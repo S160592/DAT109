@@ -1,8 +1,8 @@
 package no.hvl.dat109.Superclasses;
 
-import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Interfaces.BiltypeInterface;
 
-public class BiltypeSuper implements Biltype {
+public class BiltypeSuper implements BiltypeInterface {
 
 	@Override
 	public String getTypeid() {

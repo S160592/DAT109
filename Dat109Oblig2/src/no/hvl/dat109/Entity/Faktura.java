@@ -3,7 +3,7 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.Faktura;
+import no.hvl.dat109.Interfaces.FakturaInterface;
 
 
 /**
@@ -13,7 +13,7 @@ import no.hvl.dat109.Interfaces.Faktura;
 @Entity(name = "Faktura")
 @Table(name = "Faktura", schema = "borgar")
 @NamedQuery(name="Faktura.findAll", query="SELECT f FROM Faktura f")
-public class FakturaDB implements Serializable, Faktura {
+public class Faktura implements Serializable, FakturaInterface {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -22,9 +22,9 @@ public class FakturaDB implements Serializable, Faktura {
 	//bi-directional many-to-one association to Reservasjon
 	@ManyToOne
 	@JoinColumn(name="reservasjon")
-	private ReservasjonDB reservasjon;
+	private Reservasjon reservasjon;
 
-	public FakturaDB() {
+	public Faktura() {
 	}
 
 	public Integer getFakturanr() {
@@ -35,11 +35,11 @@ public class FakturaDB implements Serializable, Faktura {
 		this.fakturanr = fakturanr;
 	}
 
-	public ReservasjonDB getReservasjonBean() {
+	public Reservasjon getReservasjonBean() {
 		return this.reservasjon;
 	}
 
-	public void setReservasjonBean(ReservasjonDB reservasjonBean) {
+	public void setReservasjonBean(Reservasjon reservasjonBean) {
 		this.reservasjon = reservasjonBean;
 	}
 

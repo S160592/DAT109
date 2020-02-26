@@ -1,10 +1,10 @@
 package no.hvl.dat109.Interfaces;
 
-import no.hvl.dat109.Entity.KundeDB;
+import no.hvl.dat109.Entity.Kunde;
 
 public interface PersistentKunde {
 	public void leggTil(Kunde kunde);
 	
-	public KundeDB finnKunde(String mobilnr);
+	public Kunde finnKunde(String mobilnr);
 	
 }

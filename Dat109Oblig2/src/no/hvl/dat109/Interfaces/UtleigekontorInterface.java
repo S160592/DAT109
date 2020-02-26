@@ -1,8 +1,8 @@
 package no.hvl.dat109.Interfaces;
 
-import no.hvl.dat109.Entity.AdressDB;
+import no.hvl.dat109.Entity.Adress;
 
-public interface Utleigekontor {
+public interface UtleigekontorInterface {
 //	public UtleigekontorDB hentUtleigekontor(int id);
 //	public List<UtleigekontorDB> hentAlle();
 
@@ -14,7 +14,7 @@ public interface Utleigekontor {
 
 	public void setTelefonnr(String telefonnr);
 
-	public AdressDB getAdress() ;
+	public Adress getAdress() ;
 
-	public void setAdress(AdressDB adress);
+	public void setAdress(Adress adress);
 }

@@ -10,23 +10,19 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import no.hvl.dat109.Entity.AdressDB;
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.ReservasjonDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
-import no.hvl.dat109.Interfaces.Adress;
-import no.hvl.dat109.Interfaces.Bil;
-import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.Reservasjon;
+import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.Kunde;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentBiltype;
 import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
-import no.hvl.dat109.Superclasses.BilSuper;
-import no.hvl.dat109.Superclasses.BiltypeSuper;
 @Stateless
 public class DatalagringEAO implements Datalagring{
 	@PersistenceContext(name = "utleige")
@@ -47,20 +43,20 @@ public class DatalagringEAO implements Datalagring{
 	
 	
 	@Override
-	public void lagreBil(BilSuper bil) {
+	public void lagreBil(Bil bil) {
 		bilEAO.leggTil(bil);
 	}
 
 	@Override
-	public BilDB hentBil(String regnr) {
+	public Bil hentBil(String regnr) {
 		return bilEAO.hentBil(regnr);
 	}
 	
 	@Override
-	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
+	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
-		List<ReservasjonDB> reservasjonar = reservasjonEAO.hentAlle();
-		List<? extends Bil> bilar = bilEAO.hentAlle();
+		List<Reservasjon> reservasjonar = reservasjonEAO.hentAlle();
+		List<Bil> bilar = bilEAO.hentAlle();
 		List<String> reserverte = new ArrayList<String>();
 
 		reservasjonar.forEach(r -> {
@@ -96,19 +92,18 @@ public class DatalagringEAO implements Datalagring{
 
 
 	@Override
-	public UtleigekontorDB hentUtleigekontor(int id) {
+	public Utleigekontor hentUtleigekontor(int id) {
 		// TODO Auto-generated method stub
 		return utleigekontorEAO.hentUtleigekontor(id);
 	}
 
 	@Override
-	public BiltypeSuper hentBiltype(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Biltype hentBiltype(String id) {
+		return biltypeEAO.hentbiltype(id);
 	}
 
 	@Override
-	public List<? extends Biltype> hentBiltyper() {
+	public List<Biltype> hentBiltyper() {
 		// TODO Auto-generated method stub
 		
 		return biltypeEAO.hentAlle();

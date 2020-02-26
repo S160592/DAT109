@@ -1,11 +1,11 @@
 package Test.Moc;
 
-import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
-import no.hvl.dat109.Interfaces.Bil;
-import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.Utleigekontor;
+import no.hvl.dat109.Interfaces.BilInterface;
+import no.hvl.dat109.Interfaces.BiltypeInterface;
 
-public class MocBil implements Bil{
+public class MocBil implements BilInterface{
 
 	@Override
 	public String getRegnr() {
@@ -44,25 +44,25 @@ public class MocBil implements Bil{
 	}
 
 	@Override
-	public void setBiltype(BiltypeDB biltype) {
+	public void setBiltype(Biltype biltype) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor) {
+	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public UtleigekontorDB getStaarVedUtleigekontor() {
+	public Utleigekontor getStaarVedUtleigekontor() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Biltype getBiltype() {
+	public BiltypeInterface getBiltype() {
 		// TODO Auto-generated method stub
 		return null;
 	}

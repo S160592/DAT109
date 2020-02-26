@@ -1,9 +1,9 @@
 package no.hvl.dat109.Superclasses;
 
-import no.hvl.dat109.Entity.AdressDB;
-import no.hvl.dat109.Interfaces.Kunde;
+import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Interfaces.KundeInterface;
 
-public class KundeSuper implements Kunde {
+public class KundeSuper implements KundeInterface {
 
 	@Override
 	public String getTelefonnummer() {
@@ -54,13 +54,13 @@ public class KundeSuper implements Kunde {
 	}
 
 	@Override
-	public AdressDB getAdress() {
+	public Adress getAdress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setAdress(AdressDB adress) {
+	public void setAdress(Adress adress) {
 		// TODO Auto-generated method stub
 		
 	}

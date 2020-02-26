@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import Test.Moc.MocDatalagring;
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Interfaces.Bil;
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Interfaces.BilInterface;
 
 class TestBil {
 
@@ -14,7 +14,7 @@ class TestBil {
 	
 	@Test
 	void testLagringAvBil() {
-		Bil bil = new BilDB();
+		BilInterface bil = new Bil();
 		bil.setRegnr("AB12345");
 		lagring.lagreBil(bil);
 		assertEquals(bil, lagring.hentBil("AB12345"));;

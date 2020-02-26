@@ -9,12 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Superclasses.BilSuper;
-import no.hvl.dat109.Superclasses.BiltypeSuper;
 
 /**
  * Servlet implementation class NyBil
@@ -41,8 +37,7 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		
 		request.getRequestDispatcher("WEB-INF/jsp/nyBil.jsp").forward(request, response);
 	}
 
@@ -52,22 +47,16 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Vask input
-
+		
 		String regnr = request.getParameter("regnr");
 		String farge = request.getParameter("farge");
 		String Merke = request.getParameter("Merke");
 		String staarVed = request.getParameter("staarVed");
 		String biltype = request.getParameter("biltype");
 
-		BilSuper nyBil = new BilDB();
-		System.out.println("biltype : " + biltype);
-		BiltypeSuper type = (BiltypeSuper) datalagring.hentBiltype(biltype);
-//		type.setTypeid(datalagring.hentBiltype(biltype).getTypeid());
-//		System.out.println(datalagring.hentBiltype(biltype).getTypeid());
-//		BiltypeSuper test = new BiltypeDB();
-		nyBil.setBiltype(type);
+		Bil nyBil = new Bil();
 		
+		nyBil.setBiltype(datalagring.hentBiltype(biltype));
 		nyBil.setRegnr(regnr);
 		nyBil.setMerke(Merke);
 		nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));

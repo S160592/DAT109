@@ -2,13 +2,13 @@ package no.hvl.dat109.Interfaces;
 
 import java.util.List;
 
-import no.hvl.dat109.Entity.AdressDB;
+import no.hvl.dat109.Entity.Adress;
 
 public interface PersistentAdresse {
 
 
-	public AdressDB hentAdresse(int id);
+	public Adress hentAdresse(int id);
 	
-	public List<AdressDB> hentAlle();
+	public List<Adress> hentAlle();
 	public int lagre(Adress adress);
 }

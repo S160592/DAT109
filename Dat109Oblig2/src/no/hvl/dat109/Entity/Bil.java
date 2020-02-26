@@ -11,8 +11,6 @@ import javax.persistence.Table;
 
 import com.google.gson.annotations.Expose;
 
-import no.hvl.dat109.Superclasses.BilSuper;
-
 /**
  * The persistent class for the bil database table.
  * 
@@ -21,8 +19,7 @@ import no.hvl.dat109.Superclasses.BilSuper;
 @Table(name = "Bil", schema = "borgar")
 @NamedQuery(name = "Bil.findAll", query = "SELECT b FROM Bil b")
 
-
-public class BilDB extends BilSuper implements Serializable {
+public class Bil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -36,14 +33,14 @@ public class BilDB extends BilSuper implements Serializable {
 	// bi-directional many-to-one association to Biltype
 	@ManyToOne
 	@JoinColumn(name = "typeid")
-	private BiltypeDB biltype;
+	private Biltype biltype;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "staarved")
-	private UtleigekontorDB staarved;
+	private Utleigekontor staarved;
 
-	public BilDB() {
+	public Bil() {
 	}
 
 	public String getRegnr() {
@@ -70,29 +67,26 @@ public class BilDB extends BilSuper implements Serializable {
 		this.merke = merke;
 	}
 
-	public BiltypeDB getBiltype() {
+	public Biltype getBiltype() {
 		return this.biltype;
 	}
 
-	public void setBiltype(BiltypeDB biltype) {
-		this.biltype = biltype;
-	}
-
-	public UtleigekontorDB getStaarVedUtleigekontor() {
+	public Utleigekontor getStaarVedUtleigekontor() {
 		return this.staarved;
 	}
 
-	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor) {
+	public void setBiltype(Biltype type) {
+		this.biltype = type;
+	}
+
+	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor) {
 		this.staarved = utleigekontor;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + ", biltype= " + biltype.getTypeid() + "]";
+		return "Bil [regnr=" + regnr + ", farge=" + farge + ", merke=" + merke + ", biltype= " + biltype.getTypeid()
+				+ "]";
 	}
-
-	
-	
 
 }

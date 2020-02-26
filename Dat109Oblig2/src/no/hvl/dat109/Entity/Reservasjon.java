@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.Interfaces.Reservasjon;
+import no.hvl.dat109.Interfaces.ReservasjonInterface;
 
 /**
  * The persistent class for the reservasjon database table.
@@ -22,7 +22,7 @@ import no.hvl.dat109.Interfaces.Reservasjon;
 @Entity(name = "Reservasjon")
 @Table(name = "Reservasjon", schema = "borgar")
 @NamedQuery(name = "Reservasjon.findAll", query = "SELECT r FROM Reservasjon r")
-public class ReservasjonDB implements Serializable, Reservasjon {
+public class Reservasjon implements Serializable, ReservasjonInterface {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -41,25 +41,25 @@ public class ReservasjonDB implements Serializable, Reservasjon {
 	// bi-directional many-to-one association to Bil
 	@ManyToOne
 	@JoinColumn(name = "bil")
-	private BilDB bil;
+	private Bil bil;
 
 	// bi-directional many-to-one association to Kunde
 	@ManyToOne
 	@JoinColumn(name = "kunde")
-	private KundeDB kunde;
+	private Kunde kunde;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "fralokasjon")
-	private UtleigekontorDB fraUtleigekontor;
+	private Utleigekontor fraUtleigekontor;
 
 	// bi-directional many-to-one association to Utleigekontor
 	@ManyToOne
 	@JoinColumn(name = "tillokasjon")
-	private UtleigekontorDB tilUtleigekotor;
+	private Utleigekontor tilUtleigekotor;
 
 	
-	public ReservasjonDB() {
+	public Reservasjon() {
 	}
 
 	public Integer getReservasjonsid() {
@@ -102,35 +102,35 @@ public class ReservasjonDB implements Serializable, Reservasjon {
 		this.tildato = tildato;
 	}
 
-	public BilDB getBilBean() {
+	public Bil getBilBean() {
 		return this.bil;
 	}
 
-	public void setBilBean(BilDB bilBean) {
+	public void setBilBean(Bil bilBean) {
 		this.bil = bilBean;
 	}
 
-	public KundeDB getKundeBean() {
+	public Kunde getKundeBean() {
 		return this.kunde;
 	}
 
-	public void setKundeBean(KundeDB kundeBean) {
+	public void setKundeBean(Kunde kundeBean) {
 		this.kunde = kundeBean;
 	}
 
-	public UtleigekontorDB getFraUtleigekontor() {
+	public Utleigekontor getFraUtleigekontor() {
 		return this.fraUtleigekontor;
 	}
 
-	public void setFraUtleigekontor(UtleigekontorDB fraUtleigekotor) {
+	public void setFraUtleigekontor(Utleigekontor fraUtleigekotor) {
 		this.fraUtleigekontor = fraUtleigekotor;
 	}
 
-	public UtleigekontorDB getTilUtleigekotor() {
+	public Utleigekontor getTilUtleigekotor() {
 		return this.tilUtleigekotor;
 	}
 
-	public void setTilUtleigekotor(UtleigekontorDB tilUtleigekotor) {
+	public void setTilUtleigekotor(Utleigekontor tilUtleigekotor) {
 		this.tilUtleigekotor = tilUtleigekotor;
 	}
 

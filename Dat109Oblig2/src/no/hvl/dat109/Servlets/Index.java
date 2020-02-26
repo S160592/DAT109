@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.PersistentBil;
-import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
 @WebServlet({ "/index.html" })
 public class Index extends HttpServlet {
