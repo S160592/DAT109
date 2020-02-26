@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import com.google.gson.annotations.Expose;
 
 import no.hvl.dat109.Interfaces.Bil;
+import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Superclasses.BilSuper;
 
 /**
  * The persistent class for the bil database table.
@@ -22,7 +24,7 @@ import no.hvl.dat109.Interfaces.Bil;
 @NamedQuery(name = "Bil.findAll", query = "SELECT b FROM Bil b")
 
 
-public class BilDB implements Serializable, Bil {
+public class BilDB extends BilSuper implements Serializable, Bil {
 	private static final long serialVersionUID = 1L;
 
 	@Id

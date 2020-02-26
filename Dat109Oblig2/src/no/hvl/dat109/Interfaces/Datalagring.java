@@ -19,5 +19,7 @@ public interface Datalagring {
 	public void lagreNyKunde(Kunde kunde);
 
 	public UtleigekontorDB hentUtleigekontor(int id);
+	public Biltype hentBiltype(String biltype);
+	public List<? extends Biltype> hentBiltyper();
 
 }

@@ -13,7 +13,7 @@ import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.BiltypeDB;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
+import no.hvl.dat109.Superclasses.BilSuper;
 
 /**
  * Servlet implementation class NyBil
@@ -31,8 +31,6 @@ public class NyBil extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-//	@EJB
-//	private PersistentUtleigekontor persistentUtleigekontor;
 	@EJB
 	private Datalagring datalagring;
 
@@ -62,19 +60,27 @@ public class NyBil extends HttpServlet {
 		String biltype = request.getParameter("biltype");
 
 		Bil nyBil = new BilDB();
-
 		BiltypeDB type = new BiltypeDB();
 		type.setTypeid(biltype);
 		nyBil.setBiltype(type);
 		nyBil.setRegnr(regnr);
 		nyBil.setMerke(Merke);
 		nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
-		//nyBil.setStaarVedUtleigekontor(persistentUtleigekontor.hentUtleigekontor(Integer.valueOf(staarVed)));
 		nyBil.setFarge(farge);
 
 		datalagring.lagreBil(nyBil);
 
 		response.sendRedirect("adminNyBil");
+		
+		
+		BilSuper bsuper = new BilDB();
+		bsuper.setBiltype(type);
+		bsuper.setRegnr(regnr.replace('A', 'B'));
+		bsuper.setMerke(Merke);
+		bsuper.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
+		bsuper.setFarge(farge);
+		datalagring.lagreBil(bsuper);
+		
 	}
 
 }

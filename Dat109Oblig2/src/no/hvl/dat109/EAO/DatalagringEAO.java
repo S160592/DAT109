@@ -16,10 +16,12 @@ import no.hvl.dat109.Entity.ReservasjonDB;
 import no.hvl.dat109.Entity.UtleigekontorDB;
 import no.hvl.dat109.Interfaces.Adress;
 import no.hvl.dat109.Interfaces.Bil;
+import no.hvl.dat109.Interfaces.Biltype;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Interfaces.Kunde;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
+import no.hvl.dat109.Interfaces.PersistentBiltype;
 import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
@@ -30,6 +32,8 @@ public class DatalagringEAO implements Datalagring{
 
 	@EJB
 	PersistentBil bilEAO;
+	@EJB
+	PersistentBiltype biltypeEAO;
 	@EJB
 	PersistentReservasjon reservasjonEAO;
 	@EJB
@@ -93,5 +97,18 @@ public class DatalagringEAO implements Datalagring{
 	public UtleigekontorDB hentUtleigekontor(int id) {
 		// TODO Auto-generated method stub
 		return utleigekontorEAO.hentUtleigekontor(id);
+	}
+
+	@Override
+	public Biltype hentBiltype(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<? extends Biltype> hentBiltyper() {
+		// TODO Auto-generated method stub
+		
+		return biltypeEAO.hentAlle();
 	}
 }

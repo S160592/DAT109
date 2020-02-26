@@ -27,29 +27,10 @@ public class BilEAO implements PersistentBil {
 	public List<? extends Bil> hentAlle() {
 		
 		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
-//		List<Bil> test = biler;
-//		List<Bil> bilar = new ArrayList<Bil>();
-//		biler.forEach(bilar::add);
-		
+	
 		return biler;
 	}
 
-//	public List<BilDB> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon) {
-
-//		List<Reservasjon>reservasjonar=reservasjonEAO.hentAlle();List<Bil>bilar=hentAlle();List<String>reserverte=new ArrayList<String>();
-//
-//		reservasjonar.forEach(r->{
-//
-//		if(r.getFradato().before(fra)&&r.getTildato().after(til)){reserverte.add(r.getBilBean().getRegnr());}
-//
-//		});
-//
-//		List<Bil>ledigeBilar=bilar.stream().filter(b->!reserverte.contains(b.getRegnr()) && b.getUtleigekontor().getId() == fraLokasjon.getId() ).collect(Collectors.toList());
-//
-//		return ledigeBilar;
-		//return null;
-
-//	}
 
 	public void leggTil(Bil bil) {
 		em.persist(bil);

@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import no.hvl.dat109.Entity.BiltypeDB;
+import no.hvl.dat109.Interfaces.Biltype;
 import no.hvl.dat109.Interfaces.PersistentBiltype;
 
 @Stateless

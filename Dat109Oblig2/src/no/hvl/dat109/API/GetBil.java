@@ -1,4 +1,4 @@
-package no.hvl.dat109.RESTAPI;
+package no.hvl.dat109.API;
 
 import java.io.IOException;
 
