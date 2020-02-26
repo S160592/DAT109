@@ -1,6 +1,5 @@
 package no.hvl.dat109.Superclasses;
 
-import no.hvl.dat109.Entity.Biltype;
 import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.BilInterface;
 import no.hvl.dat109.Interfaces.BiltypeInterface;

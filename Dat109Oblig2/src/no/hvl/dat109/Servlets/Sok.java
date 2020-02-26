@@ -57,7 +57,6 @@ public class Sok extends HttpServlet {
 		Date fra = Date.valueOf(request.getParameter("trip-start"));
 		Date til = Date.valueOf(request.getParameter("trip-end"));
 		int fraLokasjon = Integer.valueOf(request.getParameter("fraLokasjon"));
-		int tilLokasjon = Integer.valueOf(request.getParameter("tilLokasjon"));
 		String biltype = request.getParameter("biltype");
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());

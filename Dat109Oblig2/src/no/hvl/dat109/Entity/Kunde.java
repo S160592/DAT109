@@ -1,12 +1,15 @@
 package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.AdressInterface;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
 import no.hvl.dat109.Interfaces.KundeInterface;
-
-import java.util.List;
 
 /**
  * The persistent class for the kunde database table.
