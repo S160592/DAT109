@@ -180,3 +180,7 @@ values('Borgar',
 'Grande',
 1,
 '81548300','');
+
+INSERT INTO borgar.reservasjon
+(bil, kunde, fralokasjon, tillokasjon, kmstandut, kmstandinn)
+VALUES( 'KH51979', '81548300', 1, 1, 0, 0);
