@@ -25,6 +25,8 @@ import no.hvl.dat109.Interfaces.PersistentBiltype;
 import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
+import no.hvl.dat109.Superclasses.BilSuper;
+import no.hvl.dat109.Superclasses.BiltypeSuper;
 @Stateless
 public class DatalagringEAO implements Datalagring{
 	@PersistenceContext(name = "utleige")
@@ -45,7 +47,7 @@ public class DatalagringEAO implements Datalagring{
 	
 	
 	@Override
-	public void lagreBil(Bil bil) {
+	public void lagreBil(BilSuper bil) {
 		bilEAO.leggTil(bil);
 	}
 
@@ -100,7 +102,7 @@ public class DatalagringEAO implements Datalagring{
 	}
 
 	@Override
-	public Biltype hentBiltype(String id) {
+	public BiltypeSuper hentBiltype(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

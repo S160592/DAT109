@@ -1,17 +1,15 @@
 package no.hvl.dat109.Interfaces;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
+import no.hvl.dat109.Superclasses.BilSuper;
 
 public interface PersistentBil {
 
 
 	public BilDB hentBil(String regnr);
-	public List<? extends Bil> hentAlle();
-	public void leggTil(Bil bil);
-	//public List<? extends Bil> henledige(Timestamp fra, Timestamp til, UtleigekontorDB fraLokasjon);
-	public void update(BilDB bil);
+	public List<? extends BilSuper> hentAlle();
+	public void leggTil(BilSuper bil);
+	public void update(BilSuper bil); 
 }

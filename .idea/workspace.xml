@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="096aa1d9-c9d1-402e-8be3-43cb73fe9734" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1YKwKAx2bN3D48vpslGy7ztycL8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\borgar\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="096aa1d9-c9d1-402e-8be3-43cb73fe9734" name="Default Changelist" comment="" />
+      <created>1582704527368</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582704527368</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3039" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582706485345">
+      <screen x="2560" y="0" width="2048" height="1112" />
+    </state>
+    <state x="3039" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/2560.0.2048.1112/-1440.-465.1152.2008@2560.0.2048.1112" timestamp="1582706485345" />
+    <state x="3095" y="202" key="SettingsEditor" timestamp="1582706518209">
+      <screen x="2560" y="0" width="2048" height="1112" />
+    </state>
+    <state x="3095" y="202" key="SettingsEditor/0.0.2048.1112/2560.0.2048.1112/-1440.-465.1152.2008@2560.0.2048.1112" timestamp="1582706518209" />
+    <state x="3293" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1582704776778">
+      <screen x="2560" y="0" width="2048" height="1112" />
+    </state>
+    <state x="733" y="385" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/2560.0.2048.1112/-1440.-465.1152.2008@0.0.2048.1112" timestamp="1582704545247" />
+    <state x="3293" y="385" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/2560.0.2048.1112/-1440.-465.1152.2008@2560.0.2048.1112" timestamp="1582704776778" />
+    <state x="3247" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1582706456919">
+      <screen x="2560" y="0" width="2048" height="1112" />
+    </state>
+    <state x="3247" y="243" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112/2560.0.2048.1112/-1440.-465.1152.2008@2560.0.2048.1112" timestamp="1582706456919" />
+  </component>
+</project>

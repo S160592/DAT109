@@ -1,7 +1,5 @@
 package no.hvl.dat109.EAO;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -9,9 +7,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import no.hvl.dat109.Entity.BilDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
 import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.PersistentBil;
+import no.hvl.dat109.Superclasses.BilSuper;
 
 @Stateless
 public class BilEAO implements PersistentBil {
@@ -24,7 +22,7 @@ public class BilEAO implements PersistentBil {
 		return em.find(BilDB.class, regnr);
 	}
 
-	public List<? extends Bil> hentAlle() {
+	public List<? extends BilSuper> hentAlle() {
 		
 		List<BilDB> biler = em.createNamedQuery("Bil.findAll", BilDB.class).getResultList();
 	
@@ -32,11 +30,13 @@ public class BilEAO implements PersistentBil {
 	}
 
 
-	public void leggTil(Bil bil) {
+	public void leggTil(BilSuper bil) {
 		em.persist(bil);
 	}
 
-	public void update(BilDB bil) {
+	public void update(BilSuper bil) {
 		em.merge(bil);
 	}
+
+	
 }

@@ -1,72 +1,69 @@
 package no.hvl.dat109.Superclasses;
 
-import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Entity.UtleigekontorDB;
-import no.hvl.dat109.Interfaces.Bil;
-import no.hvl.dat109.Interfaces.Biltype;
+import no.hvl.dat109.Entity.AdressDB;
+import no.hvl.dat109.Interfaces.Kunde;
 
-public class BilSuper implements Bil{
+public class KundeSuper implements Kunde {
 
 	@Override
-	public String getRegnr() {
+	public String getTelefonnummer() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setRegnr(String regnr) {
+	public void setTelefonnummer(String telefonnummer) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public String getFarge() {
+	public String getEtternavn() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setFarge(String farge) {
+	public void setEtternavn(String etternavn) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public String getMerke() {
+	public String getFornavn() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setMerke(String merke) {
+	public void setFornavn(String fornavn) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void setBiltype(BiltypeSuper type) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setStaarVedUtleigekontor(UtleigekontorDB utleigekontor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public UtleigekontorDB getStaarVedUtleigekontor() {
+	public String getKredittkortnr() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Biltype getBiltype() {
+	public void setKredittkortnr(String kredittkortnr) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public AdressDB getAdress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public void setAdress(AdressDB adress) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

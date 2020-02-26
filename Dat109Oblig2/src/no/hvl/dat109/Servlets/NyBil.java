@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.BiltypeDB;
-import no.hvl.dat109.Interfaces.Bil;
 import no.hvl.dat109.Interfaces.Datalagring;
 import no.hvl.dat109.Superclasses.BilSuper;
+import no.hvl.dat109.Superclasses.BiltypeSuper;
 
 /**
  * Servlet implementation class NyBil
@@ -59,10 +59,15 @@ public class NyBil extends HttpServlet {
 		String staarVed = request.getParameter("staarVed");
 		String biltype = request.getParameter("biltype");
 
-		Bil nyBil = new BilDB();
-		BiltypeDB type = new BiltypeDB();
-		type.setTypeid(biltype);
+		BilSuper nyBil = new BilDB();
+		BiltypeSuper type = datalagring.hentBiltype(biltype);
+//		type.setTypeid(datalagring.hentBiltype(biltype).getTypeid());
+//		System.out.println(datalagring.hentBiltype(biltype).getTypeid());
+		System.out.println(type.getTypeid());
+		System.out.println(nyBil.getBiltype().getTypeid());
 		nyBil.setBiltype(type);
+		System.out.println(nyBil.getBiltype().getTypeid());
+		
 		nyBil.setRegnr(regnr);
 		nyBil.setMerke(Merke);
 		nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
@@ -71,15 +76,6 @@ public class NyBil extends HttpServlet {
 		datalagring.lagreBil(nyBil);
 
 		response.sendRedirect("adminNyBil");
-		
-		
-		BilSuper bsuper = new BilDB();
-		bsuper.setBiltype(type);
-		bsuper.setRegnr(regnr.replace('A', 'B'));
-		bsuper.setMerke(Merke);
-		bsuper.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
-		bsuper.setFarge(farge);
-		datalagring.lagreBil(bsuper);
 		
 	}
 

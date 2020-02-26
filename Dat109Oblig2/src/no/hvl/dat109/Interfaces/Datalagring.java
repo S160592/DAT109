@@ -3,12 +3,13 @@ package no.hvl.dat109.Interfaces;
 import java.sql.Timestamp;
 import java.util.List;
 
-import no.hvl.dat109.Entity.BilDB;
 import no.hvl.dat109.Entity.UtleigekontorDB;
+import no.hvl.dat109.Superclasses.BilSuper;
+import no.hvl.dat109.Superclasses.BiltypeSuper;
 
 public interface Datalagring {
 
-	public void lagreBil(Bil bil);
+	public void lagreBil(BilSuper bil);
 
 	public Bil hentBil(String regnr);
 
@@ -19,7 +20,7 @@ public interface Datalagring {
 	public void lagreNyKunde(Kunde kunde);
 
 	public UtleigekontorDB hentUtleigekontor(int id);
-	public Biltype hentBiltype(String biltype);
+	public BiltypeSuper hentBiltype(String biltype);
 	public List<? extends Biltype> hentBiltyper();
 
 }
