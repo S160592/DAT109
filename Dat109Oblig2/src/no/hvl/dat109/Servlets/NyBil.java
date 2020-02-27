@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.Bil;
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
+import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 
 /**
  * Servlet implementation class NyBil
@@ -29,7 +30,7 @@ public class NyBil extends HttpServlet {
 	}
 
 	@EJB
-	private Datalagring datalagring;
+	private Databehandling datalagring;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -37,8 +38,12 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		request.getRequestDispatcher("WEB-INF/jsp/nyBil.jsp").forward(request, response);
+
+		if (InnloggingUtil.isInnloggetSomAdmin(request)) {
+			request.getRequestDispatcher("WEB-INF/jsp/nyBil.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("sok");
+		}
 	}
 
 	/**
@@ -47,25 +52,29 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String regnr = request.getParameter("regnr");
-		String farge = request.getParameter("farge");
-		String Merke = request.getParameter("Merke");
-		String staarVed = request.getParameter("staarVed");
-		String biltype = request.getParameter("biltype");
 
-		Bil nyBil = new Bil();
-		
-		nyBil.setBiltype(datalagring.hentBiltype(biltype));
-		nyBil.setRegnr(regnr);
-		nyBil.setMerke(Merke);
-		nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
-		nyBil.setFarge(farge);
+		if (InnloggingUtil.isInnloggetSomAdmin(request)) {
+			String regnr = request.getParameter("regnr");
+			String farge = request.getParameter("farge");
+			String Merke = request.getParameter("Merke");
+			String staarVed = request.getParameter("staarVed");
+			String biltype = request.getParameter("biltype");
 
-		datalagring.lagreBil(nyBil);
+			Bil nyBil = new Bil();
 
-		response.sendRedirect("adminNyBil");
-		
+			nyBil.setBiltype(datalagring.hentBiltype(biltype));
+			nyBil.setRegnr(regnr);
+			nyBil.setMerke(Merke);
+			nyBil.setStaarVedUtleigekontor(datalagring.hentUtleigekontor(Integer.valueOf(staarVed)));
+			nyBil.setFarge(farge);
+
+			datalagring.lagreBil(nyBil);
+
+			response.sendRedirect("adminNyBil");
+		} else {
+			response.sendRedirect("sok");
+		}
+
 	}
 
 }

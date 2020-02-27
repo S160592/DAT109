@@ -1,4 +1,4 @@
-package no.hvl.dat109.Interfaces;
+package no.hvl.dat109.ubrukt;
 
 import no.hvl.dat109.Entity.Adress;
 

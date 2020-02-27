@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.Interfaces.ReservasjonInterface;
+import no.hvl.dat109.ubrukt.ReservasjonInterface;
 
 /**
  * The persistent class for the reservasjon database table.

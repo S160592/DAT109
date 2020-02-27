@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.Adress;
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
 
 /**
  * Servlet implementation class NyAdresse
@@ -28,7 +28,7 @@ public class NyAdresse extends HttpServlet {
     }
     
     @EJB
-	private Datalagring datalagring;
+	private Databehandling datalagring;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

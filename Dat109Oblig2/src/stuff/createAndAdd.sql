@@ -179,12 +179,12 @@ insert
 values('Borgar',
 'Grande',
 1,
-'81548300','');
+'81549300','');
 
 
 
 INSERT INTO borgar.reservasjon
 (fradato, tildato, bil, kunde, fralokasjon, tillokasjon, kmstandut, kmstandinn)
-VALUES('NOW()', 'NOW()', 'KH51979', '81548300', 1, 1, 0, 0);
+VALUES('NOW()', 'NOW()', 'KH51979', '81549300', 1, 1, 0, 0);
 
 

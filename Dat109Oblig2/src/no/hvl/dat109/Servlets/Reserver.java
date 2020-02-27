@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
+import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 
 /**
  * Servlet implementation class Reserver
@@ -23,7 +24,7 @@ import no.hvl.dat109.Interfaces.Datalagring;
 public class Reserver extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private Datalagring datalagring;
+	private Databehandling datalagring;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -45,7 +46,7 @@ public class Reserver extends HttpServlet {
 			response.sendRedirect("sok");
 		}
 		
-		request.getSession().setAttribute("bilar", null);
+//		request.getSession().setAttribute("bilar", null);
 	}
 
 	/**
@@ -57,30 +58,38 @@ public class Reserver extends HttpServlet {
 		
 		
 		
-		Bil bil = datalagring.hentBil(request.getParameter("bil"));
 		Utleigekontor fraLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("fraLokasjon"));
 		Utleigekontor tilLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("tilLokasjon"));
 		Timestamp fraTimestamp = (Timestamp) request.getSession().getAttribute("fraTimestamp");
 		Timestamp tilTimestamp = (Timestamp) request.getSession().getAttribute("tilTimestamp");
 		
-		
-		
-		if(fraLokasjon == null || tilLokasjon == null || fraTimestamp == null || tilTimestamp == null || bil == null) {
+		if(InnloggingUtil.isInnlogget(request)) {
+			if(fraLokasjon == null || tilLokasjon == null || fraTimestamp == null || tilTimestamp == null ) {
 
-			response.sendRedirect("sok");
-			
-		}else {
-			Reservasjon reservasjon = new Reservasjon();
-			reservasjon.setBilBean(bil);
-			reservasjon.setFradato(fraTimestamp);
-			reservasjon.setTildato(tilTimestamp);
-			reservasjon.setFraUtleigekontor(fraLokasjon);
-			reservasjon.setTilUtleigekotor(tilLokasjon);
-			reservasjon.setKundeBean(datalagring.hentKunde("81548300"));
-			datalagring.lagreReservasjon(reservasjon);
-			request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
-			response.sendRedirect("reservasjonBekreftelse");
+				response.sendRedirect("sok");
+				
+			}else {
+				Bil bil = datalagring.hentBil(request.getParameter("bil"));
+				Reservasjon reservasjon = new Reservasjon();
+				reservasjon.setBilBean(bil);
+				reservasjon.setFradato(fraTimestamp);
+				reservasjon.setTildato(tilTimestamp);
+				reservasjon.setFraUtleigekontor(fraLokasjon);
+				reservasjon.setTilUtleigekotor(tilLokasjon);
+				reservasjon.setKundeBean(datalagring.hentKunde((String) request.getSession().getAttribute("username")));
+				datalagring.lagreReservasjon(reservasjon);
+				request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
+				response.sendRedirect("reservasjonBekreftelse");
+			}
 		}
+		else {
+			request.getSession().setAttribute("commingFrom", "reserver");
+			response.sendRedirect("login");
+		}
+//		request.getSession().setAttribute("bil", request.getParameter("bil"));
+		
+		
+	
 		
 	}
 

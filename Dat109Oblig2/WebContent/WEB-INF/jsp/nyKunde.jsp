@@ -132,8 +132,8 @@
         <i class="fas fa-car fa-6"></i>
         <h1>Bilutleige A/S</h1>
         <div class="btn-group">
-          <a class="btn-item" href="Utleige">Registrer utleige</a>
-          <a class="btn-item" href="Innlevering">Regisrer innlevering</a>
+          <a class="btn-item" href="sok">Søk etter bil</a>
+          <a class="btn-item" href="login">Logg inn</a>
         </div>
       </div>
       <form action="nyKunde" method="post">

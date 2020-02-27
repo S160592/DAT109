@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.Superclasses.BiltypeSuper;
-
 
 /**
  * The persistent class for the biltype database table.
@@ -17,7 +15,7 @@ import no.hvl.dat109.Superclasses.BiltypeSuper;
 @Entity(name = "Biltype")
 @Table(name = "Biltype", schema = "borgar")
 @NamedQuery(name="Biltype.findAll", query="SELECT b FROM Biltype b")
-public class Biltype extends BiltypeSuper implements Serializable {
+public class Biltype  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id

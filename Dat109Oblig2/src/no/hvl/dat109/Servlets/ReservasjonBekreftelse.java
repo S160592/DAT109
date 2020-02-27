@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import no.hvl.dat109.Entity.Reservasjon;
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
 
 /**
  * Servlet implementation class ReservasjonBekreftelse
@@ -19,7 +19,7 @@ import no.hvl.dat109.Interfaces.Datalagring;
 public class ReservasjonBekreftelse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private Datalagring datalagring;
+	private Databehandling datalagring;
     /**
      * @see HttpServlet#HttpServlet()
      */

@@ -10,7 +10,7 @@ import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
 
-public interface Datalagring {
+public interface Databehandling {
 
 	public void lagreBil(Bil bil);
 
@@ -29,5 +29,6 @@ public interface Datalagring {
 	public Reservasjon getReservasjon(String reservasjonsnr);
 	public List<Reservasjon> hentAlleReservasjonar();
 	public Kunde hentKunde(String telefonnr);
+	public List<Reservasjon> hentReservasjonarFor(Kunde kunde);
 
 }

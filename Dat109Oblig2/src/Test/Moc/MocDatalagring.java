@@ -4,26 +4,27 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import no.hvl.dat109.Entity.Adress;
+import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
-import no.hvl.dat109.Interfaces.AdressInterface;
-import no.hvl.dat109.Interfaces.BilInterface;
-import no.hvl.dat109.Interfaces.BiltypeInterface;
-import no.hvl.dat109.Interfaces.Datalagring;
-import no.hvl.dat109.Interfaces.KundeInterface;
+import no.hvl.dat109.Interfaces.Databehandling;
 
-public class MocDatalagring implements Datalagring {
+public class MocDatalagring implements Databehandling{
 
-	List<BilInterface> bilar = new ArrayList<BilInterface>();
+	List<Bil> bilar = new ArrayList<Bil>();
 	
 	
 	@Override
-	public void lagreBil(BilInterface bil) {
+	public void lagreBil(Bil bil) {
 		bilar.add(bil);
 		
 	}
 
 	@Override
-	public BilInterface hentBil(String regnr) {
+	public Bil hentBil(String regnr) {
 		// TODO Auto-generated method stub
 		
 		return bilar.stream().filter(b -> b.getRegnr().equals(regnr)).findFirst().get();
@@ -31,19 +32,19 @@ public class MocDatalagring implements Datalagring {
 	}
 
 	@Override
-	public List<BilInterface> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
+	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int lagreAdresse(AdressInterface adress) {
+	public int lagreAdresse(Adress adress) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void lagreNyKunde(KundeInterface kunde) {
+	public void lagreNyKunde(Kunde kunde) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -55,15 +56,40 @@ public class MocDatalagring implements Datalagring {
 	}
 
 	@Override
-	public BiltypeInterface hentBiltype(int id) {
+	public Biltype hentBiltype(String biltype) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<? extends BiltypeInterface> hentBiltyper() {
+	public List<Biltype> hentBiltyper() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int lagreReservasjon(Reservasjon reservasjon) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Reservasjon getReservasjon(String reservasjonsnr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Reservasjon> hentAlleReservasjonar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Kunde hentKunde(String telefonnr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

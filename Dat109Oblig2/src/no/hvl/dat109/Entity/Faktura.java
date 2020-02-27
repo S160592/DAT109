@@ -3,7 +3,7 @@ package no.hvl.dat109.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import no.hvl.dat109.Interfaces.FakturaInterface;
+import no.hvl.dat109.ubrukt.FakturaInterface;
 
 
 /**

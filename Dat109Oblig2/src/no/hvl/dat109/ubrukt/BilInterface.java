@@ -1,7 +1,7 @@
-package no.hvl.dat109.Interfaces;
+package no.hvl.dat109.ubrukt;
 
+import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Utleigekontor;
-import no.hvl.dat109.Superclasses.BiltypeSuper;
 
 public interface BilInterface {
 
@@ -11,7 +11,7 @@ public interface BilInterface {
 	public void setFarge(String farge);
 	public String getMerke();
 	public void setMerke(String merke);
-	public void setBiltype(BiltypeSuper biltype) ;
+	public void setBiltype(Bil biltype) ;
 	public void setStaarVedUtleigekontor(Utleigekontor utleigekontor);
 	public Utleigekontor getStaarVedUtleigekontor();
 	public BiltypeInterface getBiltype();

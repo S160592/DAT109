@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
 
 @WebServlet({ "/index.html" })
 public class Index extends HttpServlet {
@@ -22,7 +22,7 @@ public class Index extends HttpServlet {
 //	@EJB
 //	private PersistentUtleigekontor utleigekontorEAO;
 	@EJB
-	private Datalagring datalagring;
+	private Databehandling datalagring;
 
 	public Index() {
 		super();

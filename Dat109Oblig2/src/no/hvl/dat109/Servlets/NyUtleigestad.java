@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
+
 /**
  * Servlet implementation class NyUtleigestad
  */
-@WebServlet("/Admin/NyUtleigestad")
+@WebServlet("/adminNyUtleigestad")
 public class NyUtleigestad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +29,13 @@ public class NyUtleigestad extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		if(InnloggingUtil.isInnloggetSomAdmin(request)) {
+			response.getWriter().append("Served at: ").append(request.getContextPath());
+//			request.getRequestDispatcher("WEB-INF/jsp/admin.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("sok");
+		}
+		
 	}
 
 	/**
@@ -35,7 +43,12 @@ public class NyUtleigestad extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		if(InnloggingUtil.isInnloggetSomAdmin(request)) {
+//			response.getWriter().append("Served at: ").append(request.getContextPath());
+//			request.getRequestDispatcher("WEB-INF/jsp/admin.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("sok");
+		}
 	}
 
 }

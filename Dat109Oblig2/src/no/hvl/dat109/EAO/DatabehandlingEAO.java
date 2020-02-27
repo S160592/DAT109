@@ -16,7 +16,7 @@ import no.hvl.dat109.Entity.Biltype;
 import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
-import no.hvl.dat109.Interfaces.Datalagring;
+import no.hvl.dat109.Interfaces.Databehandling;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentBiltype;
@@ -25,7 +25,7 @@ import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
 
 @Stateless
-public class DatalagringEAO implements Datalagring {
+public class DatabehandlingEAO implements Databehandling {
 	@PersistenceContext(name = "utleige")
 	private EntityManager em;
 
@@ -129,6 +129,14 @@ public class DatalagringEAO implements Datalagring {
 	public Kunde hentKunde(String telefonnr) {
 		// TODO Auto-generated method stub
 		return kundeEAO.finnKunde(telefonnr);
+	}
+
+	@Override
+	public List<Reservasjon> hentReservasjonarFor(Kunde kunde) {
+		// TODO Auto-generated method stub
+		return reservasjonEAO.hentAlle().stream().filter(r -> r.getKundeBean().getTelefonnummer().equals(kunde.getTelefonnummer())).collect(Collectors.toList());
+		
+		
 	}
 
 }
