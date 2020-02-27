@@ -73,7 +73,7 @@ bil varchar(8) not null,
 kunde varchar(8) not null,
 fralokasjon int4 not null,
 tillokasjon int4 not null,
-kmstandut integer not null,
+kmstandut integer,
 kmstandinn integer,
 fakturaID int4,
 constraint reservasjon_pk primary key (reservasjonsid),
@@ -181,6 +181,10 @@ values('Borgar',
 1,
 '81548300','');
 
+
+
 INSERT INTO borgar.reservasjon
-(bil, kunde, fralokasjon, tillokasjon, kmstandut, kmstandinn)
-VALUES( 'KH51979', '81548300', 1, 1, 0, 0);
+(fradato, tildato, bil, kunde, fralokasjon, tillokasjon, kmstandut, kmstandinn)
+VALUES('NOW()', 'NOW()', 'KH51979', '81548300', 1, 1, 0, 0);
+
+

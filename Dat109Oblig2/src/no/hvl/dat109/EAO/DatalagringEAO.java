@@ -23,10 +23,11 @@ import no.hvl.dat109.Interfaces.PersistentBiltype;
 import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
+
 @Stateless
-public class DatalagringEAO implements Datalagring{
+public class DatalagringEAO implements Datalagring {
 	@PersistenceContext(name = "utleige")
-    private EntityManager em;
+	private EntityManager em;
 
 	@EJB
 	PersistentBil bilEAO;
@@ -40,8 +41,7 @@ public class DatalagringEAO implements Datalagring{
 	PersistentKunde kundeEAO;
 	@EJB
 	PersistentUtleigekontor utleigekontorEAO;
-	
-	
+
 	@Override
 	public void lagreBil(Bil bil) {
 		bilEAO.leggTil(bil);
@@ -51,7 +51,7 @@ public class DatalagringEAO implements Datalagring{
 	public Bil hentBil(String regnr) {
 		return bilEAO.hentBil(regnr);
 	}
-	
+
 	@Override
 	public List<Bil> finnledigeBilar(Timestamp fra, Timestamp til, Utleigekontor fraLokasjon) {
 
@@ -60,36 +60,33 @@ public class DatalagringEAO implements Datalagring{
 		List<String> reserverte = new ArrayList<String>();
 
 		reservasjonar.forEach(r -> {
+			if ((r.getFradato().before(fra) || r.getFradato().equals(fra))
+					&& (r.getTildato().after(til) || r.getTildato().equals(til))) {
 
-			if (r.getFradato().before(fra) && r.getTildato().after(til)) {
 				reserverte.add(r.getBilBean().getRegnr());
 			}
 
 		});
 
-		List<Bil> ledigeBilar = bilar.stream()
-				.filter(b -> !reserverte.contains(b.getRegnr()) && b.getStaarVedUtleigekontor().getId() == fraLokasjon.getId())
+		List<Bil> ledigeBilar = bilar.stream().filter(
+				b -> !reserverte.contains(b.getRegnr()) && b.getStaarVedUtleigekontor().getId() == fraLokasjon.getId())
 				.collect(Collectors.toList());
-		
+
 		return ledigeBilar;
 	}
 
-
 	@Override
 	public int lagreAdresse(Adress adress) {
-		
-		
-		return adressEAO.lagre(adress);
-		
-	}
 
+		return adressEAO.lagre(adress);
+
+	}
 
 	@Override
 	public void lagreNyKunde(Kunde kunde) {
-		
+
 		kundeEAO.leggTil(kunde);
 	}
-
 
 	@Override
 	public Utleigekontor hentUtleigekontor(int id) {
@@ -105,7 +102,7 @@ public class DatalagringEAO implements Datalagring{
 	@Override
 	public List<Biltype> hentBiltyper() {
 		// TODO Auto-generated method stub
-		
+
 		return biltypeEAO.hentAlle();
 	}
 
@@ -113,7 +110,7 @@ public class DatalagringEAO implements Datalagring{
 	public int lagreReservasjon(Reservasjon reservasjon) {
 		// TODO Auto-generated method stub
 		return reservasjonEAO.createReservasjon(reservasjon);
-		
+
 	}
 
 	@Override
@@ -127,5 +124,11 @@ public class DatalagringEAO implements Datalagring{
 		// TODO Auto-generated method stub
 		return reservasjonEAO.hentAlle();
 	}
-	
+
+	@Override
+	public Kunde hentKunde(String telefonnr) {
+		// TODO Auto-generated method stub
+		return kundeEAO.finnKunde(telefonnr);
+	}
+
 }

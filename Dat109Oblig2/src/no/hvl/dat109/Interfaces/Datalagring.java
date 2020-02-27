@@ -28,5 +28,6 @@ public interface Datalagring {
 	public int lagreReservasjon(Reservasjon reservasjon);
 	public Reservasjon getReservasjon(String reservasjonsnr);
 	public List<Reservasjon> hentAlleReservasjonar();
+	public Kunde hentKunde(String telefonnr);
 
 }

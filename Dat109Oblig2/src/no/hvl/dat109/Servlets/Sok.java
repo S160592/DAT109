@@ -57,11 +57,21 @@ public class Sok extends HttpServlet {
 		Date fra = Date.valueOf(request.getParameter("trip-start"));
 		Date til = Date.valueOf(request.getParameter("trip-end"));
 		int fraLokasjon = Integer.valueOf(request.getParameter("fraLokasjon"));
+
+		int tilLokasjon = Integer.valueOf(request.getParameter("tilLokasjon"));
+		
 		String biltype = request.getParameter("biltype");
+		
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
+		System.out.println("fra dao: " + fraTimestamp);
+		System.out.println("til dao: " + tilTimestamp);
 
 		request.getSession().setAttribute("fraTimestamp", fraTimestamp);
+		request.getSession().setAttribute("tilTimestamp", tilTimestamp);
+		request.getSession().setAttribute("fraLokasjon", fraLokasjon);
+		request.getSession().setAttribute("tilLokasjon", tilLokasjon);
+		
 		request.getSession()
 				.setAttribute("bilar", datalagring
 						.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon))

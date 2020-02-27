@@ -157,66 +157,31 @@ button:hover, .btn-item:hover {
 			<i class="fas fa-car fa-6"></i>
 			<h1>Bilutleige A/S</h1>
 			<div class="btn-group">
-				<a class="btn-item" href="Utleige">Registrer utleige</a> <a
-					class="btn-item" href="Innlevering">Regisrer innlevering</a>
+				<a class="btn-item" href="sok">Nytt søk</a>
 			</div>
 		</div>
-		<form action="sok" method="post">
+		<form action="reserver" method="post">
 			<div class="title">
 				<i class="fas fa-pencil-alt"></i>
-				<h2>Søk etter ledig bil</h2>
+				<h2>Velg bil</h2>
 			</div>
 			<div class="info">
-				<div id="fraDato">
-					<label>Fra dato : </label> <input type="date" id="start"
-						name="trip-start">
-				</div>
-
-				<div id="fraDato">
-					<label>Til dato : </label> <input type="date" id="start"
-						name="trip-end">
-				</div>
-
-				<div id="fraDato">
-					<label>Velg bil : </label> <select id=fraLokasjon
-						name="fraLokasjon">
+				<div id="bil">
+					<label>Velg bil : </label> <select id=bil name="bil">
 						<c:forEach items="${bilar}" var="item">
-							<option value="${item.regnr}" selected>Regnr.: ${item.regnr}, Biltype: ${item.biltype.typeid}</option>
+							<option value="${item.regnr}" selected>Regnr.:
+								${item.regnr}, Biltype: ${item.biltype.typeid}</option>
 						</c:forEach>
 
-
-
-
 					</select>
 				</div>
 
-
-				<div id="fraDato">
-					<label>Til lokasjon : </label> <select id="tilLokasjon"
-						name="tilLokasjon">
-						<option value="1" selected>Førde</option>
-						<option value="2">Sogndal</option>
-
-
-
-					</select>
-
-				</div>
-
-				<div id="fraDato">
-					<label>Biltype : </label> <select id="biltype" name="biltype">
-						<option value="A" selected>Liten bil</option>
-						<option value="B">Mellomstor bil</option>
-						<option value="C">Stor bil</option>
-						<option value="D">Stasjonsvogn</option>
-					</select>
-				</div>
 			</div>
 			<div class="checkbox">
 				<input type="checkbox" name="checkbox"><span>I agree
 					to the stupid agreement</span>
 			</div>
-			<button type="submit" href="/">Søk</button>
+			<button type="submit" href="/">Reserver</button>
 		</form>
 	</div>
 </body>

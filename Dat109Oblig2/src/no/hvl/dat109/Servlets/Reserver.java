@@ -55,27 +55,33 @@ public class Reserver extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Bil bil = datalagring.hentBil(request.getParameter("regnr"));
-		
-		Date fra = Date.valueOf(request.getParameter("trip-start"));
-		Date til = Date.valueOf(request.getParameter("trip-end"));
-		Utleigekontor fraLokasjon = datalagring.hentUtleigekontor(Integer.valueOf(request.getParameter("fraLokasjon")));
-		Utleigekontor tilLokasjon = datalagring.hentUtleigekontor(Integer.valueOf(request.getParameter("tilLokasjon")));
 		
 		
+		Bil bil = datalagring.hentBil(request.getParameter("bil"));
+		Utleigekontor fraLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("fraLokasjon"));
+		Utleigekontor tilLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("tilLokasjon"));
+		Timestamp fraTimestamp = (Timestamp) request.getSession().getAttribute("fraTimestamp");
+		Timestamp tilTimestamp = (Timestamp) request.getSession().getAttribute("tilTimestamp");
 		
-		Timestamp fraTimestamp = new Timestamp(fra.getTime());
-		Timestamp tilTimestamp = new Timestamp(til.getTime());
 		
-		Reservasjon reservasjon = new Reservasjon();
-		reservasjon.setBilBean(bil);
-		reservasjon.setFradato(fraTimestamp);
-		reservasjon.setTildato(tilTimestamp);
-		reservasjon.setFraUtleigekontor(fraLokasjon);
-		reservasjon.setTilUtleigekotor(tilLokasjon);
-		datalagring.lagreReservasjon(reservasjon);
-		request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
-		response.sendRedirect("reservasjonBekreftelse");
+		
+		if(fraLokasjon == null || tilLokasjon == null || fraTimestamp == null || tilTimestamp == null || bil == null) {
+
+			response.sendRedirect("sok");
+			
+		}else {
+			Reservasjon reservasjon = new Reservasjon();
+			reservasjon.setBilBean(bil);
+			reservasjon.setFradato(fraTimestamp);
+			reservasjon.setTildato(tilTimestamp);
+			reservasjon.setFraUtleigekontor(fraLokasjon);
+			reservasjon.setTilUtleigekotor(tilLokasjon);
+			reservasjon.setKundeBean(datalagring.hentKunde("81548300"));
+			datalagring.lagreReservasjon(reservasjon);
+			System.out.println(reservasjon.getReservasjonsid());
+			request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
+			response.sendRedirect("reservasjonBekreftelse");
+		}
 		
 	}
 

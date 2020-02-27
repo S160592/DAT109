@@ -38,7 +38,7 @@ public class ReservasjonBekreftelse extends HttpServlet {
 		
 		
 		
-		Reservasjon reservasjon = datalagring.getReservasjon(request.getParameter("reservasjonsnr"));
+		Reservasjon reservasjon = datalagring.getReservasjon(String.valueOf(request.getSession().getAttribute("reservasjon")));
 		request.setAttribute("reservasjon", reservasjon);
 		request.getRequestDispatcher("WEB-INF/jsp/reservasjonsBekreftelse.jsp").forward(request, response);
 	}
