@@ -78,7 +78,6 @@ public class Reserver extends HttpServlet {
 			reservasjon.setTilUtleigekotor(tilLokasjon);
 			reservasjon.setKundeBean(datalagring.hentKunde("81548300"));
 			datalagring.lagreReservasjon(reservasjon);
-			System.out.println(reservasjon.getReservasjonsid());
 			request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
 			response.sendRedirect("reservasjonBekreftelse");
 		}

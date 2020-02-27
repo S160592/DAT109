@@ -64,8 +64,6 @@ public class Sok extends HttpServlet {
 		
 		Timestamp fraTimestamp = new Timestamp(fra.getTime());
 		Timestamp tilTimestamp = new Timestamp(til.getTime());
-		System.out.println("fra dao: " + fraTimestamp);
-		System.out.println("til dao: " + tilTimestamp);
 
 		request.getSession().setAttribute("fraTimestamp", fraTimestamp);
 		request.getSession().setAttribute("tilTimestamp", tilTimestamp);
