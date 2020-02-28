@@ -22,7 +22,7 @@ public class Index extends HttpServlet {
 //	@EJB
 //	private PersistentUtleigekontor utleigekontorEAO;
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	public Index() {
 		super();
@@ -42,7 +42,7 @@ public class Index extends HttpServlet {
 		long time = date.getTime();
 
 		Timestamp timestamp = new Timestamp(time);
-		datalagring.finnledigeBilar(timestamp, timestamp, datalagring.hentUtleigekontor(1)).forEach(System.out::println);
+		databehandling.finnledigeBilar(timestamp, timestamp, databehandling.hentUtleigekontor(1)).forEach(System.out::println);
 		
 
 		System.out.println();

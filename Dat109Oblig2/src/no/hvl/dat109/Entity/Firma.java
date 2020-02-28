@@ -26,7 +26,7 @@ public class Firma implements Serializable {
 	private Integer adresse;
 
 	//bi-directional many-to-one association to Utleigekontor
-	@OneToMany(mappedBy="firmaBean")
+	@OneToMany(mappedBy="firma")
 	private List<Utleigekontor> utleigekontors;
 
 	public Firma() {
@@ -36,24 +36,14 @@ public class Firma implements Serializable {
 		return this.navn;
 	}
 
-	public void setNavn(String navn) {
-		this.navn = navn;
-	}
 
 	public Integer getAdresse() {
 		return this.adresse;
 	}
 
-	public void setAdresse(Integer adresse) {
-		this.adresse = adresse;
-	}
 
 	public List<Utleigekontor> getUtleigekontors() {
 		return this.utleigekontors;
-	}
-
-	public void setUtleigekontors(List<Utleigekontor> utleigekontors) {
-		this.utleigekontors = utleigekontors;
 	}
 
 	

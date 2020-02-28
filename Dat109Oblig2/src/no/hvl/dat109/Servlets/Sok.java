@@ -30,7 +30,7 @@ public class Sok extends HttpServlet {
 	}
 
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -71,8 +71,8 @@ public class Sok extends HttpServlet {
 		request.getSession().setAttribute("tilLokasjon", tilLokasjon);
 		
 		request.getSession()
-				.setAttribute("bilar", datalagring
-						.finnledigeBilar(fraTimestamp, tilTimestamp, datalagring.hentUtleigekontor(fraLokasjon))
+				.setAttribute("bilar", databehandling
+						.finnledigeBilar(fraTimestamp, tilTimestamp, databehandling.hentUtleigekontor(fraLokasjon))
 						.stream().filter(b -> b.getBiltype().getTypeid().equals(biltype)).collect(Collectors.toList()));
 
 		response.sendRedirect("reserver");

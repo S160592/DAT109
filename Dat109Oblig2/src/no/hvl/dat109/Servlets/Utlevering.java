@@ -9,28 +9,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.Bil;
+import no.hvl.dat109.Entity.Kunde;
+import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Interfaces.Databehandling;
 import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 
 /**
- * Servlet implementation class NyBil
+ * Servlet implementation class Utlevering
  */
-@WebServlet("/adminNyBil")
-
-public class NyBil extends HttpServlet {
+@WebServlet("/adminUtlevering")
+public class Utlevering extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	@EJB
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public NyBil() {
+	public Utlevering() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	@EJB
-	private Databehandling databehandling;
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -38,9 +37,10 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		if (InnloggingUtil.isInnloggetSomAdmin(request)) {
-			request.getRequestDispatcher("WEB-INF/jsp/nyBil.jsp").forward(request, response);
+		String reservasjonsid = request.getParameter("reservasjonsid");
+		if (InnloggingUtil.isInnloggetSomAdmin(request) && reservasjonsid != null) {
+			request.setAttribute("reservasjon", databehandling.getReservasjon(reservasjonsid));
+			request.getRequestDispatcher("WEB-INF/jsp/utlevering.jsp").forward(request, response);
 		} else {
 			response.sendRedirect("sok");
 		}
@@ -52,25 +52,16 @@ public class NyBil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		if (InnloggingUtil.isInnloggetSomAdmin(request)) {
-			String regnr = request.getParameter("regnr");
-			String farge = request.getParameter("farge");
-			String Merke = request.getParameter("Merke");
-			String staarVed = request.getParameter("staarVed");
-			String biltype = request.getParameter("biltype");
-
-			Bil nyBil = new Bil();
-
-			nyBil.setBiltype(databehandling.hentBiltype(biltype));
-			nyBil.setRegnr(regnr);
-			nyBil.setMerke(Merke);
-			nyBil.setStaarVedUtleigekontor(databehandling.hentUtleigekontor(Integer.valueOf(staarVed)));
-			nyBil.setFarge(farge);
-
-			databehandling.lagreBil(nyBil);
-
-			response.sendRedirect("adminNyBil");
+			Reservasjon reservasjon = databehandling.getReservasjon(request.getParameter("reservasjonsid"));
+			reservasjon.setKmstandinn(Integer.valueOf(request.getParameter("kmstand")));
+			String kredittkort = request.getParameter("kredittkort");
+			if (kredittkort != null) {
+				Kunde kunde = reservasjon.getKundeBean();
+				kunde.setKredittkortnr(kredittkort);
+				databehandling.oppdaterKunde(kunde);
+			}
+			response.sendRedirect("Admin");
 		} else {
 			response.sendRedirect("sok");
 		}

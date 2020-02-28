@@ -6,5 +6,5 @@ public interface PersistentKunde {
 	public void leggTil(Kunde kunde);
 	
 	public Kunde finnKunde(String mobilnr);
-	
+	public void oppdaterKunde(Kunde kunde);
 }

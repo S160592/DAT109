@@ -2,7 +2,10 @@ package no.hvl.dat109.Entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +24,8 @@ public class Utleigekontor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
 	private Integer id;
 
 	private String telefonnr;
@@ -33,7 +38,7 @@ public class Utleigekontor implements Serializable {
 	//bi-directional many-to-one association to Firma
 		@ManyToOne
 		@JoinColumn(name="firma")
-		private Firma firmaBean;
+		private Firma firma;
 
 	public Utleigekontor() {
 	}
@@ -61,5 +66,15 @@ public class Utleigekontor implements Serializable {
 	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
+
+	public Firma getFirma() {
+		return firma;
+	}
+
+	public void setFirma(Firma firma) {
+		this.firma = firma;
+	}
+	
+	
 
 }

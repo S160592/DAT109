@@ -9,14 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import no.hvl.dat109.Entity.Faktura;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Interfaces.Databehandling;
+import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 
 /**
- * Servlet implementation class ReservasjonBekreftelse
+ * Servlet implementation class Faktura
  */
-@WebServlet("/reservasjonBekreftelse")
-public class ReservasjonBekreftelse extends HttpServlet {
+@WebServlet("/faktura")
+public class SynFaktura extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private Databehandling databehandling;
@@ -24,9 +26,8 @@ public class ReservasjonBekreftelse extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ReservasjonBekreftelse() {
+	public SynFaktura() {
 		super();
-
 	}
 
 	/**
@@ -35,12 +36,13 @@ public class ReservasjonBekreftelse extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Reservasjon reservasjon = databehandling
-				.getReservasjon(String.valueOf(request.getSession().getAttribute("reservasjon")));
-		request.setAttribute("reservasjon", reservasjon);
-		request.getRequestDispatcher("WEB-INF/jsp/reservasjonsBekreftelse.jsp").forward(request, response);
+		Reservasjon reservasjon = databehandling.getReservasjon(request.getParameter("reservasjonsid"));
 		
-		request.getSession().setAttribute("reservasjon", null);
+		if (InnloggingUtil.isInnlogget(request)) {
+			
+		} else {
+			response.sendRedirect("sok");
+		}
 	}
 
 }

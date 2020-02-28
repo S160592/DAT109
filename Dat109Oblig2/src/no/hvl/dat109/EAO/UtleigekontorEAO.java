@@ -23,6 +23,11 @@ public class UtleigekontorEAO implements PersistentUtleigekontor{
 		return em.createNamedQuery("Utleigekontor.findAll", Utleigekontor.class).getResultList();
 	}
 
+	@Override
+	public void nyttUtleigekontor(Utleigekontor utleigekontor) {
+		em.persist(utleigekontor);
+	}
+
 	
 	
 }

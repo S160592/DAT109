@@ -1,7 +1,6 @@
 package no.hvl.dat109.Servlets;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.ejb.EJB;
@@ -24,7 +23,7 @@ import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 public class Reserver extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -58,8 +57,8 @@ public class Reserver extends HttpServlet {
 		
 		
 		
-		Utleigekontor fraLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("fraLokasjon"));
-		Utleigekontor tilLokasjon = datalagring.hentUtleigekontor((int) request.getSession().getAttribute("tilLokasjon"));
+		Utleigekontor fraLokasjon = databehandling.hentUtleigekontor((int) request.getSession().getAttribute("fraLokasjon"));
+		Utleigekontor tilLokasjon = databehandling.hentUtleigekontor((int) request.getSession().getAttribute("tilLokasjon"));
 		Timestamp fraTimestamp = (Timestamp) request.getSession().getAttribute("fraTimestamp");
 		Timestamp tilTimestamp = (Timestamp) request.getSession().getAttribute("tilTimestamp");
 		
@@ -69,15 +68,15 @@ public class Reserver extends HttpServlet {
 				response.sendRedirect("sok");
 				
 			}else {
-				Bil bil = datalagring.hentBil(request.getParameter("bil"));
+				Bil bil = databehandling.hentBil(request.getParameter("bil"));
 				Reservasjon reservasjon = new Reservasjon();
 				reservasjon.setBilBean(bil);
 				reservasjon.setFradato(fraTimestamp);
 				reservasjon.setTildato(tilTimestamp);
 				reservasjon.setFraUtleigekontor(fraLokasjon);
 				reservasjon.setTilUtleigekotor(tilLokasjon);
-				reservasjon.setKundeBean(datalagring.hentKunde((String) request.getSession().getAttribute("username")));
-				datalagring.lagreReservasjon(reservasjon);
+				reservasjon.setKundeBean(databehandling.hentKunde((String) request.getSession().getAttribute("username")));
+				databehandling.lagreReservasjon(reservasjon);
 				request.getSession().setAttribute("reservasjon",reservasjon.getReservasjonsid());
 				response.sendRedirect("reservasjonBekreftelse");
 			}
@@ -86,7 +85,6 @@ public class Reserver extends HttpServlet {
 			request.getSession().setAttribute("commingFrom", "reserver");
 			response.sendRedirect("login");
 		}
-//		request.getSession().setAttribute("bil", request.getParameter("bil"));
 		
 		
 	

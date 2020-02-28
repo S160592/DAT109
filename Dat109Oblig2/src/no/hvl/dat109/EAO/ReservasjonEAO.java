@@ -27,4 +27,9 @@ public class ReservasjonEAO implements PersistentReservasjon {
 		em.flush();
 		return reservasjon.getReservasjonsid();
 	}
+
+	@Override
+	public void oppdaterReservasjon(Reservasjon reservasjon) {
+		em.merge(reservasjon);
+	}
 }

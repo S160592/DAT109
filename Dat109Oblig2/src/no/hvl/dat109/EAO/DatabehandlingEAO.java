@@ -13,6 +13,8 @@ import javax.persistence.PersistenceContext;
 import no.hvl.dat109.Entity.Adress;
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.Faktura;
+import no.hvl.dat109.Entity.Firma;
 import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
@@ -20,6 +22,8 @@ import no.hvl.dat109.Interfaces.Databehandling;
 import no.hvl.dat109.Interfaces.PersistentAdresse;
 import no.hvl.dat109.Interfaces.PersistentBil;
 import no.hvl.dat109.Interfaces.PersistentBiltype;
+import no.hvl.dat109.Interfaces.PersistentFaktura;
+import no.hvl.dat109.Interfaces.PersistentFirma;
 import no.hvl.dat109.Interfaces.PersistentKunde;
 import no.hvl.dat109.Interfaces.PersistentReservasjon;
 import no.hvl.dat109.Interfaces.PersistentUtleigekontor;
@@ -41,6 +45,12 @@ public class DatabehandlingEAO implements Databehandling {
 	PersistentKunde kundeEAO;
 	@EJB
 	PersistentUtleigekontor utleigekontorEAO;
+	@EJB
+	PersistentFirma firmaEAO;
+	@EJB
+	PersistentFaktura fakturaEAO;
+	
+	
 
 	@Override
 	public void lagreBil(Bil bil) {
@@ -134,8 +144,54 @@ public class DatabehandlingEAO implements Databehandling {
 	@Override
 	public List<Reservasjon> hentReservasjonarFor(Kunde kunde) {
 		// TODO Auto-generated method stub
-		return reservasjonEAO.hentAlle().stream().filter(r -> r.getKundeBean().getTelefonnummer().equals(kunde.getTelefonnummer())).collect(Collectors.toList());
+		return reservasjonEAO.hentAlle().stream()
+				.filter(r -> r.getKundeBean().getTelefonnummer().equals(kunde.getTelefonnummer()))
+				.collect(Collectors.toList());
+
+	}
+
+	@Override
+	public void nyttUtleigekontor(Utleigekontor utleigekontor) {
+
+		utleigekontorEAO.nyttUtleigekontor(utleigekontor);
+
+	}
+
+	@Override
+	public Firma hentFirma() {
+		// TODO Auto-generated method stub
+		return firmaEAO.hentFirma();
+	}
+
+	
+
+	@Override
+	public List<Faktura> hentAlleFaktura() {
+		// TODO Auto-generated method stub
+		return fakturaEAO.hentAlleFaktura();
+	}
+
+	@Override
+	public int nyFaktura(Faktura faktura) {
+		// TODO Auto-generated method stub
+		return fakturaEAO.nyFaktura(faktura);
+	}
+
+	@Override
+	public Faktura getFaktura(int fakturanr) {
+		// TODO Auto-generated method stub
+		return fakturaEAO.getFaktura(fakturanr);
+	}
+
+	@Override
+	public void oppdaterKunde(Kunde kunde) {
+		kundeEAO.oppdaterKunde(kunde);
 		
+	}
+
+	@Override
+	public void oppdaterReservasjon(Reservasjon reservasjon) {
+		reservasjonEAO.oppdaterReservasjon(reservasjon);
 		
 	}
 

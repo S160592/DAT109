@@ -20,7 +20,7 @@ import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -59,7 +59,7 @@ public class login extends HttpServlet {
 			response.sendRedirect("minSide");
 		} else {
 
-			Kunde kunde = datalagring.hentKunde(request.getParameter("telefonnr"));
+			Kunde kunde = databehandling.hentKunde(request.getParameter("telefonnr"));
 			if (kunde == null) {
 				response.sendRedirect("login");
 			} else if (kunde.getEtternavn().equals(request.getParameter("etternavn"))) {

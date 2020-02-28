@@ -157,16 +157,41 @@ button:hover, .btn-item:hover {
 			<i class="fas fa-car fa-6"></i>
 			<h1>Bilutleige A/S</h1>
 			<div class="btn-group">
-				<a class="btn-item" href="sok">Søk etter bil</a> <a class="btn-item"
-					href="adminUtleige">Utleige av bil</a> <a class="btn-item"
-					href="adminInnlevering">Innlevering av bil</a> <a class="btn-item"
-					href="adminNyBil">Ny bil</a> <a class="btn-item"
-					href="adminNyUtleigestad">Ny utleigestad</a><a class="btn-item"
-					href="AdminFinnReservasjon">Finn reservasjon</a>
-					
-
+				<a class="btn-item" href="Admin">Admin</a>
 			</div>
 		</div>
+		<form action="adminUtlevering" method="post">
+			<div class="title">
+				<i class="fas fa-pencil-alt"></i>
+				<h2>Utlevering av bil</h2>
+			</div>
+			<div class="info">
+				<input type="text" name ="reservasjonsid" placeholder="${reservasjon.reservasjonsid}" value="${reservasjon.reservasjonsid}">
+				<input type="text" name="kmstand" placeholder="kmstand">
+			</div>
+
+			<c:choose>
+				<c:when test="${empty reservasjon.getKundeBean().kredittkortnr}">
+					<input type="text" name="kredittkort" placeholder="Kredittkortnr">
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
+
+
+
+
+			<div class="checkbox">
+				<input type="checkbox" name="checkbox"><span>I agree
+					to the stupid agreement</span>
+			</div>
+			<button type="submit" href="/">Leig ut</button>
+			<br> <br> <br> <br>
+
+
+
+		</form>
+
 
 	</div>
 </body>

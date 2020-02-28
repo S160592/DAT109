@@ -1,23 +1,29 @@
 package no.hvl.dat109.Servlets;
 
 import java.io.IOException;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import no.hvl.dat109.Interfaces.Databehandling;
+import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
+
 /**
- * Servlet implementation class Utleige
+ * Servlet implementation class FinnReservasjon
  */
-@WebServlet("/Utleige")
-public class Utleige extends HttpServlet {
+@WebServlet("/AdminFinnReservasjon")
+public class FinnReservasjon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	@EJB
+	private Databehandling databehandling;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Utleige() {
+    public FinnReservasjon() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +33,19 @@ public class Utleige extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		if(InnloggingUtil.isInnloggetSomAdmin(request)) {
+			String reservasjonsID = request.getParameter("reservasjonsID");
+			if(reservasjonsID == "" || reservasjonsID == null) {
+				
+			}else {
+				request.setAttribute("reservasjon", databehandling.getReservasjon(reservasjonsID));
+			}
+			request.getRequestDispatcher("WEB-INF/jsp/finnReservasjon.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("sok");
+		}
+		
+		
 	}
 
 	/**

@@ -20,7 +20,7 @@ import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
 public class minSide extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -38,8 +38,8 @@ public class minSide extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		if (InnloggingUtil.isInnlogget(request)) {
-			Kunde kunde = datalagring.hentKunde((String) request.getSession().getAttribute("username"));
-			request.setAttribute("reservasjonar", datalagring.hentReservasjonarFor(kunde));
+			Kunde kunde = databehandling.hentKunde((String) request.getSession().getAttribute("username"));
+			request.setAttribute("reservasjonar", databehandling.hentReservasjonarFor(kunde));
 			request.getRequestDispatcher("WEB-INF/jsp/minSide.jsp").forward(request, response);
 		} else {
 			request.getSession().setAttribute("commingFrom", "minSide");

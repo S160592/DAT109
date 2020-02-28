@@ -9,6 +9,7 @@ public interface PersistentUtleigekontor {
 
 	public Utleigekontor hentUtleigekontor(int id);
 	public List<Utleigekontor> hentAlle();
+	public void nyttUtleigekontor(Utleigekontor utleigekontor);
 	
 	
 }

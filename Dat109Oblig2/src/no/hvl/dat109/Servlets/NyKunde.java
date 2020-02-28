@@ -29,7 +29,7 @@ public class NyKunde extends HttpServlet {
 	}
 
 	@EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -54,20 +54,23 @@ public class NyKunde extends HttpServlet {
 		String gateadresse = request.getParameter("gateadresse");
 		String postnummer = request.getParameter("postnummer");
 		String poststed = request.getParameter("poststed");
-
+		String kredittkort = request.getParameter("kredittkort");
 		Kunde kunde = new Kunde();
 		Adress adresse = new Adress();
 
 		adresse.setGateadresse(gateadresse);
 		adresse.setPostnummer(postnummer);
 		adresse.setPoststed(poststed);
-		datalagring.lagreAdresse(adresse);
+		databehandling.lagreAdresse(adresse);
 
 		kunde.setAdress(adresse);
 		kunde.setFornavn(fornavn);
 		kunde.setEtternavn(etternavn);
 		kunde.setTelefonnummer(telefonnr);
-		datalagring.lagreNyKunde(kunde);
+		if(kredittkort != null) {
+			kunde.setKredittkortnr(kredittkort);
+		}
+		databehandling.lagreNyKunde(kunde);
 
 		response.sendRedirect("nyKunde");
 	}

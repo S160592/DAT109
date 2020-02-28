@@ -28,7 +28,7 @@ public class NyAdresse extends HttpServlet {
     }
     
     @EJB
-	private Databehandling datalagring;
+	private Databehandling databehandling;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -52,7 +52,7 @@ public class NyAdresse extends HttpServlet {
 		newAdr.setGateadresse(gatenr);
 		newAdr.setPostnummer(postkode);
 		newAdr.setPoststed(poststed);
-		datalagring.lagreAdresse(newAdr); 
+		databehandling.lagreAdresse(newAdr); 
 		
 
 		response.sendRedirect("NyAdresse");

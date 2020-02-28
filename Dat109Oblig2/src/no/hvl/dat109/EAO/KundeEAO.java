@@ -24,4 +24,10 @@ public class KundeEAO implements PersistentKunde {
 		em.persist(kunde);
 	}
 
+	@Override
+	public void oppdaterKunde(Kunde kunde) {
+		em.merge(kunde);
+		
+	}
+
 }

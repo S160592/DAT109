@@ -157,16 +157,48 @@ button:hover, .btn-item:hover {
 			<i class="fas fa-car fa-6"></i>
 			<h1>Bilutleige A/S</h1>
 			<div class="btn-group">
-				<a class="btn-item" href="sok">Søk etter bil</a> <a class="btn-item"
-					href="adminUtleige">Utleige av bil</a> <a class="btn-item"
-					href="adminInnlevering">Innlevering av bil</a> <a class="btn-item"
-					href="adminNyBil">Ny bil</a> <a class="btn-item"
-					href="adminNyUtleigestad">Ny utleigestad</a><a class="btn-item"
-					href="AdminFinnReservasjon">Finn reservasjon</a>
-					
-
+				<a class="btn-item" href="Admin">Admin</a> 
 			</div>
 		</div>
+		<form action="AdminFinnReservasjon" method="post">
+			<div class="title">
+				<i class="fas fa-pencil-alt"></i>
+				<h2>Finn og behandle reservasjon</h2>
+			</div>
+			<div class="info">
+				<input type="text" name="reservasjonsID"
+					placeholder="ReservasjonsID">
+
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" name="checkbox"><span>I agree
+					to the stupid agreement</span>
+			</div>
+			<button type="submit" href="/">Søk</button>
+			<br> <br> <br> <br>
+
+			<c:choose>
+				<c:when test="${empty reservasjon}">
+
+				</c:when>
+				<c:otherwise>
+					<label> ReservasjonsID : ${reservasjon.reservasjonsid}<br>
+						Bil : ${reservasjon.getBilBean().regnr}<br> Farge:
+						${reservasjon.getBilBean().farge}<br> Fra dato :
+						${reservasjon.fradato}<br> Til Dato : ${reservasjon.tildato}<br>
+
+					</label>
+					<br>
+					<a class="btn-item"
+						href="adminInnlevering?reservasjonsid=${reservasjon.reservasjonsid}">Innlevering</a>
+					<a class="btn-item"
+						href="adminUtlevering?reservasjonsid=${reservasjon.reservasjonsid}">Utlevering</a>
+
+				</c:otherwise>
+			</c:choose>
+
+		</form>
+
 
 	</div>
 </body>

@@ -188,3 +188,6 @@ INSERT INTO borgar.reservasjon
 VALUES('NOW()', 'NOW()', 'KH51979', '81549300', 1, 1, 0, 0);
 
 
+INSERT INTO borgar.firma
+(navn, adresse)
+VALUES('Bilutleige AS', 1);

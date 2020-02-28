@@ -132,25 +132,19 @@
         <i class="fas fa-car fa-6"></i>
         <h1>Bilutleige A/S</h1>
         <div class="btn-group">
-          <a class="btn-item" href="sok">Søk etter bil</a>
-          <a class="btn-item" href="login">Logg inn</a>
+          <a class="btn-item" href="Admin">Admin</a>
         </div>
       </div>
-      <form action="nyKunde" method="post">
+      <form action="adminNyUtleigestad" method="post">
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
-          <h2>Registrer kunde</h2>
+          <h2>Ny utleigestad</h2>
         </div>
         <div class="info">
-          <input type="text" name="fornavn" placeholder="Fornavn">
-          <input type="text" name="etternavn" placeholder="Etternavn">
           <input type="text" name="telefonnr" placeholder="Telefonnr">
           <input type="text" name="gateadresse" placeholder="Gateadresse">
           <input type="text" name="postnummer" placeholder="Postnummer">
           <input type="text" name="poststed" placeholder="Poststad">
-          <input type="text" name="kredittkort" placeholder="Kredittkort">
-          
-          
           
           
         </div>

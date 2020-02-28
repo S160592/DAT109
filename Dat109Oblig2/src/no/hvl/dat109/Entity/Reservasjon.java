@@ -57,8 +57,11 @@ public class Reservasjon implements Serializable, ReservasjonInterface {
 	@ManyToOne
 	@JoinColumn(name = "tillokasjon")
 	private Utleigekontor tilUtleigekotor;
-
 	
+	@JoinColumn(name="fakturaid")
+	private Faktura faktura;
+	
+
 	public Reservasjon() {
 	}
 
@@ -134,14 +137,19 @@ public class Reservasjon implements Serializable, ReservasjonInterface {
 		this.tilUtleigekotor = tilUtleigekotor;
 	}
 
-	@Override
-	public String toString() {
-		return "Reservasjon [reservasjonsid=" + reservasjonsid + ", fradato=" + fradato + ", tildato=" + tildato + "]";
+	public Faktura getFaktura() {
+		return this.faktura;
+	}
+
+	public void setFaktura(Faktura faktura) {
+		this.faktura = faktura;
 	}
 	
 	
 
-
-	
+	@Override
+	public String toString() {
+		return "Reservasjon [reservasjonsid=" + reservasjonsid + ", fradato=" + fradato + ", tildato=" + tildato + "]";
+	}
 
 }
