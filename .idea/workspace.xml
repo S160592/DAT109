@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c652c246-0261-44e0-9e5e-91e93c711dd2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="bd2b7e88-58af-4b23-b90b-e6172e0892a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAT109Oblig1/DAT109Oblig1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DAT109Oblig1/DAT109Oblig1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/DAT109Oblig2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/DAT109Oblig2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Reserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Reserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Sok.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Sok.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Superclasses/BilSuper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Superclasses/BilSuper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +12,14 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="DAT109" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1YLS1e8ytFb5j1Yw6nlvkUCUWCv" />
+  <component name="ProjectId" id="1YQgDSjokwvYW8tAenPYHigtj0V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -46,23 +34,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c652c246-0261-44e0-9e5e-91e93c711dd2" name="Default Changelist" comment="" />
-      <created>1582720167337</created>
+      <changelist id="bd2b7e88-58af-4b23-b90b-e6172e0892a9" name="Default Changelist" comment="" />
+      <created>1582880112217</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582720167337</updated>
+      <updated>1582880112217</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3789" y="370" key="SettingsEditor" timestamp="1582720343663">
-      <screen x="2560" y="23" width="3440" height="1417" />
+    <state x="1624" y="162" key="SettingsEditor" timestamp="1582880146931">
+      <screen x="1440" y="23" width="1366" height="1001" />
     </state>
-    <state x="3789" y="370" key="SettingsEditor/-3440.23.3440.1417/2560.23.3440.1417/0.23.2560.1341@2560.23.3440.1417" timestamp="1582720343663" />
-    <state x="3815" y="556" key="com.intellij.ide.util.TipDialog" timestamp="1582720392368">
-      <screen x="2560" y="23" width="3440" height="1417" />
+    <state x="1624" y="162" key="SettingsEditor/1440.23.1366.1001/0.23.1440.820@1440.23.1366.1001" timestamp="1582880146931" />
+    <state x="1724" y="304" key="com.intellij.ide.util.TipDialog" timestamp="1582880161960">
+      <screen x="1440" y="23" width="1366" height="1001" />
     </state>
-    <state x="934" y="527" key="com.intellij.ide.util.TipDialog/-3440.23.3440.1417/2560.23.3440.1417/0.23.2560.1341@0.23.2560.1341" timestamp="1582720183077" />
-    <state x="3815" y="556" key="com.intellij.ide.util.TipDialog/-3440.23.3440.1417/2560.23.3440.1417/0.23.2560.1341@2560.23.3440.1417" timestamp="1582720392368" />
+    <state x="1724" y="304" key="com.intellij.ide.util.TipDialog/1440.23.1366.1001/0.23.1440.820@1440.23.1366.1001" timestamp="1582880161960" />
   </component>
 </project>
