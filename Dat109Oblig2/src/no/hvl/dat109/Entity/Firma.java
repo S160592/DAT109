@@ -24,6 +24,11 @@ public class Firma implements Serializable {
 	private String navn;
 
 	private Integer adresse;
+	
+	private String telefonnr;
+
+	
+
 
 	//bi-directional many-to-one association to Utleigekontor
 	@OneToMany(mappedBy="firma")
@@ -44,6 +49,13 @@ public class Firma implements Serializable {
 
 	public List<Utleigekontor> getUtleigekontors() {
 		return this.utleigekontors;
+	}
+	public String getTelefonnr() {
+		return telefonnr;
+	}
+
+	public void setTelefonnr(String telefonnr) {
+		this.telefonnr = telefonnr;
 	}
 
 	

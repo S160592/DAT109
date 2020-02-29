@@ -23,6 +23,7 @@ constraint adress_pk primary key (id) );
 CREATE TABLE borgar.firma (
 	navn varchar NOT NULL,
 	adresse int4 NOT NULL,
+	telefonnr varchar NOT NULL,
 	CONSTRAINT firma_pk PRIMARY KEY (navn),
 	CONSTRAINT firma_fk FOREIGN KEY (adresse) REFERENCES borgar.adress(id)
 );
@@ -107,8 +108,8 @@ values('Stykkje 6B',
 
 
 INSERT INTO borgar.firma
-(navn, adresse)
-VALUES('Bilutleige', 1);
+(navn, telefonnr, adresse)
+VALUES('Bilutleige', '22334455', 1);
 
 
 
