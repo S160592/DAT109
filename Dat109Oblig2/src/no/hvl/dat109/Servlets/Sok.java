@@ -42,7 +42,7 @@ public class Sok extends HttpServlet {
 		java.util.Date dato = new java.util.Date();
 		Timestamp TimeStmpDato = new Timestamp(dato.getTime());
 		request.setAttribute("dato", TimeStmpDato);
-
+		request.setAttribute("utleigekontor", databehandling.hentAlleUtleigekontor());
 		request.getRequestDispatcher("WEB-INF/jsp/sok.jsp").forward(request, response);
 
 	}

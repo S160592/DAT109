@@ -54,5 +54,7 @@ public interface Databehandling {
 	public void oppdaterKunde(Kunde kunde);
 	
 	public void oppdaterReservasjon(Reservasjon reservasjon);
+	
+	public List<Utleigekontor> hentAlleUtleigekontor();
 
 }

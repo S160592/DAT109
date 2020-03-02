@@ -7,6 +7,8 @@ import java.util.List;
 import no.hvl.dat109.Entity.Adress;
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Entity.Biltype;
+import no.hvl.dat109.Entity.Faktura;
+import no.hvl.dat109.Entity.Firma;
 import no.hvl.dat109.Entity.Kunde;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Entity.Utleigekontor;
@@ -87,6 +89,60 @@ public class MocDatalagring implements Databehandling{
 
 	@Override
 	public Kunde hentKunde(String telefonnr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Reservasjon> hentReservasjonarFor(Kunde kunde) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void nyttUtleigekontor(Utleigekontor utleigekontor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Firma hentFirma() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Faktura> hentAlleFaktura() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int nyFaktura(Faktura faktura) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Faktura getFaktura(int fakturanr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void oppdaterKunde(Kunde kunde) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void oppdaterReservasjon(Reservasjon reservasjon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Utleigekontor> hentAlleUtleigekontor() {
 		// TODO Auto-generated method stub
 		return null;
 	}

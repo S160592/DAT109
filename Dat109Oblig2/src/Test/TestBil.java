@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import Test.Moc.MocDatalagring;
 import no.hvl.dat109.Entity.Bil;
 import no.hvl.dat109.Interfaces.Databehandling;
-import no.hvl.dat109.ubrukt.BilInterface;
 
 class TestBil {
 

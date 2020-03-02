@@ -9,7 +9,7 @@ public class Priskalkulator {
 		int antallDagar = (int) (((reservasjon.getTildato().getTime() - reservasjon.getFradato().getTime())/8640000)/10);
 		System.out.println("Dagspris : " + dagspris);
 		System.out.println("Antall dagar : " + antallDagar);
-		return antallDagar * dagspris;
+		return antallDagar * dagspris + dagspris;
 	}
 	
 }

@@ -65,6 +65,7 @@ constraint kunde_fk foreign key (adresse) references borgar.adress(id) );
 create table borgar.faktura ( 
 fakturanr serial,
 beskriveslse text,
+pris integer,
 constraint db_faktura_pk primary key (fakturanr));
 
 create table borgar.reservasjon ( reservasjonsid serial,
@@ -190,5 +191,8 @@ VALUES('NOW()', 'NOW()', 'KH51979', '81549300', 1, 1, 0, 0);
 
 
 INSERT INTO borgar.firma
-(navn, adresse)
-VALUES('Bilutleige AS', 1);
+(navn, telefonnr, adresse)
+VALUES('Bilutleige AS','88888888' , 1);
+
+
+

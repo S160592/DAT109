@@ -195,4 +195,10 @@ public class DatabehandlingEAO implements Databehandling {
 		
 	}
 
+	@Override
+	public List<Utleigekontor> hentAlleUtleigekontor() {
+		// TODO Auto-generated method stub
+		return utleigekontorEAO.hentAlle();
+	}
+
 }

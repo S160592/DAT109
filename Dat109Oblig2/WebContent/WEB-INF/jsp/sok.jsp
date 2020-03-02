@@ -172,34 +172,36 @@ button:hover, .btn-item:hover {
 						>
 				</div>
 
-				<div id="fraDato">
+				<div id="tilDato">
 					<label>Til dato : </label> <input type="date" id="slutt" name="trip-end"
 						>
 				</div>
 
-				<div id="fraDato">
+				<div id="fraLokasjon">
 					<label>Fra lokasjon : </label> <select id=fraLokasjon name="fraLokasjon">
-						<option value="1" selected>Førde</option>
-						<option value="2">Sogndal</option>
-
+					<c:forEach items="${utleigekontor}" var="item">
+							<option value="${item.id}" selected>Frå: 
+								${item.getAdress().poststed}</option>
+						</c:forEach>
 
 
 					</select>
 				</div>
 
 
-				<div id="fraDato">
+				<div id="tilLokasjon">
 					<label>Til lokasjon : </label> <select id="tilLokasjon" name="tilLokasjon">
-						<option value="1" selected>Førde</option>
-						<option value="2">Sogndal</option>
-
-
-
-					</select>
+					<c:forEach items="${utleigekontor}" var="item">
+							<option value="${item.id}" selected>Til: 
+								${item.getAdress().poststed}</option>
+						</c:forEach></select>
+					
+					
+					
 
 				</div>
 
-				<div id="fraDato">
+				<div id="biltype">
 					<label>Biltype : </label> <select id="biltype" name="biltype">
 						<option value="A" selected>Liten bil</option>
 						<option value="B">Mellomstor bil</option>

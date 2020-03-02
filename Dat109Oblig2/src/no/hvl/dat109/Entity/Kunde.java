@@ -9,8 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.ubrukt.KundeInterface;
-
 /**
  * The persistent class for the kunde database table.
  * 
@@ -18,7 +16,7 @@ import no.hvl.dat109.ubrukt.KundeInterface;
 @Entity(name = "Kunde")
 @Table(name = "Kunde", schema = "borgar")
 @NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k")
-public class Kunde implements Serializable, KundeInterface {
+public class Kunde implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id

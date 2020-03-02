@@ -13,8 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import no.hvl.dat109.ubrukt.ReservasjonInterface;
-
 /**
  * The persistent class for the reservasjon database table.
  * 
@@ -22,7 +20,7 @@ import no.hvl.dat109.ubrukt.ReservasjonInterface;
 @Entity(name = "Reservasjon")
 @Table(name = "Reservasjon", schema = "borgar")
 @NamedQuery(name = "Reservasjon.findAll", query = "SELECT r FROM Reservasjon r")
-public class Reservasjon implements Serializable, ReservasjonInterface {
+public class Reservasjon implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
