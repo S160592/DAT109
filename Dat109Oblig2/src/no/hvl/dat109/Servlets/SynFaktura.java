@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import no.hvl.dat109.Entity.Faktura;
 import no.hvl.dat109.Entity.Reservasjon;
 import no.hvl.dat109.Interfaces.Databehandling;
 import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
@@ -39,7 +38,7 @@ public class SynFaktura extends HttpServlet {
 		Reservasjon reservasjon = databehandling.getReservasjon(request.getParameter("reservasjonsid"));
 		
 		if (InnloggingUtil.isInnlogget(request)) {
-			
+			//TODO send til faktura servlet
 		} else {
 			response.sendRedirect("sok");
 		}

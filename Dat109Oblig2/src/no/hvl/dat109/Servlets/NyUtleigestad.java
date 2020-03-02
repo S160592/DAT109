@@ -13,7 +13,6 @@ import no.hvl.dat109.Entity.Adress;
 import no.hvl.dat109.Entity.Utleigekontor;
 import no.hvl.dat109.Interfaces.Databehandling;
 import no.hvl.dat109.hjelpeklasser.InnloggingUtil;
-import sun.jvm.hotspot.oops.DataLayout;
 
 /**
  * Servlet implementation class NyUtleigestad

@@ -3,6 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="bd2b7e88-58af-4b23-b90b-e6172e0892a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/WebContent/WEB-INF/jsp/sok.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/WebContent/WEB-INF/jsp/sok.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/Test/Moc/MocDatalagring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/Test/Moc/MocDatalagring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/Test/TestBil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/Test/TestBil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/EAO/DatabehandlingEAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/EAO/DatabehandlingEAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Kunde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Reservasjon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Entity/Reservasjon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Interfaces/Databehandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Interfaces/Databehandling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/NyUtleigestad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/NyUtleigestad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Sok.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/Servlets/Sok.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/AdressInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/BilInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/BiltypeInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/FakturaInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/GetBil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/KundeInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/ReservasjonInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/no/hvl/dat109/ubrukt/UtleigekontorInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dat109Oblig2/src/stuff/createAndAdd.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Dat109Oblig2/src/stuff/createAndAdd.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
